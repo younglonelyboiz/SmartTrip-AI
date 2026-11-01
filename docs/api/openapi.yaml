@@ -1,0 +1,1563 @@
+openapi: 3.1.0
+info:
+  title: SmartTrip AI Target API
+  version: 0.1.0
+  description: Hợp đồng thiết kế, chưa có backend. FE dùng mock, không gọi các endpoints
+    này.
+servers:
+- url: http://localhost:8000/api/v1
+  description: Target local development, chưa triển khai
+security:
+- bearerAuth: []
+paths:
+  /auth/login:
+    post:
+      operationId: login
+      summary: login
+      responses:
+        '200':
+          description: Thành công
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        '422':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+  /profile:
+    get:
+      operationId: getProfile
+      summary: getProfile
+      responses:
+        '200':
+          description: Thành công
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+        '401':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '403':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '404':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '409':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+    patch:
+      operationId: updateProfile
+      summary: updateProfile
+      responses:
+        '200':
+          description: Thành công
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+        '401':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '403':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '404':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '409':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProfileUpdate'
+  /places:
+    get:
+      operationId: listPlaces
+      summary: Danh mục snapshot công khai; target thêm phân trang khi dữ liệu lớn
+      responses:
+        '200':
+          description: Thành công
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DatasetSnapshot'
+        '422':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security: []
+  /trips:
+    post:
+      operationId: createTrip
+      summary: createTrip
+      responses:
+        '201':
+          description: Thành công
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Trip'
+        '401':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '403':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '404':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '409':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TripCreate'
+    get:
+      operationId: listTrips
+      summary: listTrips
+      responses:
+        '200':
+          description: Thành công
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TripList'
+        '401':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '403':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '404':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '409':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+  /trips/{tripId}:
+    get:
+      operationId: getTrip
+      summary: getTrip
+      responses:
+        '200':
+          description: Thành công
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Trip'
+        '401':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '403':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '404':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '409':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      parameters:
+      - name: tripId
+        in: path
+        required: true
+        schema: &id001
+          type: string
+          minLength: 1
+  /trips/{tripId}/runs:
+    post:
+      operationId: createOptimizationRun
+      summary: createOptimizationRun
+      responses:
+        '202':
+          description: Thành công
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RunAccepted'
+        '401':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '403':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '404':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '409':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      parameters:
+      - name: tripId
+        in: path
+        required: true
+        schema: *id001
+      - name: Idempotency-Key
+        in: header
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RunCreate'
+  /trips/{tripId}/runs/{runId}:
+    get:
+      operationId: getOptimizationRun
+      summary: getOptimizationRun
+      responses:
+        '200':
+          description: Thành công
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RunState'
+        '401':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '403':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '404':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '409':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      parameters:
+      - name: tripId
+        in: path
+        required: true
+        schema: *id001
+      - name: runId
+        in: path
+        required: true
+        schema: *id001
+  /trips/{tripId}/versions:
+    get:
+      operationId: listVersions
+      summary: listVersions
+      responses:
+        '200':
+          description: Thành công
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VersionList'
+        '401':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '403':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '404':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '409':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      parameters:
+      - name: tripId
+        in: path
+        required: true
+        schema: *id001
+  /trips/{tripId}/versions/{versionId}:
+    get:
+      operationId: getVersion
+      summary: getVersion
+      responses:
+        '200':
+          description: Thành công
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlanVersion'
+        '401':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '403':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '404':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '409':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      parameters:
+      - name: tripId
+        in: path
+        required: true
+        schema: *id001
+      - name: versionId
+        in: path
+        required: true
+        schema: *id001
+  /trips/{tripId}/feedback:
+    post:
+      operationId: createFeedback
+      summary: createFeedback
+      responses:
+        '201':
+          description: Thành công
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Feedback'
+        '401':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '403':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '404':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '409':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      parameters:
+      - name: tripId
+        in: path
+        required: true
+        schema: *id001
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Feedback'
+  /trips/{tripId}/shares:
+    post:
+      operationId: createShare
+      summary: createShare
+      responses:
+        '201':
+          description: Thành công
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Share'
+        '401':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '403':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '404':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '409':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      parameters:
+      - name: tripId
+        in: path
+        required: true
+        schema: *id001
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ShareCreate'
+  /trips/{tripId}/shares/{shareId}:
+    delete:
+      operationId: revokeShare
+      summary: revokeShare
+      responses:
+        '204':
+          description: Thành công, không có body
+        '401':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '403':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '404':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '409':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      parameters:
+      - name: tripId
+        in: path
+        required: true
+        schema: *id001
+      - name: shareId
+        in: path
+        required: true
+        schema: *id001
+  /shares/{shareToken}:
+    get:
+      operationId: getSharedVersion
+      summary: getSharedVersion
+      responses:
+        '200':
+          description: Thành công
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlanVersion'
+        '422':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security: []
+      parameters:
+      - name: shareToken
+        in: path
+        required: true
+        schema: *id001
+  /admin/sources:
+    get:
+      operationId: listSources
+      summary: listSources
+      responses:
+        '200':
+          description: Thành công
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SourceList'
+        '401':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '403':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '404':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '409':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+    post:
+      operationId: createSource
+      summary: createSource
+      responses:
+        '201':
+          description: Thành công
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataSource'
+        '401':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '403':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '404':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '409':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DataSource'
+  /admin/places/{placeId}:
+    put:
+      operationId: updatePlace
+      summary: updatePlace
+      responses:
+        '200':
+          description: Thành công
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Place'
+        '401':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '403':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '404':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '409':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      parameters:
+      - name: placeId
+        in: path
+        required: true
+        schema: *id001
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Place'
+  /admin/snapshots:
+    post:
+      operationId: publishSnapshot
+      summary: publishSnapshot
+      responses:
+        '201':
+          description: Thành công
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DatasetSnapshot'
+        '401':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '403':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '404':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '409':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          description: Problem có code nghiệp vụ; 404 che tài nguyên không có quyền
+            xem
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DatasetSnapshot'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    SolverStatus:
+      type: string
+      enum:
+      - FEASIBLE
+      - OPTIMAL
+      - INFEASIBLE
+      - TIMEOUT_WITH_SOLUTION
+      - TIMEOUT_NO_SOLUTION
+      - INVALID_INPUT
+      - DATA_ERROR
+    LockedVisit:
+      type: object
+      additionalProperties: false
+      properties:
+        placeId: *id001
+        date:
+          type: string
+          format: date
+        startMinute: &id002
+          type: integer
+          minimum: 0
+          maximum: 1440
+      required:
+      - placeId
+      - date
+      - startMinute
+    TravelRequest:
+      type: object
+      additionalProperties: false
+      properties:
+        destination: *id001
+        startDate:
+          type: string
+          format: date
+        endDate:
+          type: string
+          format: date
+        partySize:
+          type: integer
+          minimum: 1
+        budgetVnd: &id004
+          type: integer
+          minimum: 0
+          description: VND nguyên; tổng theo basis, không phải giá đặt dịch vụ
+        dayStartMinute: *id002
+        dayEndMinute: *id002
+        depotId: *id001
+        interests:
+          type: array
+          items: &id003
+            type: string
+        mandatoryPlaceIds:
+          type: array
+          items: *id001
+        excludedPlaceIds:
+          type: array
+          items: *id001
+        lockedVisits:
+          type: array
+          items:
+            $ref: '#/components/schemas/LockedVisit'
+      required:
+      - destination
+      - startDate
+      - endDate
+      - partySize
+      - budgetVnd
+      - dayStartMinute
+      - dayEndMinute
+      - depotId
+      - interests
+      - mandatoryPlaceIds
+      - excludedPlaceIds
+      - lockedVisits
+    Provenance:
+      type: object
+      additionalProperties: false
+      properties:
+        sourceId: *id001
+        kind:
+          type: string
+          enum:
+          - observed
+          - estimated
+          - simulated
+        recordedAt:
+          type: string
+          format: date-time
+        serviceDate:
+          type: string
+          format: date
+        currency:
+          const: VND
+        conditions: *id003
+      required:
+      - sourceId
+      - kind
+      - recordedAt
+      - serviceDate
+      - currency
+      - conditions
+    CostItem:
+      type: object
+      additionalProperties: false
+      properties:
+        id: *id001
+        label: *id003
+        amountVnd: *id004
+        basis:
+          type: string
+          enum:
+          - per_person
+          - per_group
+        provenance:
+          $ref: '#/components/schemas/Provenance'
+      required:
+      - id
+      - label
+      - amountVnd
+      - basis
+      - provenance
+    OpeningWindow:
+      type: object
+      additionalProperties: false
+      properties:
+        openMinute: *id002
+        closeMinute: *id002
+        provenance:
+          $ref: '#/components/schemas/FactProvenance'
+      required:
+      - openMinute
+      - closeMinute
+      - provenance
+    Place:
+      type: object
+      additionalProperties: false
+      properties:
+        id: *id001
+        name: *id003
+        category: *id003
+        durationMinutes:
+          type: integer
+          minimum: 1
+        relevanceScore:
+          type: integer
+          minimum: 0
+          maximum: 1000
+        windows:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              $ref: '#/components/schemas/OpeningWindow'
+        visitCost:
+          $ref: '#/components/schemas/CostItem'
+        sourceId: *id001
+        provenance:
+          $ref: '#/components/schemas/FactProvenance'
+      required:
+      - id
+      - name
+      - category
+      - durationMinutes
+      - relevanceScore
+      - windows
+      - visitCost
+      - sourceId
+      - provenance
+    TravelEdge:
+      type: object
+      additionalProperties: false
+      properties:
+        fromId: *id001
+        toId: *id001
+        travelMinutes:
+          type: integer
+          minimum: 0
+        distanceKm:
+          type: number
+          minimum: 0
+        cost:
+          $ref: '#/components/schemas/CostItem'
+        provenance:
+          $ref: '#/components/schemas/FactProvenance'
+      required:
+      - fromId
+      - toId
+      - travelMinutes
+      - distanceKm
+      - cost
+      - provenance
+    DataSource:
+      type: object
+      additionalProperties: false
+      properties:
+        id: *id001
+        name: *id003
+        status:
+          type: string
+          enum:
+          - simulated
+          - verified
+          - unverified
+        notes: *id003
+      required:
+      - id
+      - name
+      - status
+      - notes
+    DatasetSnapshot:
+      type: object
+      additionalProperties: false
+      properties:
+        snapshotId: *id001
+        recordedAt:
+          type: string
+          format: date-time
+        configVersion: *id001
+        places:
+          type: array
+          items:
+            $ref: '#/components/schemas/Place'
+        edges:
+          type: array
+          items:
+            $ref: '#/components/schemas/TravelEdge'
+        fixedCosts:
+          type: array
+          items:
+            $ref: '#/components/schemas/CostItem'
+        sources:
+          type: array
+          items:
+            $ref: '#/components/schemas/DataSource'
+      required:
+      - snapshotId
+      - recordedAt
+      - configVersion
+      - places
+      - edges
+      - fixedCosts
+      - sources
+    Visit:
+      type: object
+      additionalProperties: false
+      properties:
+        placeId: *id001
+        startMinute: *id002
+        endMinute: *id002
+      required:
+      - placeId
+      - startMinute
+      - endMinute
+    DayPlan:
+      type: object
+      additionalProperties: false
+      properties:
+        date:
+          type: string
+          format: date
+        departureMinute: *id002
+        returnMinute: *id002
+        visits:
+          type: array
+          items:
+            $ref: '#/components/schemas/Visit'
+      required:
+      - date
+      - departureMinute
+      - returnMinute
+      - visits
+    ConstraintCheck:
+      type: object
+      additionalProperties: false
+      properties:
+        code: *id001
+        status:
+          type: string
+          enum:
+          - pass
+          - fail
+          - unknown
+        message: *id003
+        evidence:
+          type: object
+          additionalProperties:
+            type:
+            - string
+            - number
+            - boolean
+            - 'null'
+      required:
+      - code
+      - status
+      - message
+      - evidence
+    PlanVersion:
+      type: object
+      additionalProperties: false
+      properties:
+        tripId: *id001
+        versionId: *id001
+        parentVersionId:
+          type:
+          - string
+          - 'null'
+        snapshotId: *id001
+        request:
+          $ref: '#/components/schemas/TravelRequest'
+        days:
+          type: array
+          items:
+            $ref: '#/components/schemas/DayPlan'
+        costItems:
+          type: array
+          items:
+            $ref: '#/components/schemas/CostItem'
+        totalCostVnd: *id004
+        travelMinutes:
+          type: integer
+          minimum: 0
+        status:
+          $ref: '#/components/schemas/SolverStatus'
+        isMock:
+          type: boolean
+        configVersion:
+          type: string
+        objectiveVersion:
+          type: string
+      required:
+      - tripId
+      - versionId
+      - parentVersionId
+      - snapshotId
+      - request
+      - days
+      - costItems
+      - totalCostVnd
+      - travelMinutes
+      - status
+      - isMock
+      - configVersion
+      - objectiveVersion
+    OptimizationResult:
+      type: object
+      additionalProperties: false
+      properties:
+        runId: *id001
+        snapshotId: *id001
+        request:
+          $ref: '#/components/schemas/TravelRequest'
+        status:
+          $ref: '#/components/schemas/SolverStatus'
+        reason: *id003
+        checks:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConstraintCheck'
+        plan:
+          oneOf:
+          - $ref: '#/components/schemas/PlanVersion'
+          - type: 'null'
+        isMock:
+          type: boolean
+        configVersion:
+          type: string
+        objectiveVersion:
+          type: string
+        skippedPlaces:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkippedPlace'
+      required:
+      - runId
+      - snapshotId
+      - request
+      - status
+      - reason
+      - checks
+      - plan
+      - isMock
+      - configVersion
+      - objectiveVersion
+      - skippedPlaces
+      allOf:
+      - if:
+          properties:
+            status:
+              enum:
+              - INFEASIBLE
+              - TIMEOUT_NO_SOLUTION
+              - INVALID_INPUT
+              - DATA_ERROR
+        then:
+          properties:
+            plan:
+              type: 'null'
+        else:
+          properties:
+            plan:
+              $ref: '#/components/schemas/PlanVersion'
+    Profile:
+      type: object
+      additionalProperties: false
+      properties:
+        id: *id001
+        displayName: *id003
+        interests: &id005
+          type: array
+          items: *id003
+        role:
+          type: string
+          enum:
+          - traveler
+          - admin
+      required:
+      - id
+      - displayName
+      - interests
+      - role
+    LoginRequest:
+      type: object
+      additionalProperties: false
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          minLength: 8
+          writeOnly: true
+      required:
+      - email
+      - password
+    LoginResponse:
+      type: object
+      additionalProperties: false
+      properties:
+        accessToken: *id003
+        expiresIn:
+          type: integer
+        profile:
+          $ref: '#/components/schemas/Profile'
+      required:
+      - accessToken
+      - expiresIn
+      - profile
+    Trip:
+      type: object
+      additionalProperties: false
+      properties:
+        tripId: *id001
+        ownerId: *id001
+        title: *id003
+        createdAt:
+          type: string
+          format: date-time
+      required:
+      - tripId
+      - ownerId
+      - title
+      - createdAt
+    TripCreate:
+      type: object
+      additionalProperties: false
+      properties:
+        title:
+          type: string
+          minLength: 1
+      required:
+      - title
+    RunCreate:
+      type: object
+      additionalProperties: false
+      properties:
+        request:
+          $ref: '#/components/schemas/TravelRequest'
+        snapshotId: *id001
+        parentVersionId:
+          type:
+          - string
+          - 'null'
+      required:
+      - request
+      - snapshotId
+      - parentVersionId
+    RunAccepted:
+      type: object
+      additionalProperties: false
+      properties:
+        runId: *id001
+        state:
+          const: QUEUED
+        pollUrl: *id003
+      required:
+      - runId
+      - state
+      - pollUrl
+    RunState:
+      type: object
+      additionalProperties: false
+      properties:
+        runId: *id001
+        state:
+          type: string
+          enum:
+          - QUEUED
+          - RUNNING
+          - COMPLETED
+          - FAILED
+        result:
+          oneOf:
+          - $ref: '#/components/schemas/OptimizationResult'
+          - type: 'null'
+      required:
+      - runId
+      - state
+      - result
+    Feedback:
+      type: object
+      additionalProperties: false
+      properties:
+        versionId: *id001
+        useful:
+          type: boolean
+        comment: *id003
+      required:
+      - versionId
+      - useful
+      - comment
+    ShareCreate:
+      type: object
+      additionalProperties: false
+      properties:
+        versionId: *id001
+        expiresAt:
+          type: string
+          format: date-time
+      required:
+      - versionId
+      - expiresAt
+    Share:
+      type: object
+      additionalProperties: false
+      properties:
+        shareId: *id001
+        readUrl: *id003
+        expiresAt:
+          type: string
+          format: date-time
+      required:
+      - shareId
+      - readUrl
+      - expiresAt
+    Problem:
+      type: object
+      additionalProperties: false
+      properties:
+        type: *id003
+        title: *id003
+        status:
+          type: integer
+        detail: *id003
+        code: *id001
+        instance: *id003
+      required:
+      - type
+      - title
+      - status
+      - detail
+      - code
+      - instance
+    TripList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Trip'
+    VersionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/PlanVersion'
+    SourceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataSource'
+    FactProvenance:
+      type: object
+      additionalProperties: false
+      required:
+      - sourceId
+      - kind
+      - recordedAt
+      - validFrom
+      - validTo
+      - method
+      properties:
+        sourceId:
+          type: string
+        kind:
+          type: string
+          enum:
+          - observed
+          - estimated
+          - simulated
+        recordedAt:
+          type: string
+          format: date-time
+        validFrom:
+          type: string
+          format: date
+        validTo:
+          type: string
+          format: date
+        method:
+          type: string
+    SkippedPlace:
+      type: object
+      additionalProperties: false
+      required:
+      - placeId
+      - reason
+      properties:
+        placeId:
+          type: string
+        reason:
+          type: string
+    ProfileUpdate:
+      type: object
+      additionalProperties: false
+      required:
+      - displayName
+      - interests
+      properties:
+        displayName: *id003
+        interests: *id005
