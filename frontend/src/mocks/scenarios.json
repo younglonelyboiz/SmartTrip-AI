@@ -1,0 +1,2953 @@
+{
+  "snapshot": {
+    "snapshotId": "danang-demo-v1",
+    "recordedAt": "2026-11-02T03:00:00Z",
+    "configVersion": "demo-1",
+    "places": [
+      {
+        "id": "my-khe",
+        "name": "Biển Mỹ Khê",
+        "category": "biển",
+        "durationMinutes": 60,
+        "relevanceScore": 940,
+        "windows": {
+          "2026-12-10": [
+            {
+              "openMinute": 480,
+              "closeMinute": 1080,
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "validFrom": "2026-12-10",
+                "validTo": "2026-12-12",
+                "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+              }
+            }
+          ],
+          "2026-12-11": [
+            {
+              "openMinute": 480,
+              "closeMinute": 1080,
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "validFrom": "2026-12-10",
+                "validTo": "2026-12-12",
+                "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+              }
+            }
+          ],
+          "2026-12-12": [
+            {
+              "openMinute": 480,
+              "closeMinute": 1080,
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "validFrom": "2026-12-10",
+                "validTo": "2026-12-12",
+                "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+              }
+            }
+          ]
+        },
+        "visitCost": {
+          "id": "visit-my-khe",
+          "label": "Tham quan Biển Mỹ Khê",
+          "amountVnd": 0,
+          "basis": "per_person",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "sourceId": "demo",
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "id": "han-market",
+        "name": "Chợ Hàn",
+        "category": "ẩm thực",
+        "durationMinutes": 45,
+        "relevanceScore": 880,
+        "windows": {
+          "2026-12-10": [
+            {
+              "openMinute": 480,
+              "closeMinute": 1080,
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "validFrom": "2026-12-10",
+                "validTo": "2026-12-12",
+                "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+              }
+            }
+          ],
+          "2026-12-11": [
+            {
+              "openMinute": 480,
+              "closeMinute": 1080,
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "validFrom": "2026-12-10",
+                "validTo": "2026-12-12",
+                "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+              }
+            }
+          ],
+          "2026-12-12": [
+            {
+              "openMinute": 480,
+              "closeMinute": 1080,
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "validFrom": "2026-12-10",
+                "validTo": "2026-12-12",
+                "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+              }
+            }
+          ]
+        },
+        "visitCost": {
+          "id": "visit-han-market",
+          "label": "Tham quan Chợ Hàn",
+          "amountVnd": 50000,
+          "basis": "per_person",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "sourceId": "demo",
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "id": "marble",
+        "name": "Ngũ Hành Sơn",
+        "category": "văn hóa",
+        "durationMinutes": 90,
+        "relevanceScore": 750,
+        "windows": {
+          "2026-12-10": [
+            {
+              "openMinute": 480,
+              "closeMinute": 1080,
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "validFrom": "2026-12-10",
+                "validTo": "2026-12-12",
+                "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+              }
+            }
+          ],
+          "2026-12-11": [
+            {
+              "openMinute": 480,
+              "closeMinute": 1080,
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "validFrom": "2026-12-10",
+                "validTo": "2026-12-12",
+                "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+              }
+            }
+          ],
+          "2026-12-12": [
+            {
+              "openMinute": 480,
+              "closeMinute": 1080,
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "validFrom": "2026-12-10",
+                "validTo": "2026-12-12",
+                "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+              }
+            }
+          ]
+        },
+        "visitCost": {
+          "id": "visit-marble",
+          "label": "Tham quan Ngũ Hành Sơn",
+          "amountVnd": 60000,
+          "basis": "per_person",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "sourceId": "demo",
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "id": "museum",
+        "name": "Bảo tàng Chăm",
+        "category": "văn hóa",
+        "durationMinutes": 60,
+        "relevanceScore": 740,
+        "windows": {
+          "2026-12-10": [
+            {
+              "openMinute": 480,
+              "closeMinute": 1080,
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "validFrom": "2026-12-10",
+                "validTo": "2026-12-12",
+                "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+              }
+            }
+          ],
+          "2026-12-11": [
+            {
+              "openMinute": 480,
+              "closeMinute": 1080,
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "validFrom": "2026-12-10",
+                "validTo": "2026-12-12",
+                "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+              }
+            }
+          ],
+          "2026-12-12": [
+            {
+              "openMinute": 480,
+              "closeMinute": 1080,
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "validFrom": "2026-12-10",
+                "validTo": "2026-12-12",
+                "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+              }
+            }
+          ]
+        },
+        "visitCost": {
+          "id": "visit-museum",
+          "label": "Tham quan Bảo tàng Chăm",
+          "amountVnd": 60000,
+          "basis": "per_person",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "sourceId": "demo",
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "id": "son-tra",
+        "name": "Bán đảo Sơn Trà",
+        "category": "thiên nhiên",
+        "durationMinutes": 90,
+        "relevanceScore": 850,
+        "windows": {
+          "2026-12-10": [
+            {
+              "openMinute": 480,
+              "closeMinute": 1080,
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "validFrom": "2026-12-10",
+                "validTo": "2026-12-12",
+                "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+              }
+            }
+          ],
+          "2026-12-11": [
+            {
+              "openMinute": 480,
+              "closeMinute": 1080,
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "validFrom": "2026-12-10",
+                "validTo": "2026-12-12",
+                "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+              }
+            }
+          ],
+          "2026-12-12": [
+            {
+              "openMinute": 480,
+              "closeMinute": 1080,
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "validFrom": "2026-12-10",
+                "validTo": "2026-12-12",
+                "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+              }
+            }
+          ]
+        },
+        "visitCost": {
+          "id": "visit-son-tra",
+          "label": "Tham quan Bán đảo Sơn Trà",
+          "amountVnd": 0,
+          "basis": "per_person",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "sourceId": "demo",
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "id": "bridge",
+        "name": "Cầu Tình Yêu",
+        "category": "đi dạo",
+        "durationMinutes": 45,
+        "relevanceScore": 680,
+        "windows": {
+          "2026-12-10": [
+            {
+              "openMinute": 480,
+              "closeMinute": 1080,
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "validFrom": "2026-12-10",
+                "validTo": "2026-12-12",
+                "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+              }
+            }
+          ],
+          "2026-12-11": [
+            {
+              "openMinute": 480,
+              "closeMinute": 1080,
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "validFrom": "2026-12-10",
+                "validTo": "2026-12-12",
+                "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+              }
+            }
+          ],
+          "2026-12-12": [
+            {
+              "openMinute": 480,
+              "closeMinute": 1080,
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "validFrom": "2026-12-10",
+                "validTo": "2026-12-12",
+                "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+              }
+            }
+          ]
+        },
+        "visitCost": {
+          "id": "visit-bridge",
+          "label": "Tham quan Cầu Tình Yêu",
+          "amountVnd": 0,
+          "basis": "per_person",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "sourceId": "demo",
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      }
+    ],
+    "edges": [
+      {
+        "fromId": "hotel",
+        "toId": "my-khe",
+        "travelMinutes": 20,
+        "distanceKm": 8.0,
+        "cost": {
+          "id": "edge-hotel-my-khe",
+          "label": "Di chuyển hotel → my-khe",
+          "amountVnd": 20000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "hotel",
+        "toId": "han-market",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-hotel-han-market",
+          "label": "Di chuyển hotel → han-market",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "hotel",
+        "toId": "marble",
+        "travelMinutes": 30,
+        "distanceKm": 12.0,
+        "cost": {
+          "id": "edge-hotel-marble",
+          "label": "Di chuyển hotel → marble",
+          "amountVnd": 30000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "hotel",
+        "toId": "museum",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-hotel-museum",
+          "label": "Di chuyển hotel → museum",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "hotel",
+        "toId": "son-tra",
+        "travelMinutes": 35,
+        "distanceKm": 14.0,
+        "cost": {
+          "id": "edge-hotel-son-tra",
+          "label": "Di chuyển hotel → son-tra",
+          "amountVnd": 35000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "hotel",
+        "toId": "bridge",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-hotel-bridge",
+          "label": "Di chuyển hotel → bridge",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "my-khe",
+        "toId": "hotel",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-my-khe-hotel",
+          "label": "Di chuyển my-khe → hotel",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "my-khe",
+        "toId": "han-market",
+        "travelMinutes": 15,
+        "distanceKm": 6.0,
+        "cost": {
+          "id": "edge-my-khe-han-market",
+          "label": "Di chuyển my-khe → han-market",
+          "amountVnd": 15000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "my-khe",
+        "toId": "marble",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-my-khe-marble",
+          "label": "Di chuyển my-khe → marble",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "my-khe",
+        "toId": "museum",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-my-khe-museum",
+          "label": "Di chuyển my-khe → museum",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "my-khe",
+        "toId": "son-tra",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-my-khe-son-tra",
+          "label": "Di chuyển my-khe → son-tra",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "my-khe",
+        "toId": "bridge",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-my-khe-bridge",
+          "label": "Di chuyển my-khe → bridge",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "han-market",
+        "toId": "hotel",
+        "travelMinutes": 20,
+        "distanceKm": 8.0,
+        "cost": {
+          "id": "edge-han-market-hotel",
+          "label": "Di chuyển han-market → hotel",
+          "amountVnd": 20000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "han-market",
+        "toId": "my-khe",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-han-market-my-khe",
+          "label": "Di chuyển han-market → my-khe",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "han-market",
+        "toId": "marble",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-han-market-marble",
+          "label": "Di chuyển han-market → marble",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "han-market",
+        "toId": "museum",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-han-market-museum",
+          "label": "Di chuyển han-market → museum",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "han-market",
+        "toId": "son-tra",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-han-market-son-tra",
+          "label": "Di chuyển han-market → son-tra",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "han-market",
+        "toId": "bridge",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-han-market-bridge",
+          "label": "Di chuyển han-market → bridge",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "marble",
+        "toId": "hotel",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-marble-hotel",
+          "label": "Di chuyển marble → hotel",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "marble",
+        "toId": "my-khe",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-marble-my-khe",
+          "label": "Di chuyển marble → my-khe",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "marble",
+        "toId": "han-market",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-marble-han-market",
+          "label": "Di chuyển marble → han-market",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "marble",
+        "toId": "museum",
+        "travelMinutes": 25,
+        "distanceKm": 10.0,
+        "cost": {
+          "id": "edge-marble-museum",
+          "label": "Di chuyển marble → museum",
+          "amountVnd": 25000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "marble",
+        "toId": "son-tra",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-marble-son-tra",
+          "label": "Di chuyển marble → son-tra",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "marble",
+        "toId": "bridge",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-marble-bridge",
+          "label": "Di chuyển marble → bridge",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "museum",
+        "toId": "hotel",
+        "travelMinutes": 15,
+        "distanceKm": 6.0,
+        "cost": {
+          "id": "edge-museum-hotel",
+          "label": "Di chuyển museum → hotel",
+          "amountVnd": 15000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "museum",
+        "toId": "my-khe",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-museum-my-khe",
+          "label": "Di chuyển museum → my-khe",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "museum",
+        "toId": "han-market",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-museum-han-market",
+          "label": "Di chuyển museum → han-market",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "museum",
+        "toId": "marble",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-museum-marble",
+          "label": "Di chuyển museum → marble",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "museum",
+        "toId": "son-tra",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-museum-son-tra",
+          "label": "Di chuyển museum → son-tra",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "museum",
+        "toId": "bridge",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-museum-bridge",
+          "label": "Di chuyển museum → bridge",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "son-tra",
+        "toId": "hotel",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-son-tra-hotel",
+          "label": "Di chuyển son-tra → hotel",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "son-tra",
+        "toId": "my-khe",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-son-tra-my-khe",
+          "label": "Di chuyển son-tra → my-khe",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "son-tra",
+        "toId": "han-market",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-son-tra-han-market",
+          "label": "Di chuyển son-tra → han-market",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "son-tra",
+        "toId": "marble",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-son-tra-marble",
+          "label": "Di chuyển son-tra → marble",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "son-tra",
+        "toId": "museum",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-son-tra-museum",
+          "label": "Di chuyển son-tra → museum",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "son-tra",
+        "toId": "bridge",
+        "travelMinutes": 30,
+        "distanceKm": 12.0,
+        "cost": {
+          "id": "edge-son-tra-bridge",
+          "label": "Di chuyển son-tra → bridge",
+          "amountVnd": 30000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "bridge",
+        "toId": "hotel",
+        "travelMinutes": 15,
+        "distanceKm": 6.0,
+        "cost": {
+          "id": "edge-bridge-hotel",
+          "label": "Di chuyển bridge → hotel",
+          "amountVnd": 15000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "bridge",
+        "toId": "my-khe",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-bridge-my-khe",
+          "label": "Di chuyển bridge → my-khe",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "bridge",
+        "toId": "han-market",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-bridge-han-market",
+          "label": "Di chuyển bridge → han-market",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "bridge",
+        "toId": "marble",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-bridge-marble",
+          "label": "Di chuyển bridge → marble",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "bridge",
+        "toId": "museum",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-bridge-museum",
+          "label": "Di chuyển bridge → museum",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      },
+      {
+        "fromId": "bridge",
+        "toId": "son-tra",
+        "travelMinutes": 40,
+        "distanceKm": 16.0,
+        "cost": {
+          "id": "edge-bridge-son-tra",
+          "label": "Di chuyển bridge → son-tra",
+          "amountVnd": 40000,
+          "basis": "per_group",
+          "provenance": {
+            "sourceId": "demo",
+            "kind": "simulated",
+            "recordedAt": "2026-11-02T03:00:00Z",
+            "serviceDate": "2026-12-10",
+            "currency": "VND",
+            "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+          }
+        },
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "validFrom": "2026-12-10",
+          "validTo": "2026-12-12",
+          "method": "Dữ liệu tự dựng phục vụ demo, không quan sát thực tế."
+        }
+      }
+    ],
+    "fixedCosts": [
+      {
+        "id": "hotel",
+        "label": "Lưu trú cả nhóm · 2 đêm",
+        "amountVnd": 1000000,
+        "basis": "per_group",
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "serviceDate": "2026-12-10",
+          "currency": "VND",
+          "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+        }
+      },
+      {
+        "id": "meals",
+        "label": "Ăn uống mỗi người · 3 ngày",
+        "amountVnd": 300000,
+        "basis": "per_person",
+        "provenance": {
+          "sourceId": "demo",
+          "kind": "simulated",
+          "recordedAt": "2026-11-02T03:00:00Z",
+          "serviceDate": "2026-12-10",
+          "currency": "VND",
+          "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "demo",
+        "name": "Bộ dữ liệu minh họa SmartTrip",
+        "status": "simulated",
+        "notes": "Tên địa danh để minh họa. Giá, giờ và tuyến đều giả lập."
+      }
+    ]
+  },
+  "scenarios": [
+    {
+      "id": "standard",
+      "title": "Lịch trình tiêu chuẩn",
+      "description": "3 ngày khám phá biển, ẩm thực và văn hóa.",
+      "request": {
+        "destination": "Đà Nẵng",
+        "startDate": "2026-12-10",
+        "endDate": "2026-12-12",
+        "partySize": 2,
+        "budgetVnd": 6000000,
+        "dayStartMinute": 480,
+        "dayEndMinute": 1080,
+        "depotId": "hotel",
+        "interests": [
+          "biển",
+          "ẩm thực"
+        ],
+        "mandatoryPlaceIds": [
+          "my-khe"
+        ],
+        "excludedPlaceIds": [],
+        "lockedVisits": []
+      },
+      "result": {
+        "runId": "run-standard",
+        "snapshotId": "danang-demo-v1",
+        "request": {
+          "destination": "Đà Nẵng",
+          "startDate": "2026-12-10",
+          "endDate": "2026-12-12",
+          "partySize": 2,
+          "budgetVnd": 6000000,
+          "dayStartMinute": 480,
+          "dayEndMinute": 1080,
+          "depotId": "hotel",
+          "interests": [
+            "biển",
+            "ẩm thực"
+          ],
+          "mandatoryPlaceIds": [
+            "my-khe"
+          ],
+          "excludedPlaceIds": [],
+          "lockedVisits": []
+        },
+        "status": "FEASIBLE",
+        "reason": "Lịch mẫu khả thi theo dữ liệu giả lập; chưa chạy solver.",
+        "checks": [
+          {
+            "code": "time",
+            "status": "pass",
+            "message": "Đủ thời gian thăm, di chuyển và quay về trong ngày.",
+            "evidence": {
+              "snapshotId": "danang-demo-v1",
+              "basis": "fixture-validation"
+            }
+          },
+          {
+            "code": "budget",
+            "status": "pass",
+            "message": "Tổng chi phí nhóm nằm trong ngân sách.",
+            "evidence": {
+              "snapshotId": "danang-demo-v1",
+              "basis": "fixture-validation"
+            }
+          },
+          {
+            "code": "mandatory",
+            "status": "pass",
+            "message": "Giữ điểm bắt buộc, không ghé điểm loại trừ.",
+            "evidence": {
+              "snapshotId": "danang-demo-v1",
+              "basis": "fixture-validation"
+            }
+          },
+          {
+            "code": "snapshot",
+            "status": "pass",
+            "message": "Cùng bộ dữ liệu mô phỏng có phiên bản.",
+            "evidence": {
+              "snapshotId": "danang-demo-v1",
+              "basis": "fixture-validation"
+            }
+          }
+        ],
+        "plan": {
+          "tripId": "danang-demo",
+          "versionId": "v1",
+          "parentVersionId": null,
+          "snapshotId": "danang-demo-v1",
+          "request": {
+            "destination": "Đà Nẵng",
+            "startDate": "2026-12-10",
+            "endDate": "2026-12-12",
+            "partySize": 2,
+            "budgetVnd": 6000000,
+            "dayStartMinute": 480,
+            "dayEndMinute": 1080,
+            "depotId": "hotel",
+            "interests": [
+              "biển",
+              "ẩm thực"
+            ],
+            "mandatoryPlaceIds": [
+              "my-khe"
+            ],
+            "excludedPlaceIds": [],
+            "lockedVisits": []
+          },
+          "days": [
+            {
+              "date": "2026-12-10",
+              "departureMinute": 480,
+              "returnMinute": 640,
+              "visits": [
+                {
+                  "placeId": "my-khe",
+                  "startMinute": 500,
+                  "endMinute": 560
+                },
+                {
+                  "placeId": "han-market",
+                  "startMinute": 575,
+                  "endMinute": 620
+                }
+              ]
+            },
+            {
+              "date": "2026-12-11",
+              "departureMinute": 480,
+              "returnMinute": 700,
+              "visits": [
+                {
+                  "placeId": "marble",
+                  "startMinute": 510,
+                  "endMinute": 600
+                },
+                {
+                  "placeId": "museum",
+                  "startMinute": 625,
+                  "endMinute": 685
+                }
+              ]
+            },
+            {
+              "date": "2026-12-12",
+              "departureMinute": 480,
+              "returnMinute": 695,
+              "visits": [
+                {
+                  "placeId": "son-tra",
+                  "startMinute": 515,
+                  "endMinute": 605
+                },
+                {
+                  "placeId": "bridge",
+                  "startMinute": 635,
+                  "endMinute": 680
+                }
+              ]
+            }
+          ],
+          "costItems": [
+            {
+              "id": "hotel",
+              "label": "Lưu trú cả nhóm · 2 đêm",
+              "amountVnd": 1000000,
+              "basis": "per_group",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "meals",
+              "label": "Ăn uống mỗi người · 3 ngày",
+              "amountVnd": 300000,
+              "basis": "per_person",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "2026-12-10-edge-hotel-my-khe",
+              "label": "Di chuyển hotel → my-khe",
+              "amountVnd": 20000,
+              "basis": "per_group",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "visit-my-khe",
+              "label": "Tham quan Biển Mỹ Khê",
+              "amountVnd": 0,
+              "basis": "per_person",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "2026-12-10-edge-my-khe-han-market",
+              "label": "Di chuyển my-khe → han-market",
+              "amountVnd": 15000,
+              "basis": "per_group",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "visit-han-market",
+              "label": "Tham quan Chợ Hàn",
+              "amountVnd": 50000,
+              "basis": "per_person",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "2026-12-10-edge-han-market-hotel",
+              "label": "Di chuyển han-market → hotel",
+              "amountVnd": 20000,
+              "basis": "per_group",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "2026-12-11-edge-hotel-marble",
+              "label": "Di chuyển hotel → marble",
+              "amountVnd": 30000,
+              "basis": "per_group",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "visit-marble",
+              "label": "Tham quan Ngũ Hành Sơn",
+              "amountVnd": 60000,
+              "basis": "per_person",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "2026-12-11-edge-marble-museum",
+              "label": "Di chuyển marble → museum",
+              "amountVnd": 25000,
+              "basis": "per_group",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "visit-museum",
+              "label": "Tham quan Bảo tàng Chăm",
+              "amountVnd": 60000,
+              "basis": "per_person",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "2026-12-11-edge-museum-hotel",
+              "label": "Di chuyển museum → hotel",
+              "amountVnd": 15000,
+              "basis": "per_group",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "2026-12-12-edge-hotel-son-tra",
+              "label": "Di chuyển hotel → son-tra",
+              "amountVnd": 35000,
+              "basis": "per_group",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "visit-son-tra",
+              "label": "Tham quan Bán đảo Sơn Trà",
+              "amountVnd": 0,
+              "basis": "per_person",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "2026-12-12-edge-son-tra-bridge",
+              "label": "Di chuyển son-tra → bridge",
+              "amountVnd": 30000,
+              "basis": "per_group",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "visit-bridge",
+              "label": "Tham quan Cầu Tình Yêu",
+              "amountVnd": 0,
+              "basis": "per_person",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "2026-12-12-edge-bridge-hotel",
+              "label": "Di chuyển bridge → hotel",
+              "amountVnd": 15000,
+              "basis": "per_group",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            }
+          ],
+          "totalCostVnd": 2145000,
+          "travelMinutes": 205,
+          "status": "FEASIBLE",
+          "isMock": true,
+          "configVersion": "demo-1",
+          "objectiveVersion": "proposed-score-v1"
+        },
+        "isMock": true,
+        "configVersion": "demo-1",
+        "objectiveVersion": "proposed-score-v1",
+        "skippedPlaces": []
+      },
+      "baseline": {
+        "tripId": "danang-demo",
+        "versionId": "baseline",
+        "parentVersionId": null,
+        "snapshotId": "danang-demo-v1",
+        "request": {
+          "destination": "Đà Nẵng",
+          "startDate": "2026-12-10",
+          "endDate": "2026-12-12",
+          "partySize": 2,
+          "budgetVnd": 6000000,
+          "dayStartMinute": 480,
+          "dayEndMinute": 1080,
+          "depotId": "hotel",
+          "interests": [
+            "biển",
+            "ẩm thực"
+          ],
+          "mandatoryPlaceIds": [
+            "my-khe"
+          ],
+          "excludedPlaceIds": [],
+          "lockedVisits": []
+        },
+        "days": [
+          {
+            "date": "2026-12-10",
+            "departureMinute": 480,
+            "returnMinute": 730,
+            "visits": [
+              {
+                "placeId": "my-khe",
+                "startMinute": 500,
+                "endMinute": 560
+              },
+              {
+                "placeId": "marble",
+                "startMinute": 600,
+                "endMinute": 690
+              }
+            ]
+          },
+          {
+            "date": "2026-12-11",
+            "departureMinute": 480,
+            "returnMinute": 735,
+            "visits": [
+              {
+                "placeId": "han-market",
+                "startMinute": 520,
+                "endMinute": 565
+              },
+              {
+                "placeId": "son-tra",
+                "startMinute": 605,
+                "endMinute": 695
+              }
+            ]
+          },
+          {
+            "date": "2026-12-12",
+            "departureMinute": 480,
+            "returnMinute": 680,
+            "visits": [
+              {
+                "placeId": "museum",
+                "startMinute": 520,
+                "endMinute": 580
+              },
+              {
+                "placeId": "bridge",
+                "startMinute": 620,
+                "endMinute": 665
+              }
+            ]
+          }
+        ],
+        "costItems": [
+          {
+            "id": "hotel",
+            "label": "Lưu trú cả nhóm · 2 đêm",
+            "amountVnd": 1000000,
+            "basis": "per_group",
+            "provenance": {
+              "sourceId": "demo",
+              "kind": "simulated",
+              "recordedAt": "2026-11-02T03:00:00Z",
+              "serviceDate": "2026-12-10",
+              "currency": "VND",
+              "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+            }
+          },
+          {
+            "id": "meals",
+            "label": "Ăn uống mỗi người · 3 ngày",
+            "amountVnd": 300000,
+            "basis": "per_person",
+            "provenance": {
+              "sourceId": "demo",
+              "kind": "simulated",
+              "recordedAt": "2026-11-02T03:00:00Z",
+              "serviceDate": "2026-12-10",
+              "currency": "VND",
+              "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+            }
+          },
+          {
+            "id": "2026-12-10-edge-hotel-my-khe",
+            "label": "Di chuyển hotel → my-khe",
+            "amountVnd": 20000,
+            "basis": "per_group",
+            "provenance": {
+              "sourceId": "demo",
+              "kind": "simulated",
+              "recordedAt": "2026-11-02T03:00:00Z",
+              "serviceDate": "2026-12-10",
+              "currency": "VND",
+              "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+            }
+          },
+          {
+            "id": "visit-my-khe",
+            "label": "Tham quan Biển Mỹ Khê",
+            "amountVnd": 0,
+            "basis": "per_person",
+            "provenance": {
+              "sourceId": "demo",
+              "kind": "simulated",
+              "recordedAt": "2026-11-02T03:00:00Z",
+              "serviceDate": "2026-12-10",
+              "currency": "VND",
+              "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+            }
+          },
+          {
+            "id": "2026-12-10-edge-my-khe-marble",
+            "label": "Di chuyển my-khe → marble",
+            "amountVnd": 40000,
+            "basis": "per_group",
+            "provenance": {
+              "sourceId": "demo",
+              "kind": "simulated",
+              "recordedAt": "2026-11-02T03:00:00Z",
+              "serviceDate": "2026-12-10",
+              "currency": "VND",
+              "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+            }
+          },
+          {
+            "id": "visit-marble",
+            "label": "Tham quan Ngũ Hành Sơn",
+            "amountVnd": 60000,
+            "basis": "per_person",
+            "provenance": {
+              "sourceId": "demo",
+              "kind": "simulated",
+              "recordedAt": "2026-11-02T03:00:00Z",
+              "serviceDate": "2026-12-10",
+              "currency": "VND",
+              "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+            }
+          },
+          {
+            "id": "2026-12-10-edge-marble-hotel",
+            "label": "Di chuyển marble → hotel",
+            "amountVnd": 40000,
+            "basis": "per_group",
+            "provenance": {
+              "sourceId": "demo",
+              "kind": "simulated",
+              "recordedAt": "2026-11-02T03:00:00Z",
+              "serviceDate": "2026-12-10",
+              "currency": "VND",
+              "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+            }
+          },
+          {
+            "id": "2026-12-11-edge-hotel-han-market",
+            "label": "Di chuyển hotel → han-market",
+            "amountVnd": 40000,
+            "basis": "per_group",
+            "provenance": {
+              "sourceId": "demo",
+              "kind": "simulated",
+              "recordedAt": "2026-11-02T03:00:00Z",
+              "serviceDate": "2026-12-10",
+              "currency": "VND",
+              "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+            }
+          },
+          {
+            "id": "visit-han-market",
+            "label": "Tham quan Chợ Hàn",
+            "amountVnd": 50000,
+            "basis": "per_person",
+            "provenance": {
+              "sourceId": "demo",
+              "kind": "simulated",
+              "recordedAt": "2026-11-02T03:00:00Z",
+              "serviceDate": "2026-12-10",
+              "currency": "VND",
+              "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+            }
+          },
+          {
+            "id": "2026-12-11-edge-han-market-son-tra",
+            "label": "Di chuyển han-market → son-tra",
+            "amountVnd": 40000,
+            "basis": "per_group",
+            "provenance": {
+              "sourceId": "demo",
+              "kind": "simulated",
+              "recordedAt": "2026-11-02T03:00:00Z",
+              "serviceDate": "2026-12-10",
+              "currency": "VND",
+              "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+            }
+          },
+          {
+            "id": "visit-son-tra",
+            "label": "Tham quan Bán đảo Sơn Trà",
+            "amountVnd": 0,
+            "basis": "per_person",
+            "provenance": {
+              "sourceId": "demo",
+              "kind": "simulated",
+              "recordedAt": "2026-11-02T03:00:00Z",
+              "serviceDate": "2026-12-10",
+              "currency": "VND",
+              "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+            }
+          },
+          {
+            "id": "2026-12-11-edge-son-tra-hotel",
+            "label": "Di chuyển son-tra → hotel",
+            "amountVnd": 40000,
+            "basis": "per_group",
+            "provenance": {
+              "sourceId": "demo",
+              "kind": "simulated",
+              "recordedAt": "2026-11-02T03:00:00Z",
+              "serviceDate": "2026-12-10",
+              "currency": "VND",
+              "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+            }
+          },
+          {
+            "id": "2026-12-12-edge-hotel-museum",
+            "label": "Di chuyển hotel → museum",
+            "amountVnd": 40000,
+            "basis": "per_group",
+            "provenance": {
+              "sourceId": "demo",
+              "kind": "simulated",
+              "recordedAt": "2026-11-02T03:00:00Z",
+              "serviceDate": "2026-12-10",
+              "currency": "VND",
+              "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+            }
+          },
+          {
+            "id": "visit-museum",
+            "label": "Tham quan Bảo tàng Chăm",
+            "amountVnd": 60000,
+            "basis": "per_person",
+            "provenance": {
+              "sourceId": "demo",
+              "kind": "simulated",
+              "recordedAt": "2026-11-02T03:00:00Z",
+              "serviceDate": "2026-12-10",
+              "currency": "VND",
+              "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+            }
+          },
+          {
+            "id": "2026-12-12-edge-museum-bridge",
+            "label": "Di chuyển museum → bridge",
+            "amountVnd": 40000,
+            "basis": "per_group",
+            "provenance": {
+              "sourceId": "demo",
+              "kind": "simulated",
+              "recordedAt": "2026-11-02T03:00:00Z",
+              "serviceDate": "2026-12-10",
+              "currency": "VND",
+              "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+            }
+          },
+          {
+            "id": "visit-bridge",
+            "label": "Tham quan Cầu Tình Yêu",
+            "amountVnd": 0,
+            "basis": "per_person",
+            "provenance": {
+              "sourceId": "demo",
+              "kind": "simulated",
+              "recordedAt": "2026-11-02T03:00:00Z",
+              "serviceDate": "2026-12-10",
+              "currency": "VND",
+              "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+            }
+          },
+          {
+            "id": "2026-12-12-edge-bridge-hotel",
+            "label": "Di chuyển bridge → hotel",
+            "amountVnd": 15000,
+            "basis": "per_group",
+            "provenance": {
+              "sourceId": "demo",
+              "kind": "simulated",
+              "recordedAt": "2026-11-02T03:00:00Z",
+              "serviceDate": "2026-12-10",
+              "currency": "VND",
+              "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+            }
+          }
+        ],
+        "totalCostVnd": 2255000,
+        "travelMinutes": 315,
+        "status": "FEASIBLE",
+        "isMock": true,
+        "configVersion": "demo-1",
+        "objectiveVersion": "proposed-score-v1"
+      }
+    },
+    {
+      "id": "budget-conflict",
+      "title": "Ngân sách chưa đủ",
+      "description": "Chi phí cố định đã vượt ngân sách.",
+      "request": {
+        "destination": "Đà Nẵng",
+        "startDate": "2026-12-10",
+        "endDate": "2026-12-12",
+        "partySize": 2,
+        "budgetVnd": 1000000,
+        "dayStartMinute": 480,
+        "dayEndMinute": 1080,
+        "depotId": "hotel",
+        "interests": [
+          "biển",
+          "ẩm thực"
+        ],
+        "mandatoryPlaceIds": [
+          "my-khe"
+        ],
+        "excludedPlaceIds": [],
+        "lockedVisits": []
+      },
+      "result": {
+        "runId": "run-budget",
+        "snapshotId": "danang-demo-v1",
+        "request": {
+          "destination": "Đà Nẵng",
+          "startDate": "2026-12-10",
+          "endDate": "2026-12-12",
+          "partySize": 2,
+          "budgetVnd": 1000000,
+          "dayStartMinute": 480,
+          "dayEndMinute": 1080,
+          "depotId": "hotel",
+          "interests": [
+            "biển",
+            "ẩm thực"
+          ],
+          "mandatoryPlaceIds": [
+            "my-khe"
+          ],
+          "excludedPlaceIds": [],
+          "lockedVisits": []
+        },
+        "status": "INFEASIBLE",
+        "reason": "Chi phí cố định 1.600.000 VND > ngân sách nhóm 1.000.000 VND.",
+        "checks": [
+          {
+            "code": "budget",
+            "status": "fail",
+            "message": "Thiếu ít nhất 600.000 VND chỉ để đáp ứng chi phí cố định.",
+            "evidence": {
+              "fixedCostVnd": 1600000,
+              "budgetVnd": 1000000,
+              "shortfallVnd": 600000
+            }
+          }
+        ],
+        "plan": null,
+        "isMock": true,
+        "configVersion": "demo-1",
+        "objectiveVersion": "proposed-score-v1",
+        "skippedPlaces": []
+      }
+    },
+    {
+      "id": "replan",
+      "title": "Điều chỉnh hành trình",
+      "description": "Bỏ Sơn Trà, giữ nguyên Mỹ Khê ngày đầu.",
+      "request": {
+        "destination": "Đà Nẵng",
+        "startDate": "2026-12-10",
+        "endDate": "2026-12-12",
+        "partySize": 2,
+        "budgetVnd": 6000000,
+        "dayStartMinute": 480,
+        "dayEndMinute": 1080,
+        "depotId": "hotel",
+        "interests": [
+          "biển",
+          "ẩm thực"
+        ],
+        "mandatoryPlaceIds": [
+          "my-khe"
+        ],
+        "excludedPlaceIds": [
+          "son-tra"
+        ],
+        "lockedVisits": [
+          {
+            "placeId": "my-khe",
+            "date": "2026-12-10",
+            "startMinute": 500
+          }
+        ]
+      },
+      "result": {
+        "runId": "run-replan",
+        "snapshotId": "danang-demo-v1",
+        "request": {
+          "destination": "Đà Nẵng",
+          "startDate": "2026-12-10",
+          "endDate": "2026-12-12",
+          "partySize": 2,
+          "budgetVnd": 6000000,
+          "dayStartMinute": 480,
+          "dayEndMinute": 1080,
+          "depotId": "hotel",
+          "interests": [
+            "biển",
+            "ẩm thực"
+          ],
+          "mandatoryPlaceIds": [
+            "my-khe"
+          ],
+          "excludedPlaceIds": [
+            "son-tra"
+          ],
+          "lockedVisits": [
+            {
+              "placeId": "my-khe",
+              "date": "2026-12-10",
+              "startMinute": 500
+            }
+          ]
+        },
+        "status": "FEASIBLE",
+        "reason": "Phiên bản mẫu v2, kế thừa v1 và giữ phần đã khóa.",
+        "checks": [
+          {
+            "code": "time",
+            "status": "pass",
+            "message": "Đủ thời gian thăm, di chuyển và quay về trong ngày.",
+            "evidence": {
+              "snapshotId": "danang-demo-v1",
+              "basis": "fixture-validation"
+            }
+          },
+          {
+            "code": "budget",
+            "status": "pass",
+            "message": "Tổng chi phí nhóm nằm trong ngân sách.",
+            "evidence": {
+              "snapshotId": "danang-demo-v1",
+              "basis": "fixture-validation"
+            }
+          },
+          {
+            "code": "mandatory",
+            "status": "pass",
+            "message": "Giữ điểm bắt buộc, không ghé điểm loại trừ.",
+            "evidence": {
+              "snapshotId": "danang-demo-v1",
+              "basis": "fixture-validation"
+            }
+          },
+          {
+            "code": "snapshot",
+            "status": "pass",
+            "message": "Cùng bộ dữ liệu mô phỏng có phiên bản.",
+            "evidence": {
+              "snapshotId": "danang-demo-v1",
+              "basis": "fixture-validation"
+            }
+          }
+        ],
+        "plan": {
+          "tripId": "danang-demo",
+          "versionId": "v2",
+          "parentVersionId": "v1",
+          "snapshotId": "danang-demo-v1",
+          "request": {
+            "destination": "Đà Nẵng",
+            "startDate": "2026-12-10",
+            "endDate": "2026-12-12",
+            "partySize": 2,
+            "budgetVnd": 6000000,
+            "dayStartMinute": 480,
+            "dayEndMinute": 1080,
+            "depotId": "hotel",
+            "interests": [
+              "biển",
+              "ẩm thực"
+            ],
+            "mandatoryPlaceIds": [
+              "my-khe"
+            ],
+            "excludedPlaceIds": [
+              "son-tra"
+            ],
+            "lockedVisits": [
+              {
+                "placeId": "my-khe",
+                "date": "2026-12-10",
+                "startMinute": 500
+              }
+            ]
+          },
+          "days": [
+            {
+              "date": "2026-12-10",
+              "departureMinute": 480,
+              "returnMinute": 640,
+              "visits": [
+                {
+                  "placeId": "my-khe",
+                  "startMinute": 500,
+                  "endMinute": 560
+                },
+                {
+                  "placeId": "han-market",
+                  "startMinute": 575,
+                  "endMinute": 620
+                }
+              ]
+            },
+            {
+              "date": "2026-12-11",
+              "departureMinute": 480,
+              "returnMinute": 700,
+              "visits": [
+                {
+                  "placeId": "marble",
+                  "startMinute": 510,
+                  "endMinute": 600
+                },
+                {
+                  "placeId": "museum",
+                  "startMinute": 625,
+                  "endMinute": 685
+                }
+              ]
+            },
+            {
+              "date": "2026-12-12",
+              "departureMinute": 480,
+              "returnMinute": 580,
+              "visits": [
+                {
+                  "placeId": "bridge",
+                  "startMinute": 520,
+                  "endMinute": 565
+                }
+              ]
+            }
+          ],
+          "costItems": [
+            {
+              "id": "hotel",
+              "label": "Lưu trú cả nhóm · 2 đêm",
+              "amountVnd": 1000000,
+              "basis": "per_group",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "meals",
+              "label": "Ăn uống mỗi người · 3 ngày",
+              "amountVnd": 300000,
+              "basis": "per_person",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "2026-12-10-edge-hotel-my-khe",
+              "label": "Di chuyển hotel → my-khe",
+              "amountVnd": 20000,
+              "basis": "per_group",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "visit-my-khe",
+              "label": "Tham quan Biển Mỹ Khê",
+              "amountVnd": 0,
+              "basis": "per_person",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "2026-12-10-edge-my-khe-han-market",
+              "label": "Di chuyển my-khe → han-market",
+              "amountVnd": 15000,
+              "basis": "per_group",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "visit-han-market",
+              "label": "Tham quan Chợ Hàn",
+              "amountVnd": 50000,
+              "basis": "per_person",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "2026-12-10-edge-han-market-hotel",
+              "label": "Di chuyển han-market → hotel",
+              "amountVnd": 20000,
+              "basis": "per_group",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "2026-12-11-edge-hotel-marble",
+              "label": "Di chuyển hotel → marble",
+              "amountVnd": 30000,
+              "basis": "per_group",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "visit-marble",
+              "label": "Tham quan Ngũ Hành Sơn",
+              "amountVnd": 60000,
+              "basis": "per_person",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "2026-12-11-edge-marble-museum",
+              "label": "Di chuyển marble → museum",
+              "amountVnd": 25000,
+              "basis": "per_group",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "visit-museum",
+              "label": "Tham quan Bảo tàng Chăm",
+              "amountVnd": 60000,
+              "basis": "per_person",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "2026-12-11-edge-museum-hotel",
+              "label": "Di chuyển museum → hotel",
+              "amountVnd": 15000,
+              "basis": "per_group",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "2026-12-12-edge-hotel-bridge",
+              "label": "Di chuyển hotel → bridge",
+              "amountVnd": 40000,
+              "basis": "per_group",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "visit-bridge",
+              "label": "Tham quan Cầu Tình Yêu",
+              "amountVnd": 0,
+              "basis": "per_person",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            },
+            {
+              "id": "2026-12-12-edge-bridge-hotel",
+              "label": "Di chuyển bridge → hotel",
+              "amountVnd": 15000,
+              "basis": "per_group",
+              "provenance": {
+                "sourceId": "demo",
+                "kind": "simulated",
+                "recordedAt": "2026-11-02T03:00:00Z",
+                "serviceDate": "2026-12-10",
+                "currency": "VND",
+                "conditions": "Giả lập phục vụ demo, không phải giá đặt dịch vụ."
+              }
+            }
+          ],
+          "totalCostVnd": 2120000,
+          "travelMinutes": 180,
+          "status": "FEASIBLE",
+          "isMock": true,
+          "configVersion": "demo-1",
+          "objectiveVersion": "proposed-score-v1"
+        },
+        "isMock": true,
+        "configVersion": "demo-1",
+        "objectiveVersion": "proposed-score-v1",
+        "skippedPlaces": [
+          {
+            "placeId": "son-tra",
+            "reason": "Người dùng loại trừ trong request điều chỉnh."
+          }
+        ]
+      }
+    },
+    {
+      "id": "timeout",
+      "title": "Hết thời gian tìm kiếm",
+      "description": "Minh họa trạng thái chưa tìm được nghiệm.",
+      "request": {
+        "destination": "Đà Nẵng",
+        "startDate": "2026-12-10",
+        "endDate": "2026-12-12",
+        "partySize": 2,
+        "budgetVnd": 5000000,
+        "dayStartMinute": 480,
+        "dayEndMinute": 1080,
+        "depotId": "hotel",
+        "interests": [
+          "biển",
+          "ẩm thực"
+        ],
+        "mandatoryPlaceIds": [
+          "my-khe"
+        ],
+        "excludedPlaceIds": [],
+        "lockedVisits": []
+      },
+      "result": {
+        "runId": "run-timeout",
+        "snapshotId": "danang-demo-v1",
+        "request": {
+          "destination": "Đà Nẵng",
+          "startDate": "2026-12-10",
+          "endDate": "2026-12-12",
+          "partySize": 2,
+          "budgetVnd": 5000000,
+          "dayStartMinute": 480,
+          "dayEndMinute": 1080,
+          "depotId": "hotel",
+          "interests": [
+            "biển",
+            "ẩm thực"
+          ],
+          "mandatoryPlaceIds": [
+            "my-khe"
+          ],
+          "excludedPlaceIds": [],
+          "lockedVisits": []
+        },
+        "status": "TIMEOUT_NO_SOLUTION",
+        "reason": "Chưa tìm được nghiệm trong giới hạn thời gian. Chưa có chứng cứ vô nghiệm.",
+        "checks": [
+          {
+            "code": "feasibility",
+            "status": "unknown",
+            "message": "Chưa xác định; có thể thử lại hoặc xem kế hoạch cũ.",
+            "evidence": {
+              "stopReason": "simulated-time-limit",
+              "hasIncumbent": false,
+              "provenInfeasible": false
+            }
+          }
+        ],
+        "plan": null,
+        "isMock": true,
+        "configVersion": "demo-1",
+        "objectiveVersion": "proposed-score-v1",
+        "skippedPlaces": []
+      }
+    }
+  ]
+}
