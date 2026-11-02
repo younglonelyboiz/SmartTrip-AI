@@ -1,4 +1,4 @@
-# SmartTrip AI — Frontend prototype
+# SmartTripAI — Frontend prototype
 
 React + TypeScript + Vite; chưa có backend, solver, LLM hoặc API dữ liệu thật. Mọi giá, giờ và tuyến đều giả lập.
 
@@ -86,3 +86,12 @@ Thư mục đề tài cũ đã được sao lưu, đối chiếu nội dung từ
 ## Cập nhật thiết kế giao diện
 
 Theo yêu cầu người dùng: tông xanh dương nhẹ + trắng, ảnh địa điểm cục bộ, bố cục form/ứng viên và timeline/dự toán được nhóm rõ. Nguồn và giấy phép ảnh trong docs/05-UX_UI_DESIGN.md và footer FE; `mindmap.png` là sơ đồ tư duy chính ở README/Features.
+
+
+### Điểm đi và chặng đi–về
+
+Planner cho nhập điểm xuất phát, phương tiện, giờ đến điểm đến ngày đầu, giờ rời điểm đến ngày cuối, thời gian mỗi chặng nối và dự trù đi–về/chặng nối cả nhóm. Giờ đến cộng thời gian nối phải kịp lịch ngày đầu; giờ kết thúc lịch ngày cuối phải kịp chặng về. Prototype kiểm tra fixture, chưa tự xếp lại lịch khi xung đột và chưa tra cứu vận tải/giá thực tế.
+
+Thông tin đi–về được truyền trong URL và lưu riêng theo chuyến/phiên bản khi bấm lưu. Dự toán tại điểm đến đã gồm lưu trú, ăn uống, tham quan và di chuyển giả lập. Chi phí đi–về do người dùng nhập được cộng riêng; để trống nghĩa là chưa biết, không phải miễn phí. Xóa dữ liệu demo cũng xóa thông tin đi–về đã lưu.
+
+Kiểm tra logic hành trình: `node --import tsx scripts/check-journey.ts`.

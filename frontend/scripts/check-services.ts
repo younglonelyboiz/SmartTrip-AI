@@ -35,9 +35,11 @@ storage.set(STORAGE_KEY, "{broken");
 assert.equal(loadVersions().ok, false);
 storage.set(STORAGE_KEY, JSON.stringify({ schemaVersion: 0, versions: [] }));
 assert.equal(loadVersions().ok, false);
+storage.set("smarttrip.journey.danang-demo.v1", "example");
 storage.set("other.app", "keep");
 resetDemoStorage();
 assert.equal(storage.get("other.app"), "keep");
+assert.equal(storage.has("smarttrip.journey.danang-demo.v1"), false);
 Object.defineProperty(globalThis, "localStorage", {
   value: {
     getItem: () => null,

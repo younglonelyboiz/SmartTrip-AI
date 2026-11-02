@@ -1,19 +1,31 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import {
   scenarios,
   snapshot,
   getScenario,
 } from "../services/mockTravelService";
+import { defaultJourney, journeyFromSearch, journeySearch, journeyConflict } from "../domain/journey";
 import type { TravelRequest } from "../domain/types";
 import { DestinationPhoto } from "../components/DestinationPhoto";
 import { placePhotos } from "../domain/photos";
 import { Icon } from "../components/Icon";
 export function Planner() {
-  const [id, setId] = useState("standard");
+  const [params] = useSearchParams();
+  const initialScenario = scenarios.find(s => s.id === params.get("scenario")) ?? scenarios[0];
+  const [id, setId] = useState(initialScenario.id);
   const [req, setReq] = useState<TravelRequest>(() =>
-    structuredClone(scenarios[0].request),
+    (() => {
+      const request = structuredClone(initialScenario.request);
+      const place = params.get("place");
+      if (place && snapshot.places.some(p => p.id === place)) {
+        request.mandatoryPlaceIds = [...new Set([...request.mandatoryPlaceIds, place])];
+        request.excludedPlaceIds = request.excludedPlaceIds.filter(id => id !== place);
+      }
+      return request;
+    })(),
   );
+  const [journey, setJourney] = useState(() => journeyFromSearch("?" + params.toString()) ?? defaultJourney());
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -36,6 +48,10 @@ export function Planner() {
       );
       return;
     }
+    if (!journeyFromSearch(journeySearch(journey))) {
+      setMessage("Kiểm tra điểm đi, giờ đến–về và dự trù VND nguyên không âm.");
+      return;
+    }
     setLoading(true);
     setMessage("");
     try {
@@ -43,7 +59,9 @@ export function Planner() {
       if (response.kind === "unsupported") setMessage(response.message);
       else if (response.scenario.result.plan) {
         const p = response.scenario.result.plan;
-        navigate(`/trips/${p.tripId}/versions/${p.versionId}`);
+        const invalid = journeyConflict(journey, p);
+        if (invalid) { setMessage(invalid); return; }
+        navigate(`/trips/${p.tripId}/versions/${p.versionId}${journeySearch(journey)}`);
       } else setMessage(response.scenario.result.reason);
     } catch {
       setMessage("Không tải được dữ liệu demo. Hãy thử chọn lại kịch bản.");
@@ -77,6 +95,18 @@ export function Planner() {
               ))}
             </select>
           </label>
+          <fieldset disabled={loading}>
+            <legend>Điểm đi và chặng đi–về</legend>
+            <div className="form-grid">
+              <label>Điểm xuất phát<input required maxLength={100} value={journey.origin} onChange={e=>setJourney({...journey,origin:e.target.value})} /></label>
+              <label>Phương tiện đi–về<select value={journey.mode} onChange={e=>setJourney({...journey,mode:e.target.value})}>{['Máy bay','Tàu hỏa','Xe khách','Ô tô'].map(mode=><option key={mode}>{mode}</option>)}</select></label>
+              <label>Giờ đến điểm đến (ngày đầu)<input type="time" required value={journey.arrival} onChange={e=>setJourney({...journey,arrival:e.target.value})}/></label>
+              <label>Giờ rời điểm đến (ngày cuối)<input type="time" required value={journey.departure} onChange={e=>setJourney({...journey,departure:e.target.value})}/></label>
+              <label>Thời gian mỗi chặng nối (phút)<input type="number" required min="0" max="1440" step="1" value={journey.transferMinutes} onChange={e=>setJourney({...journey,transferMinutes:Number(e.target.value)})}/></label>
+              <label>Dự trù đi–về và chặng nối cả nhóm (VND)<input type="number" min="0" max="9007199254740991" step="1" placeholder="Chưa biết" value={journey.travelCost} onChange={e=>setJourney({...journey,travelCost:e.target.value})}/></label>
+            </div>
+            <p className="fine">Giờ đến/rời là tại sân bay, ga hoặc bến ở điểm đến; thời gian nối bao gồm di chuyển đến nơi lưu trú và khoảng đệm bạn cần. Chưa tra cứu chuyến hoặc giá thực tế. Chưa biết chi phí thì để trống.</p>
+          </fieldset>
           <fieldset disabled={loading}>
             <legend>Thời gian và ngân sách</legend>
             <div className="form-grid">

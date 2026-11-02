@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Route, Navigate, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { AppLayout } from "./components/AppLayout";
 import { DemoLogin } from "./pages/DemoLogin";
 import { Trips } from "./pages/Trips";
@@ -7,13 +7,16 @@ import { Planner } from "./pages/Planner";
 import { Itinerary } from "./pages/Itinerary";
 import { Comparison } from "./pages/Comparison";
 import { Admin } from "./pages/Admin";
+import { Explore } from "./pages/Explore";
+import { Destination } from "./pages/Destination";
 export default function App() {
   const [role, setRole] = useState("traveler");
   return (
     <BrowserRouter>
       <Routes>
         <Route element={<AppLayout role={role} />}>
-          <Route index element={<Navigate to="/demo-login" replace />} />
+          <Route index element={<Explore />} />
+          <Route path="/diem-den/:destinationId" element={<Destination />} />
           <Route path="/demo-login" element={<DemoLogin setRole={setRole} />} />
           <Route path="/trips" element={<Trips />} />
           <Route path="/planner" element={<Planner />} />

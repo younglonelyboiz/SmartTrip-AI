@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 import { getFixturePlan, scenarios } from "../services/mockTravelService";
 import { loadVersions, saveVersion } from "../services/tripStorage";
 import { dateLabel } from "../domain/types";
@@ -8,7 +8,10 @@ import { RouteDiagram } from "../components/RouteDiagram";
 import { BudgetSummary } from "../components/BudgetSummary";
 import { ConstraintReport } from "../components/ConstraintReport";
 import { DestinationPhoto } from "../components/DestinationPhoto";
+import { loadJourneySearch, saveJourneySearch } from "../domain/journey";
+import { JourneySummary } from "../components/JourneySummary";
 export function Itinerary() {
+  const { search: urlSearch } = useLocation();
   const { tripId = "", versionId = "" } = useParams();
   const plan =
     loadVersions().versions.find(
@@ -23,6 +26,7 @@ export function Itinerary() {
         <Link to="/trips">Về chuyến đi</Link>
       </section>
     );
+  const search = urlSearch || loadJourneySearch(plan);
   const day = plan.days[Math.min(index, plan.days.length - 1)];
   const scenario = scenarios.find(
     (s) => s.result.plan?.versionId === plan.versionId,
@@ -46,10 +50,14 @@ export function Itinerary() {
           <p>
             {dateLabel(plan.request.startDate)} –{" "}
             {dateLabel(plan.request.endDate)} · {plan.travelMinutes} phút di
-            chuyển cả chuyến
+            chuyển tại điểm đến
           </p>
         </div>
-        <button onClick={() => setMessage(saveVersion(plan).message ?? "")}>
+        <button onClick={() => {
+          const saved = saveVersion(plan);
+          const journeySaved = !saved.ok || saveJourneySearch(plan, search);
+          setMessage((saved.message ?? "") + (journeySaved ? "" : " Chưa lưu được thông tin đi–về; hãy giữ lại đường dẫn trang này."));
+        }}>
           Lưu phiên bản
         </button>
       </div>
@@ -60,14 +68,14 @@ export function Itinerary() {
         {plan.versionId === "v1" ? (
           <Link
             className="button secondary"
-            to="/trips/danang-demo/versions/v2"
+            to={"/trips/danang-demo/versions/v2" + search}
           >
             Xem mẫu điều chỉnh: bỏ Sơn Trà
           </Link>
         ) : (
           <Link
             className="button secondary"
-            to="/trips/danang-demo/versions/v1"
+            to={"/trips/danang-demo/versions/v1" + search}
           >
             Xem phiên bản trước
           </Link>
@@ -79,6 +87,7 @@ export function Itinerary() {
         ) : null}
       </div>
       <p className="fine">{scenario.result.reason}</p>
+      <JourneySummary plan={plan} search={search} />
       <div className="day-buttons" aria-label="Chọn ngày">
         {plan.days.map((d, i) => (
           <button

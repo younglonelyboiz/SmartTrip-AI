@@ -1,4 +1,12 @@
 export const photos = {
+  hanoi: {
+    src: "/images/hanoi-mausoleum.jpg", alt: "Lăng Chủ tịch Hồ Chí Minh tại Quảng trường Ba Đình, Hà Nội",
+    title: "Lăng Chủ tịch Hồ Chí Minh", file: "Lăng_Bác_-_NKS.jpg", position: "center 55%",
+  },
+  hue: {
+    src: "/images/hue-citadel.jpg", alt: "Ngọ Môn và Hoàng thành Huế nhìn từ phía trước",
+    title: "Ngọ Môn – Hoàng thành Huế", file: "Đại_nội.jpg", position: "center",
+  },
   beach: {
     src: "/images/my-khe.jpg",
     alt: "Bãi cát và sóng biển tại Mỹ Khê, Đà Nẵng",
