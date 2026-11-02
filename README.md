@@ -98,12 +98,16 @@ Backend target phải thực thi ownership và quyền ở API/DB. Admin không 
 
 ```mermaid
 flowchart LR
-    T[Traveler demo] --> L["/demo-login"]
+    T[Traveler demo] --> E["/ — Khám phá"]
+    T --> D["/diem-den/:destinationId"]
+    T --> L["/demo-login"]
     T --> TR["/trips"]
     T --> P["/planner"]
     T --> I["/trips/:tripId/versions/:versionId"]
     T --> C["/compare/:scenarioId"]
-    A[Admin demo] --> L
+    A[Admin demo] --> E
+    A --> D
+    A --> L
     A --> TR
     A --> P
     A --> I
@@ -115,10 +119,12 @@ flowchart LR
 
 | Tuyến đường | Màn hình | Chức năng chính | Traveler demo | Admin demo |
 |---|---|---|---|---|
+| `/` | Khám phá | Thẻ tỉnh/thành, lịch mẫu và cẩm nang | Có | Có |
+| `/diem-den/:destinationId` | Lộ trình tham khảo | Hà Nội và Huế; nội dung minh họa theo ngày | Có | Có |
 | `/demo-login` | Chọn hồ sơ | Chuyển vai trò mô phỏng | Có | Có |
 | `/trips` | Chuyến đi của bạn | Chuyến mẫu, phiên bản lưu trên thiết bị | Có | Có |
-| `/planner` | Lập kế hoạch | Form ràng buộc, ứng viên, kịch bản mock | Có | Có |
-| `/trips/:tripId/versions/:versionId` | Chi tiết lịch trình | Timeline, tuyến mô phỏng, tiền và ràng buộc | Có | Có |
+| `/planner` | Lập kế hoạch | Điểm đi, chặng đi–về, dự trù và ràng buộc tại điểm đến | Có | Có |
+| `/trips/:tripId/versions/:versionId` | Chi tiết lịch trình | Toàn hành trình nếu có dữ liệu đi–về, timeline, dự toán và kiểm tra | Có | Có |
 | `/compare/:scenarioId` | So sánh lịch mẫu | Baseline/proposed cùng request và snapshot | Có | Có |
 | `/admin` | Quản trị dữ liệu | Xem danh mục và nguồn mock | Không | Có |
 
@@ -128,50 +134,96 @@ Chi tiết sitemap, vòng đời run và phiên bản: [04-INFORMATION_ARCHITECT
 
 ## 4. Giao diện Người dùng & Trải nghiệm (UI/UX)
 
-### Khám phá điểm đến và lộ trình tham khảo
+### Bắt đầu: Khám phá điểm đến và lộ trình tham khảo
 
-Trang chủ mới giới thiệu Đà Nẵng, Hà Nội và Huế; chọn thẻ để mở ngay lộ trình. Đà Nẵng dùng fixture demo chi tiết; Hà Nội và Huế là lịch tham khảo minh họa, chưa kiểm tra tuyến, giờ mở cửa hoặc chi phí. Lịch mẫu dẫn sang Planner và cẩm nang mở rộng để đọc tại chỗ.
+Trang chủ `/` giới thiệu Đà Nẵng, Hà Nội và Huế; chọn thẻ để mở ngay lộ trình. Không cần chọn hồ sơ demo trước khi khám phá. Đà Nẵng dùng fixture demo chi tiết; Hà Nội và Huế là lịch tham khảo minh họa, chưa kiểm tra tuyến, giờ mở cửa hoặc chi phí. Lịch mẫu dẫn sang Planner và cẩm nang mở rộng để đọc tại chỗ.
+
+<details>
+<summary>Xem giao diện: Khám phá điểm đến</summary>
 
 ![Khám phá điểm đến](docs/uxui_screenshots/happy_00_explore.png)
 
+</details>
+
+<details>
+<summary>Xem giao diện: Lộ trình tham khảo Huế</summary>
+
 ![Lộ trình tham khảo Huế](docs/uxui_screenshots/happy_07_hue.png)
+
+</details>
 
 
 ### Happy Case 1: Chọn hồ sơ demo
 
-Chọn hồ sơ khách du lịch hoặc quản trị viên; không yêu cầu tài khoản hay mật khẩu thật.
+Chọn hồ sơ khách du lịch hoặc quản trị viên tại `/demo-login` khi muốn đổi vai trò mô phỏng; không yêu cầu tài khoản hay mật khẩu thật. Đây không còn là trang mở đầu của ứng dụng.
+
+<details>
+<summary>Xem giao diện: Chọn hồ sơ demo</summary>
 
 ![Chọn hồ sơ demo](docs/uxui_screenshots/happy_01_login.png)
 
+</details>
+
 ### Happy Case 2: Lập kế hoạch chuyến đi
 
-Nhập thời gian, số người và ngân sách nhóm; chọn điểm bắt buộc/loại trừ. Prototype trả fixture tương ứng với kịch bản, tổ hợp ngoài mẫu có thông báo chưa hỗ trợ.
+Nhập điểm xuất phát, phương tiện, giờ đến điểm đến ngày đầu, giờ rời điểm đến ngày cuối, thời gian mỗi chặng nối và dự trù đi–về/chặng nối cả nhóm. Sau đó chọn ngày đi, số người, ngân sách và điểm bắt buộc/loại trừ.
+
+FE kiểm tra giờ đến cộng thời gian nối phải kịp lịch ngày đầu; lịch ngày cuối phải kết thúc kịp giờ rời điểm đến trừ thời gian nối. Nếu xung đột, FE báo lý do; chưa tự sắp lại lịch hoặc tra cứu chuyến vận tải. Lịch tham quan dùng fixture tương ứng; yêu cầu ngoài mẫu được thông báo chưa hỗ trợ.
+
+<details>
+<summary>Xem giao diện: Lập kế hoạch</summary>
 
 ![Lập kế hoạch](docs/uxui_screenshots/happy_02_planner.png)
 
+</details>
+
 ### Happy Case 3: Chi tiết lịch trình và kiểm tra ràng buộc
 
-Timeline từng ngày, giờ xuất phát/quay về, sơ đồ tuyến, dự toán và kết quả kiểm tra thời gian/ngân sách. Giá và thông số di chuyển đều ghi rõ giả lập.
+Timeline từng ngày bắt đầu và kết thúc tại nơi lưu trú ở Đà Nẵng, kèm sơ đồ tuyến mô phỏng và kiểm tra ràng buộc.
+
+Khi mở từ Planner, phần toàn hành trình hiển thị điểm đi → Đà Nẵng → điểm đi và các mốc đến–về. Nếu mở lịch mẫu trực tiếp mà chưa nhập thông tin đi–về, màn hình hiển thị hướng dẫn bổ sung.
+
+Dự toán tại điểm đến đã gồm lưu trú, ăn uống, tham quan và di chuyển **giả lập**. Dự trù đi–về/chặng nối do người dùng nhập được cộng riêng; để trống nghĩa là chưa biết, không phải miễn phí. Tổng vượt ngân sách nhóm có cảnh báo; không coi các con số này là báo giá thực tế.
+
+<details>
+<summary>Xem giao diện: Chi tiết lịch trình</summary>
 
 ![Chi tiết lịch trình](docs/uxui_screenshots/happy_03_itinerary.png)
+
+</details>
 
 ### Happy Case 4: So sánh hai lịch trình mẫu
 
 Hai phương án dùng cùng request và snapshot để minh họa khác biệt về thứ tự ghé, thời gian đi và chi phí. Đây chưa phải kết quả benchmark thuật toán.
 
+<details>
+<summary>Xem giao diện: So sánh lịch mẫu</summary>
+
 ![So sánh lịch mẫu](docs/uxui_screenshots/happy_04_comparison.png)
+
+</details>
 
 ### Happy Case 5: Quản trị danh mục và nguồn dữ liệu
 
 Danh mục địa điểm và provenance phục vụ kiểm tra dữ liệu; giao diện chỉ xem, chưa có API quản trị thật.
 
+<details>
+<summary>Xem giao diện: Quản trị nguồn</summary>
+
 ![Quản trị nguồn](docs/uxui_screenshots/happy_05_admin.png)
+
+</details>
 
 ### Happy Case 6: Danh sách chuyến đi và phiên bản đã lưu
 
-Mở lại kế hoạch và phiên bản điều chỉnh từ localStorage, giữ nguyên phiên bản trước.
+Mở lại kế hoạch và phiên bản điều chỉnh từ localStorage, giữ nguyên phiên bản trước. Thông tin đi–về được lưu riêng theo chuyến/phiên bản khi bấm lưu; xóa dữ liệu demo cũng xóa thông tin này.
+
+<details>
+<summary>Xem giao diện: Chuyến đi của bạn</summary>
 
 ![Chuyến đi của bạn](docs/uxui_screenshots/happy_06_trips.png)
+
+</details>
 
 Chi tiết thiết kế: [05-UX_UI_DESIGN.md](docs/05-UX_UI_DESIGN.md). Cách chạy FE, kịch bản demo và ghi nhận kiểm tra: [frontend/README.md](frontend/README.md).
 

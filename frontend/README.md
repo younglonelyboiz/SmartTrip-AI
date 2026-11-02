@@ -12,7 +12,7 @@ npm ci
 npm run dev
 ```
 
-Mở URL Vite in ra (mặc định http://127.0.0.1:5173). Chọn hồ sơ demo, không nhập tài khoản thật. Admin chỉ là chế độ UI. Hosting static cần SPA fallback cho deep link, chưa publish trong đợt này.
+Mở URL Vite in ra (mặc định http://127.0.0.1:5173). Trang đầu là Khám phá (`/`). Mở `/demo-login` nếu muốn đổi hồ sơ demo; không nhập tài khoản thật. Admin chỉ là chế độ UI. Hosting static cần SPA fallback cho deep link, chưa publish trong đợt này.
 
 ## Build và kiểm tra
 
@@ -44,9 +44,9 @@ Nguồn duy nhất: `src/mocks/scenarios.json`. Thời điểm ghi dữ liệu m
 Ngày 1 proposed mẫu: 08:00 xuất phát; Mỹ Khê 08:20–09:20; Chợ Hàn 09:35–10:20; 10:40 về hotel. Các ngày khác đọc trực tiếp fixture để tránh nhân bản nguồn dữ liệu. Tổng hiển thị được checker cộng lại từ cost items, không nhập một số KPI rời.
 
 ## Demo chính
-1. Chọn traveler → Chuyến đi → Lập kế hoạch → standard.
-2. Xem yêu cầu và điểm ứng viên; bấm xem kết quả mock, chờ phản hồi.
-3. Chuyển ngày, đọc thời gian đi/về và chi phí, xem constraint report và nguồn simulated.
+1. Mở Khám phá → chọn tỉnh/thành để xem lộ trình, hoặc mở Lập kế hoạch → standard.
+2. Nhập điểm đi và chặng đi–về, xem yêu cầu và điểm ứng viên; bấm xem kết quả mock.
+3. Xem toàn hành trình nếu đã nhập thông tin đi–về; chuyển ngày, đọc lịch và dự toán tại điểm đến, xem constraint report và nguồn simulated.
 4. So sánh baseline/proposed; giải thích đây chỉ là hai lịch mẫu cùng dữ liệu.
 5. Lưu v1, reload và mở lại từ danh sách.
 
@@ -73,7 +73,7 @@ Kiểm tra ngày 02/11/2026, Node 26.8.1:
 | Mermaid | Parse thành công 13 sơ đồ Mermaid trong Chromium; mind map dùng ảnh người dùng cung cấp |
 | Trình duyệt | Pass demo chính, so sánh, conflict, timeout, unsupported, reload v1/v2, admin, not-found |
 | Responsive/keyboard | Không tràn ngang tại 390px ở các route được kiểm tra; skip link và reduced motion được kiểm tra, không phải audit WCAG đầy đủ |
-| Ảnh UI/UX | Đã chụp 6 màn hình thật trong docs/uxui_screenshots |
+| Ảnh UI/UX | 8 ảnh màn hình dùng trong README tại docs/uxui_screenshots |
 
 Kiểm tra browser dùng Chromium có sẵn và server localhost. Snapshot/fixture check không phải solver benchmark. Reviewer đã rà và các lỗi quan trọng về khóa prefix, provenance từng dữ kiện và metadata result đã được sửa.
 
