@@ -4,7 +4,7 @@ export function BudgetSummary({ plan }: { plan: PlanVersion }) {
   return (
     <section className="panel budget">
       <h2>
-        Dự toán chuyến đi <SourceBadge />
+        Dự toán tại điểm đến <SourceBadge />
       </h2>
       <p className="big-value">{currency(plan.totalCostVnd)}</p>
       <p className="muted">
@@ -43,7 +43,7 @@ export function BudgetSummary({ plan }: { plan: PlanVersion }) {
       </details>
       <p className="fine">
         Giá giả lập gồm lưu trú, ăn uống dự trù, tham quan và di chuyển. Không
-        dùng để đặt dịch vụ.
+        dùng để đặt dịch vụ. Chưa gồm đi–về liên tỉnh và chặng nối sân bay/ga/bến xe.
       </p>
     </section>
   );

@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import {defaultJourney, journeySearch, journeyFromSearch, journeyConflict} from '../src/domain/journey';
+import {scenarios} from '../src/services/mockTravelService';
+const plan=scenarios[0].result.plan!;
+const j=defaultJourney();
+assert.deepEqual(journeyFromSearch(journeySearch(j)),j);
+assert.equal(journeyConflict(j,plan),null);
+assert.match(journeyConflict({...j,arrival:'10:00'},plan)!,/ngày đầu/);
+assert.match(journeyConflict({...j,departure:'10:00'},plan)!,/ngày cuối/);
+assert.match(journeyConflict({...j,origin:plan.request.destination},plan)!,/khác nhau/);
+for(const query of ['?origin=Hanoi&arrival=25:00','?origin=Hanoi&transfer=-1','?origin=Hanoi&travelCost=NaN']) assert.equal(journeyFromSearch(query),null);
+assert.equal(journeyFromSearch(journeySearch({...j,travelCost:'-1'})),null);
+assert.equal(journeyFromSearch(journeySearch({...j,travelCost:'3000000'}))!.travelCost,'3000000');
+console.log('PASS: journey URL roundtrip, arrival/return conflicts, invalid inputs and cost parsing');

@@ -1,4 +1,4 @@
-# SmartTrip AI — Nền tảng du lịch thông minh
+# SmartTripAI — Nền tảng du lịch thông minh
 
 Nền tảng hỗ trợ người dùng lập kế hoạch du lịch tự túc tại Việt Nam, kết hợp **Recommendation System**, **Optimization Engine** và **AI Travel Agent**. Hệ thống hướng đến lịch trình cá nhân hóa có thể kiểm tra theo thời gian, tuyến đường và ngân sách; người dùng có thể lưu và điều chỉnh khi nhu cầu thay đổi.
 
@@ -11,7 +11,7 @@ Nền tảng hỗ trợ người dùng lập kế hoạch du lịch tự túc t�
 Hệ thống được phân tích theo hướng **Top-Down**, xuất phát từ việc chuẩn bị một chuyến du lịch tự túc:
 
 - **Bối cảnh & Vấn đề tồn tại:** Người dùng tìm địa điểm, giờ hoạt động, nơi ăn ở và chi phí từ nhiều nguồn, sau đó tự sắp xếp thứ tự tham quan. Lịch trình có thể vượt ngân sách, không đủ thời gian hoặc di chuyển vòng vèo.
-- **Giải pháp SmartTrip AI:** Phối hợp ba thành phần có trách nhiệm riêng:
+- **Giải pháp SmartTripAI:** Phối hợp ba thành phần có trách nhiệm riêng:
   1. **Recommendation System:** Xếp hạng điểm đến và hoạt động theo sở thích, ngân sách và điều kiện chuyến đi.
   2. **Optimization Engine — trọng tâm đề tài:** Chọn địa điểm, phân ngày và tối ưu thứ tự ghé dưới ràng buộc thời gian, giờ hoạt động, chi phí và điểm bắt buộc/loại trừ.
   3. **AI Travel Agent:** Tiếp nhận yêu cầu, hỏi dữ kiện thiếu, điều phối công cụ và giải thích phương án; không tự sinh số liệu giá, khoảng cách hoặc giờ hoạt động không có căn cứ.
@@ -19,7 +19,7 @@ Hệ thống được phân tích theo hướng **Top-Down**, xuất phát từ 
 
 ### Sơ đồ tư duy & Cấu trúc sản phẩm (Product Mind Map)
 
-![Sơ đồ tư duy SmartTrip AI](mindmap.png)
+![Sơ đồ tư duy SmartTripAI](mindmap.png)
 
 Chi tiết phạm vi, tính năng, nguồn dữ liệu dự kiến và phân kỳ:
 
@@ -66,7 +66,7 @@ Chi tiết: [03-USE_CASES.md](docs/03-USE_CASES.md).
 | US-09 | Quản trị danh mục và nguồn dữ liệu |
 | US-10 | Chia sẻ chỉ đọc và phản hồi — chỉ đặc tả target |
 
-| Tiêu chí | Áp dụng trong SmartTrip AI |
+| Tiêu chí | Áp dụng trong SmartTripAI |
 |---|---|
 | **Independent (Độc lập)** | Story có giá trị đầu cuối, phụ thuộc nghiệp vụ tối thiểu được chỉ rõ. |
 | **Negotiable (Thương lượng)** | Bố cục và cách triển khai linh hoạt, giữ nguyên ý nghĩa ràng buộc. |
@@ -128,6 +128,15 @@ Chi tiết sitemap, vòng đời run và phiên bản: [04-INFORMATION_ARCHITECT
 
 ## 4. Giao diện Người dùng & Trải nghiệm (UI/UX)
 
+### Khám phá điểm đến và lộ trình tham khảo
+
+Trang chủ mới giới thiệu Đà Nẵng, Hà Nội và Huế; chọn thẻ để mở ngay lộ trình. Đà Nẵng dùng fixture demo chi tiết; Hà Nội và Huế là lịch tham khảo minh họa, chưa kiểm tra tuyến, giờ mở cửa hoặc chi phí. Lịch mẫu dẫn sang Planner và cẩm nang mở rộng để đọc tại chỗ.
+
+![Khám phá điểm đến](docs/uxui_screenshots/happy_00_explore.png)
+
+![Lộ trình tham khảo Huế](docs/uxui_screenshots/happy_07_hue.png)
+
+
 ### Happy Case 1: Chọn hồ sơ demo
 
 Chọn hồ sơ khách du lịch hoặc quản trị viên; không yêu cầu tài khoản hay mật khẩu thật.
@@ -181,7 +190,7 @@ Hệ thống được mô tả theo C4; các sơ đồ backend/database là **ki
 
 ```mermaid
 flowchart LR
- G[Guest] -->|Xem danh mục| S[SmartTrip AI]
+ G[Guest] -->|Xem danh mục| S[SmartTripAI]
  T[Traveler] -->|Lập và điều chỉnh kế hoạch| S
  A[Admin] -->|Quản trị dữ liệu| S
  S -->|Gọi khi có quyền truy cập| M[Provider dữ liệu và routing]

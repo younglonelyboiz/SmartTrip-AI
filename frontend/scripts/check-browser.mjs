@@ -13,7 +13,7 @@ const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } }),
 page.on("pageerror", (e) => errors.push(e.message));
 await mkdir("test-results", { recursive: true });
 try {
-  await page.goto(base);
+  await page.goto(base + "/demo-login");
   await page.getByRole("button", { name: "Khám phá bản demo" }).click();
   await page.getByRole("link", { name: "Lập kế hoạch mới" }).click();
   await page.getByRole("button", { name: "Xem kết quả mock" }).click();
@@ -91,7 +91,7 @@ try {
       ),
       "admin navigation overflow at " + width,
     );
-    assert.equal(await page.locator("nav a").count(), 3);
+    assert.equal(await page.locator("nav a").count(), 4);
   }
 
   await page.goto(base + "/trips/danang-demo/versions/v1");
@@ -128,7 +128,7 @@ try {
   assert.equal(await page.locator(":focus").getAttribute("id"), "main");
   assert.equal(
     await page.locator("label input:not([type=checkbox]),label select").count(),
-    7,
+    13,
   );
   for (const path of [
     "/demo-login",
@@ -138,7 +138,7 @@ try {
   ]) {
     await page.goto(base + path);
     await page.locator("h1").waitFor();
-    const images = await page.locator("img").evaluateAll(async (images) => {
+    const images = await page.locator("img:not(.brand-mark)").evaluateAll(async (images) => {
       return Promise.all(
         images.map(async (image) => {
           image.loading = "eager";

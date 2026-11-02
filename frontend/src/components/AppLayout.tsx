@@ -13,26 +13,12 @@ export function AppLayout({ role }: { role: string }) {
         Đến nội dung chính
       </a>
       <header>
-        <Link className="brand" to="/trips">
-          <svg width="30" height="34" viewBox="0 0 30 34" aria-hidden="true">
-            <path
-              d="M15 2C-2 2-2 21 15 32 32 21 32 2 15 2Z"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            />
-            <path
-              d="m8 18 5-8 3 11 5-8"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            />
-          </svg>
-          <span>
-            SmartTrip <small>AI</small>
-          </span>
+        <Link className="brand" to="/">
+          <img className="brand-mark" src="/logo.svg" alt="" width="42" height="48" />
+          <span className="brand-wordmark">SmartTrip<span className="brand-ai">AI</span></span>
         </Link>
         <nav aria-label="Điều hướng chính">
+          <NavLink to="/" end>Khám phá</NavLink>
           <NavLink to="/trips">Chuyến đi</NavLink>
           <NavLink to="/planner">Lập kế hoạch</NavLink>
           {role === "admin" ? <NavLink to="/admin">Dữ liệu</NavLink> : null}
@@ -49,13 +35,13 @@ export function AppLayout({ role }: { role: string }) {
       </main>
       <footer>
         <div className="footer-brand">
-          SmartTrip AI{" "}
+          SmartTripAI{" "}
           <span>Du lịch tự túc Việt Nam · Prototype nghiên cứu</span>
         </div>
         <details className="photo-credits">
           <summary>Nguồn ảnh</summary>
           <p>
-            Ảnh: Christophe95 / Wikimedia Commons.{" "}
+            Ảnh Đà Nẵng: Christophe95 / Wikimedia Commons.{" "}
             <a
               href="https://creativecommons.org/licenses/by-sa/4.0/"
               target="_blank"
@@ -71,7 +57,8 @@ export function AppLayout({ role }: { role: string }) {
               <li key={key}>
                 <a href={photoSource(key)} target="_blank" rel="noreferrer">
                   {photos[key].title}
-                </a>
+                </a>{" — "}
+                {key === "hanoi" ? "NKSTTSSHNVN · CC BY-SA 4.0" : key === "hue" ? "NguyenThanhBac123 · CC0" : "Christophe95 · CC BY-SA 4.0"}
               </li>
             ))}
           </ul>

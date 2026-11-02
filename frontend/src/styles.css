@@ -1087,3 +1087,97 @@ footer {
     gap: 6px;
   }
 }
+
+/* Discovery: white surfaces, pale blue details, destination photography. */
+.explore { padding-bottom: 24px; }
+.explore-hero { position: relative; min-height: 490px; overflow: hidden; border-radius: 22px; background: #eaf3ff; isolation: isolate; }
+.explore-hero > img { position: absolute; inset: 0 0 0 auto; width: 60%; height: 100%; object-fit: cover; z-index: -2; }
+.explore-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg,#eaf3ff 35%,rgba(234,243,255,.94) 45%,rgba(234,243,255,0) 75%); z-index: -1; }
+.explore-hero-copy { max-width: 670px; padding: 54px 42px; }
+.explore-hero-copy h1 { font-size: clamp(2.3rem,4vw,3.8rem); line-height: 1.12; margin: 16px 0 24px; letter-spacing: -.035em; }
+.explore-hero-copy > p { max-width: 440px; }
+.explore-hero-copy .actions { flex-wrap: wrap; }
+.explore-section { padding-top: 58px; scroll-margin-top: 24px; }
+.explore-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 24px; }
+.explore-section-heading h2 { font-size: clamp(1.6rem,3vw,2.1rem); margin: 0 0 8px; }
+.explore-section-heading p { margin: 0; color: var(--muted); }
+.explore-label { font-size: .85rem; color: var(--ocean); }
+.destination-grid,.template-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; }
+.explore-destination-card { overflow: hidden; background: white; border: 1px solid var(--line); border-radius: 16px; }
+.explore-destination-card > img { display: block; width: 100%; height: 230px; object-fit: cover; }
+.explore-destination-card > div { padding: 22px; }
+.explore-destination-card h3,.template-card h3 { margin: 0 0 10px; font-size: 1.3rem; }
+.explore-destination-card p { color: var(--muted); min-height: 78px; }
+.template-card { display: block; padding: 26px; background: var(--color-soft); border-radius: 14px; text-decoration: none; color: var(--ink); border: 1px solid var(--line); }
+.template-card:hover { background: #deedff; }
+.template-card h3 { margin-top: 14px; }
+.template-card strong { color: var(--ocean); }
+.guide-list { background: white; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+.guide-item { padding: 22px 26px; }
+.guide-item + .guide-item { border-top: 1px solid var(--line); }
+.guide-item summary { cursor: pointer; font-size: 1.1rem; font-weight: 600; }
+.guide-item p { max-width: 78ch; color: var(--muted); }
+@media(max-width: 760px) {
+ .explore-hero { padding-top: 210px; }
+ .explore-hero > img { width: 100%; height: 230px; }
+ .explore-hero::after { background: linear-gradient(0deg,#eaf3ff 53%,transparent 76%); }
+ .explore-hero-copy { padding: 22px; }
+ .destination-grid,.template-grid { grid-template-columns: 1fr; }
+ .explore-destination-card p { min-height: auto; }
+ .explore-section-heading { align-items: flex-start; flex-direction: column; }
+ .explore-section { padding-top: 38px; }
+}
+
+@font-face {
+  font-family: 'Be Vietnam Pro';
+  src: url('/fonts/be-vietnam-pro-regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Be Vietnam Pro';
+  src: url('/fonts/be-vietnam-pro-bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 600 800;
+  font-display: swap;
+}
+:root { font-family: 'Be Vietnam Pro', 'Segoe UI', sans-serif; }
+h1,h2,h3 { letter-spacing: -.035em; line-height: 1.3; }
+.explore-destination-card { position: relative; }
+.explore-destination-card h3 { margin-top: 10px; }
+.explore-destination-card a::after { content: ''; position: absolute; inset: 0; }
+.explore-destination-card:focus-within { outline: 3px solid var(--ocean); outline-offset: 4px; }
+.province-art { height: 230px; background: #edf5ff; position: relative; overflow: hidden; }
+.province-art svg { width: 100%; height: 100%; }
+.province-art > span { position: absolute; top: 18px; left: 22px; font-size: .85rem; color: var(--ocean); }
+.province-art-hue { background: #e6effc; }
+.province-heading { margin: 32px 0; max-width: 850px; }
+.province-heading h1 { font-size: clamp(2rem,4vw,3.4rem); }
+.province-days { display: grid; gap: 24px; margin: 28px 0; }
+.province-days li { padding: 12px 0; }
+
+.brand { gap: 10px; letter-spacing: -.05em; }
+.brand-mark { display: block; flex: 0 0 auto; width: 44px; height: 44px; }
+.brand-wordmark { display: inline-flex; align-items: center; gap: 7px; font-size: 24px; font-weight: 700; }
+.brand-ai { background: #e8f2ff; color: #256bb7; border: 1px solid #cde2fc; padding: 2px 5px; border-radius: 6px; font-size: 10px; letter-spacing: .02em; line-height: 1.5; }
+.template-card { overflow: hidden; }
+.template-card > img { display: block; width: calc(100% + 52px); max-width: none; height: 175px; object-fit: cover; margin: -26px -26px 22px; }
+.province-cover { margin-top: 24px; height: clamp(220px,32vw,390px); border-radius: 20px; overflow: hidden; }
+.province-cover img { width: 100%; height: 100%; object-fit: cover; }
+@media(max-width: 760px) { .brand-wordmark { font-size: 21px; gap: 5px; } .brand-mark { width: 36px; height: 36px; } .brand { gap: 7px; } }
+@media(max-width: 360px) { .brand-wordmark { font-size: 18px; } .brand-mark { width: 32px; height: 32px; } }
+
+/* Vietnam silhouette and a continuous Vietnamese wordmark. */
+.brand-mark { width: 42px; height: 48px; }
+.brand-wordmark { gap: 0; font-family: 'Be Vietnam Pro', sans-serif; font-size: 25px; font-weight: 700; letter-spacing: -.065em; color: #205ea4; }
+.brand-ai { padding: 0; border: 0; background: transparent; border-radius: 0; color: #4b93d8; font: inherit; letter-spacing: inherit; }
+@media(max-width:760px) { .brand-mark { width: 35px; height: 40px; } .brand-wordmark { font-size: 22px; } }
+@media(max-width:360px) { .brand-mark { width: 30px; height: 35px; } .brand-wordmark { font-size: 19px; } }
+
+.journey-summary { margin: 24px 0; }
+.journey-stages { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; margin: 20px 0; }
+.journey-stages > div { background: var(--color-soft); padding: 20px; border-radius: 12px; }
+.journey-stages p { margin: 10px 0; }
+.journey-stages small { color: var(--muted); }
+@media(max-width:760px) { .journey-stages { grid-template-columns: 1fr; } }

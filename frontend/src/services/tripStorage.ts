@@ -70,4 +70,7 @@ export function saveVersion(version: PlanVersion): StorageResult {
 }
 export function resetDemoStorage(): void {
   localStorage.removeItem(STORAGE_KEY);
+  for (const plan of allowed) {
+    localStorage.removeItem('smarttrip.journey.' + encodeURIComponent(plan.tripId) + '.' + encodeURIComponent(plan.versionId));
+  }
 }
