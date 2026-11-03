@@ -4,7 +4,7 @@ import { getFixturePlan, scenarios } from "../services/mockTravelService";
 import { loadVersions, saveVersion } from "../services/tripStorage";
 import { dateLabel } from "../domain/types";
 import { DayTimeline } from "../components/DayTimeline";
-import { RouteDiagram } from "../components/RouteDiagram";
+import { PlannerMap } from "../components/PlannerMap";
 import { BudgetSummary } from "../components/BudgetSummary";
 import { ConstraintReport } from "../components/ConstraintReport";
 import { DestinationPhoto } from "../components/DestinationPhoto";
@@ -64,30 +64,6 @@ export function Itinerary() {
       <p role="status" className={message ? "notice" : ""}>
         {message}
       </p>
-      <div className="actions">
-        {plan.versionId === "v1" ? (
-          <Link
-            className="button secondary"
-            to={"/trips/danang-demo/versions/v2" + search}
-          >
-            Xem mẫu điều chỉnh: bỏ Sơn Trà
-          </Link>
-        ) : (
-          <Link
-            className="button secondary"
-            to={"/trips/danang-demo/versions/v1" + search}
-          >
-            Xem phiên bản trước
-          </Link>
-        )}
-        {scenario.baseline ? (
-          <Link className="button secondary" to="/compare/standard">
-            So sánh hai lịch mẫu
-          </Link>
-        ) : null}
-      </div>
-      <p className="fine">{scenario.result.reason}</p>
-      <JourneySummary plan={plan} search={search} />
       <div className="day-buttons" aria-label="Chọn ngày">
         {plan.days.map((d, i) => (
           <button
@@ -100,13 +76,31 @@ export function Itinerary() {
           </button>
         ))}
       </div>
+      <div className="itinerary-destination-layout">
+        <DayTimeline day={day} />
+        <aside className="itinerary-map-column">
+          <PlannerMap placeIds={day.visits.map((visit) => visit.placeId)} destination={`${plan.request.destination} · Ngày ${index + 1}`} />
+        </aside>
+      </div>
+      <div className="actions">
+        {plan.versionId === "v1" ? (
+          <Link className="button secondary" to={"/trips/danang-demo/versions/v2" + search}>
+            Xem mẫu điều chỉnh: bỏ Sơn Trà
+          </Link>
+        ) : (
+          <Link className="button secondary" to={"/trips/danang-demo/versions/v1" + search}>
+            Xem phiên bản trước
+          </Link>
+        )}
+        {scenario.baseline ? <Link className="button secondary" to="/compare/standard">So sánh hai lịch mẫu</Link> : null}
+      </div>
+      <p className="fine">{scenario.result.reason}</p>
+      <JourneySummary plan={plan} search={search} />
       <div className="two-columns itinerary">
         <div>
-          <DayTimeline day={day} />
           <ConstraintReport checks={scenario.result.checks} />
         </div>
         <aside>
-          <RouteDiagram day={day} />
           <BudgetSummary plan={plan} />
           <p className="fine">
             Snapshot {plan.snapshotId} · Giá và giờ hoạt động giả lập.

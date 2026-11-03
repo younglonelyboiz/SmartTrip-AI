@@ -10,6 +10,7 @@ import type { TravelRequest } from "../domain/types";
 import { DestinationPhoto } from "../components/DestinationPhoto";
 import { placePhotos } from "../domain/photos";
 import { Icon } from "../components/Icon";
+import { PlannerMap } from "../components/PlannerMap";
 export function Planner() {
   const [params] = useSearchParams();
   const initialScenario = scenarios.find(s => s.id === params.get("scenario")) ?? scenarios[0];
@@ -195,7 +196,9 @@ export function Planner() {
             {message}
           </div>
         </form>
-        <aside className="panel candidates-panel">
+        <aside className="planner-side-column">
+        <PlannerMap placeIds={req.mandatoryPlaceIds} destination={req.destination} />
+        <div className="panel candidates-panel">
           <h2>Điểm dừng ứng viên</h2>
           <p className="muted">
             Điểm phù hợp và thông số giả lập, chưa chạy hệ gợi ý.
@@ -265,6 +268,7 @@ export function Planner() {
               Giữ Mỹ Khê ngày 10/12 lúc 08:20 như phiên bản trước.
             </p>
           ) : null}
+        </div>
         </aside>
       </div>
     </>
