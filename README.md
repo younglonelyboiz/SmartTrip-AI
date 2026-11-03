@@ -134,98 +134,53 @@ Chi tiết sitemap, vòng đời run và phiên bản: [04-INFORMATION_ARCHITECT
 
 ## 4. Giao diện Người dùng & Trải nghiệm (UI/UX)
 
-### Bắt đầu: Khám phá điểm đến và lộ trình tham khảo
 
-Trang chủ `/` giới thiệu Đà Nẵng, Hà Nội và Huế; chọn thẻ để mở ngay lộ trình. Không cần chọn hồ sơ demo trước khi khám phá. Đà Nẵng dùng fixture demo chi tiết; Hà Nội và Huế là lịch tham khảo minh họa, chưa kiểm tra tuyến, giờ mở cửa hoặc chi phí. Lịch mẫu dẫn sang Planner và cẩm nang mở rộng để đọc tại chỗ.
+### 4.1. Khám phá điểm đến
 
-<details>
+Trang chủ `/` có slideshow tự chuyển ảnh, nút chuyển trái/phải nhỏ gọn, các điểm đến và lịch trình mẫu. Chọn Đà Nẵng để mở lịch demo; Hà Nội và Huế có lộ trình tham khảo riêng. Người dùng có thể khám phá trước khi chọn hồ sơ demo.
+
+<details open>
 <summary>Xem giao diện: Khám phá điểm đến</summary>
 
-![Khám phá điểm đến](docs/uxui_screenshots/happy_00_explore.png)
+![Trang khám phá với slideshow và các điểm đến](docs/uxui_screenshots/happy_00_explore.png)
 
 </details>
 
-<details>
-<summary>Xem giao diện: Lộ trình tham khảo Huế</summary>
+### 4.2. Lập kế hoạch chuyến đi
 
-![Lộ trình tham khảo Huế](docs/uxui_screenshots/happy_07_hue.png)
+Trang `/planner` cho nhập điểm xuất phát, phương tiện, thời gian đến–về, ngày đi, số người, ngân sách và sở thích. Danh sách ứng viên cho chọn điểm bắt buộc/loại trừ; bản đồ hiển thị các điểm đang chọn.
 
-</details>
+Prototype kiểm tra giờ đến–về có phù hợp lịch mẫu và thông báo khi yêu cầu ngoài fixture; chưa tự sắp lại lịch hay lấy giá qua API.
 
-
-### Happy Case 1: Chọn hồ sơ demo
-
-Chọn hồ sơ khách du lịch hoặc quản trị viên tại `/demo-login` khi muốn đổi vai trò mô phỏng; không yêu cầu tài khoản hay mật khẩu thật. Đây không còn là trang mở đầu của ứng dụng.
-
-<details>
-<summary>Xem giao diện: Chọn hồ sơ demo</summary>
-
-![Chọn hồ sơ demo](docs/uxui_screenshots/happy_01_login.png)
-
-</details>
-
-### Happy Case 2: Lập kế hoạch chuyến đi
-
-Nhập điểm xuất phát, phương tiện, giờ đến điểm đến ngày đầu, giờ rời điểm đến ngày cuối, thời gian mỗi chặng nối và dự trù đi–về/chặng nối cả nhóm. Sau đó chọn ngày đi, số người, ngân sách và điểm bắt buộc/loại trừ.
-
-FE kiểm tra giờ đến cộng thời gian nối phải kịp lịch ngày đầu; lịch ngày cuối phải kết thúc kịp giờ rời điểm đến trừ thời gian nối. Nếu xung đột, FE báo lý do; chưa tự sắp lại lịch hoặc tra cứu chuyến vận tải. Lịch tham quan dùng fixture tương ứng; yêu cầu ngoài mẫu được thông báo chưa hỗ trợ.
-
-<details>
+<details open>
 <summary>Xem giao diện: Lập kế hoạch</summary>
 
-![Lập kế hoạch](docs/uxui_screenshots/happy_02_planner.png)
+![Form lập kế hoạch cạnh bản đồ và các điểm dừng ứng viên](docs/uxui_screenshots/happy_02_planner.png)
 
 </details>
 
-### Happy Case 3: Chi tiết lịch trình và kiểm tra ràng buộc
+### 4.3. Lịch trình theo ngày và bản đồ điểm đến
 
-Timeline từng ngày bắt đầu và kết thúc tại nơi lưu trú ở Đà Nẵng, kèm sơ đồ tuyến mô phỏng và kiểm tra ràng buộc.
+Trang `/trips/:tripId/versions/:versionId` hiển thị **timeline bên trái, bản đồ Leaflet/OpenStreetMap bên phải**. Ghim đánh số theo thứ tự ghé; chọn ngày để cập nhật lịch và bản đồ, bấm tên điểm để mở thông tin vị trí.
 
-Khi mở từ Planner, phần toàn hành trình hiển thị điểm đi → Đà Nẵng → điểm đi và các mốc đến–về. Nếu mở lịch mẫu trực tiếp mà chưa nhập thông tin đi–về, màn hình hiển thị hướng dẫn bổ sung.
+Thông tin đi–về, dự toán và báo cáo ràng buộc nằm dưới khu vực tham quan. Giá và lịch vẫn là fixture; vị trí tham khảo và tuyến nét đứt là đường nối minh họa, chưa phải chỉ đường thực tế. Khoản đi–về để trống được hiểu là chưa biết chi phí.
 
-Dự toán tại điểm đến đã gồm lưu trú, ăn uống, tham quan và di chuyển **giả lập**. Dự trù đi–về/chặng nối do người dùng nhập được cộng riêng; để trống nghĩa là chưa biết, không phải miễn phí. Tổng vượt ngân sách nhóm có cảnh báo; không coi các con số này là báo giá thực tế.
+<details open>
+<summary>Xem giao diện: Lịch trình và bản đồ</summary>
 
-<details>
-<summary>Xem giao diện: Chi tiết lịch trình</summary>
-
-![Chi tiết lịch trình](docs/uxui_screenshots/happy_03_itinerary.png)
+![Lịch trình theo ngày bên trái và bản đồ thật với các điểm ghé đánh số bên phải](docs/uxui_screenshots/happy_03_itinerary.png)
 
 </details>
 
-### Happy Case 4: So sánh hai lịch trình mẫu
+### Các màn hình hỗ trợ
 
-Hai phương án dùng cùng request và snapshot để minh họa khác biệt về thứ tự ghé, thời gian đi và chi phí. Đây chưa phải kết quả benchmark thuật toán.
+- `/trips`: lưu và mở lại phiên bản trong localStorage; thông tin đi–về được lưu theo chuyến/phiên bản.
+- `/compare/:scenarioId`: so sánh hai lịch mẫu cùng request và snapshot; chưa phải benchmark thuật toán.
+- `/demo-login`: chọn hồ sơ traveler/admin mô phỏng.
+- `/admin`: admin demo xem danh mục và nguồn; chưa cập nhật dữ liệu qua backend.
+- `/diem-den/:destinationId`: xem lộ trình tham khảo tại Hà Nội hoặc Huế.
 
-<details>
-<summary>Xem giao diện: So sánh lịch mẫu</summary>
-
-![So sánh lịch mẫu](docs/uxui_screenshots/happy_04_comparison.png)
-
-</details>
-
-### Happy Case 5: Quản trị danh mục và nguồn dữ liệu
-
-Danh mục địa điểm và provenance phục vụ kiểm tra dữ liệu; giao diện chỉ xem, chưa có API quản trị thật.
-
-<details>
-<summary>Xem giao diện: Quản trị nguồn</summary>
-
-![Quản trị nguồn](docs/uxui_screenshots/happy_05_admin.png)
-
-</details>
-
-### Happy Case 6: Danh sách chuyến đi và phiên bản đã lưu
-
-Mở lại kế hoạch và phiên bản điều chỉnh từ localStorage, giữ nguyên phiên bản trước. Thông tin đi–về được lưu riêng theo chuyến/phiên bản khi bấm lưu; xóa dữ liệu demo cũng xóa thông tin này.
-
-<details>
-<summary>Xem giao diện: Chuyến đi của bạn</summary>
-
-![Chuyến đi của bạn](docs/uxui_screenshots/happy_06_trips.png)
-
-</details>
-
-Chi tiết thiết kế: [05-UX_UI_DESIGN.md](docs/05-UX_UI_DESIGN.md). Cách chạy FE, kịch bản demo và ghi nhận kiểm tra: [frontend/README.md](frontend/README.md).
+Cách chạy frontend và kịch bản demo: [frontend/README.md](frontend/README.md). Chụp lại bộ ảnh bằng `cd frontend && node scripts/capture-readme.mjs`; script tự mở máy chủ cục bộ hoặc dùng `SMARTTRIP_URL` nếu đã có server.
 
 ---
 

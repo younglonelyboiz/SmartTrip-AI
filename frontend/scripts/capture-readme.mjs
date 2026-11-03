@@ -1,86 +1,77 @@
 import { chromium } from "playwright";
 import { mkdir } from "node:fs/promises";
-const browser = await chromium.launch({
-  headless: true,
-  ...(process.env.SMARTTRIP_CHROME
-    ? { executablePath: process.env.SMARTTRIP_CHROME }
-    : {}),
-});
-const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
-const base = process.env.SMARTTRIP_URL || "http://127.0.0.1:5174";
-const dir = "../docs/uxui_screenshots";
-await mkdir(dir, { recursive: true });
+import { fileURLToPath } from "node:url";
+
+const dir = fileURLToPath(new URL("../../docs/uxui_screenshots/", import.meta.url));
+let server;
+let browser;
 try {
-  for (const [path, file] of [
-    ["/", "happy_00_explore"],
-    ["/diem-den/hue", "happy_07_hue"],
-    ["/demo-login", "happy_01_login"],
-    ["/planner", "happy_02_planner"],
-    ["/trips/danang-demo/versions/v1", "happy_03_itinerary"],
-    ["/compare/standard", "happy_04_comparison"],
-  ]) {
-    await page.goto(base + path);
-    await page.locator("h1").waitFor();
-    await page.evaluate(() => document.fonts.ready);
-    await page.locator("main").focus();
-    await page.locator("img").evaluateAll(async (images) => {
-      await Promise.all(
-        images.map(async (image) => {
-          image.loading = "eager";
-          await image.decode();
-        }),
-      );
+  let base = process.env.SMARTTRIP_URL;
+  if (!base) {
+    const { createServer } = await import("vite");
+    server = await createServer({
+      root: fileURLToPath(new URL("../", import.meta.url)),
+      server: { host: "127.0.0.1", port: 0 },
     });
-    await page.screenshot({ path: `${dir}/${file}.png`, fullPage: true });
+    await server.listen();
+    base = server.resolvedUrls.local[0];
   }
-  await page.goto(base + "/demo-login");
-  await page.getByRole("button", { name: "Xem dữ liệu quản trị" }).click();
-  await page
-    .getByRole("heading", { name: "Danh mục và nguồn dữ liệu" })
-    .waitFor();
-  await page.locator("main").focus();
-  await page.locator("img").evaluateAll(async (images) => {
-    await Promise.all(
-      images.map(async (image) => {
+  browser = await chromium.launch({
+    headless: true,
+    ...(process.env.SMARTTRIP_CHROME ? { executablePath: process.env.SMARTTRIP_CHROME } : {}),
+  });
+  const page = await browser.newPage({ viewport: { width: 1440, height: 1100 }, reducedMotion: "reduce" });
+  const errors = [];
+  page.on("pageerror", error => errors.push(error.message));
+  await mkdir(dir, { recursive: true });
+
+  async function prepare(path, map = false) {
+    await page.goto(new URL(path, base).href);
+    await page.locator("h1").waitFor();
+    await page.evaluate(async () => {
+      await document.fonts.ready;
+      await Promise.all([...document.querySelectorAll("img:not(.leaflet-tile)")].map(async image => {
         image.loading = "eager";
         await image.decode();
-      }),
-    );
-  });
-  await page.screenshot({ path: `${dir}/happy_05_admin.png`, fullPage: true });
-  await page.goto(base + "/trips/danang-demo/versions/v1");
-  await page.getByRole("button", { name: "Lưu phiên bản" }).click();
-  await page.goto(base + "/trips/danang-demo/versions/v2");
-  await page.getByRole("button", { name: "Lưu phiên bản" }).click();
-  await page.goto(base + "/trips");
-  await page.getByRole("link", { name: "Đà Nẵng · v2" }).waitFor();
-  await page.locator("main").focus();
-  await page.locator("img").evaluateAll(async (images) => {
-    await Promise.all(
-      images.map(async (image) => {
-        image.loading = "eager";
-        await image.decode();
-      }),
-    );
-  });
-  await page.screenshot({ path: `${dir}/happy_06_trips.png`, fullPage: true });
-  await page.goto(base);
-  await page.evaluate(() => document.fonts.ready);
-  await page.locator("img").evaluateAll(images => Promise.all(images.map(async image => {image.loading = "eager"; await image.decode();})));
-  for (const [selector, name] of [[".explore-hero", "hero"], ["#diem-den", "destinations"], ["#lich-trinh-mau", "templates"], ["#cam-nang", "guides"]]) {
-    await page.locator(selector).screenshot({path: `${dir}/detail_${name}.png`});
+      }));
+    });
+    if (map) {
+      await page.locator(".leaflet-marker-icon").first().waitFor();
+      await page.waitForFunction(() => {
+        const tiles = [...document.querySelectorAll("img.leaflet-tile")];
+        return tiles.length > 0 && tiles.every(tile => tile.complete && tile.naturalWidth > 0 && Number(getComputedStyle(tile).opacity) === 1);
+      }, {}, { timeout: 45000 });
+    }
+    await page.locator("main").focus();
+    await page.evaluate(() => window.scrollTo(0, 0));
   }
-  await page.goto(base + "/planner");
-  await page.evaluate(() => document.fonts.ready);
-  await page.locator("img").evaluateAll(images => Promise.all(images.map(async image => {image.loading="eager";await image.decode();})));
-  await page.locator(".planner-layout").screenshot({path: `${dir}/detail_planner.png`});
-  await page.goto(base + "/planner");
-  await page.getByLabel("Dự trù đi–về và chặng nối cả nhóm (VND)").fill("3000000");
-  await page.getByRole("button", {name: "Xem kết quả mock"}).click();
-  await page.locator(".journey-summary").waitFor();
-  await page.evaluate(() => document.fonts.ready);
-  await page.locator(".journey-summary").screenshot({path: `${dir}/detail_journey.png`});
-  console.log("PASS: refreshed UI screenshots, presentation details and full journey");
+
+  await prepare("/");
+  // Select the opening image using the actual carousel control.
+  const active = await page.locator(".explore-hero-slide").evaluateAll(slides => slides.findIndex(slide => slide.classList.contains("is-active")));
+  for (let i = 0; i < active; i++) await page.getByRole("button", { name: "Ảnh trước", exact: true }).click();
+  const hero = await page.locator(".explore-hero").boundingBox();
+  const destinations = await page.locator("#diem-den").boundingBox();
+  await page.screenshot({
+    path: `${dir}/happy_00_explore.png`, animations: "disabled", fullPage: true,
+    clip: { x: 76, y: hero.y - 16, width: 1288, height: Math.ceil(destinations.y + destinations.height - hero.y + 32) },
+  });
+
+  await prepare("/planner", true);
+  await page.locator("main").screenshot({ path: `${dir}/happy_02_planner.png`, animations: "disabled" });
+
+  await prepare("/trips/danang-demo/versions/v1?origin=H%C3%A0+N%E1%BB%99i&mode=M%C3%A1y+bay&arrival=07%3A00&departure=19%3A00&transfer=60&travelCost=", true);
+  const layout = await page.locator(".itinerary-destination-layout").boundingBox();
+  const heading = await page.locator(".itinerary-heading").boundingBox();
+  // Capture the complete daily timeline and geographic map together.
+  const top = Math.max(0, heading.y - 18);
+  await page.screenshot({
+    path: `${dir}/happy_03_itinerary.png`, animations: "disabled", fullPage: true,
+    clip: { x: 76, y: top, width: 1288, height: Math.ceil(layout.y + layout.height - top + 8) },
+  });
+  if (errors.length) throw new Error(errors.join("\n"));
+  console.log("Captured 3 current UI screenshots; map tiles loaded; no page errors.");
 } finally {
-  await browser.close();
+  await browser?.close();
+  await server?.close();
 }

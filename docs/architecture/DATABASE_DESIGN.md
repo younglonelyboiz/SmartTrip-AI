@@ -91,12 +91,3 @@ erDiagram
 
 Snapshot payload là bản sao dữ kiện chuẩn hóa tại lúc publish, không join dữ liệu live để tái dựng lịch cũ. Travel edges/fixed costs nằm trong payload; tương lai tách bảng nếu cần truy vấn khối lượng lớn. Giá theo nhiều đêm được chuẩn hóa thành line item tổng đúng số đêm trước đưa vào solver.
 
-## Toàn vẹn và ownership
-Transaction ghi run + version + itinerary cùng nhau sau validator; không tạo version nếu chưa có nghiệm. API lấy trip.owner_id và kiểm tra ở mọi đường dẫn con. parent_version_id phải cùng trip; snapshot của result phải khớp run. Composite FK hoặc transaction validation ngăn parent/run thuộc trip khác. Unique version_no được cấp trong transaction có khóa hàng trip; xung đột trả 409, không last-write-wins.
-
-Không UPDATE/DELETE snapshot đã tham chiếu trong luồng thông thường; điều chỉnh tạo version mới. Admin chỉnh catalog chỉ ảnh hưởng snapshot tương lai. Chặn sửa version ở application và DB permissions/trigger khi triển khai. Lưu giải thích xung đột trong run, không đưa plan vi phạm vào trip_versions.
-
-## Index, retention và bảo vệ
-Index trips(owner_id,created_at), trip_versions(trip_id,version_no), optimization_runs(trip_id,started_at), price_records(place_id,service_date,recorded_at), opening_windows(place_id,service_date), share_links(token_hash). Chỉ thêm JSONB GIN nếu workload chứng minh cần.
-
-Password hash dùng thuật toán phù hợp như Argon2id khi triển khai, không lưu password; không log token hoặc yêu cầu nhạy cảm nguyên bản. Retention dữ liệu cá nhân cần chính sách thống nhất trước production; xóa tài khoản phải thu hồi share và xử lý trips/snapshots liên quan, không đặt thời hạn pháp lý giả định. Dữ liệu nghiên cứu nên khử định danh trước export. FE localStorage chỉ chứa dữ liệu demo, có nút xóa riêng namespace.

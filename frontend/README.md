@@ -73,7 +73,7 @@ Kiểm tra ngày 02/11/2026, Node 26.8.1:
 | Mermaid | Parse thành công 13 sơ đồ Mermaid trong Chromium; mind map dùng ảnh người dùng cung cấp |
 | Trình duyệt | Pass demo chính, so sánh, conflict, timeout, unsupported, reload v1/v2, admin, not-found |
 | Responsive/keyboard | Không tràn ngang tại 390px ở các route được kiểm tra; skip link và reduced motion được kiểm tra, không phải audit WCAG đầy đủ |
-| Ảnh UI/UX | 8 ảnh màn hình dùng trong README tại docs/uxui_screenshots |
+| Ảnh UI/UX | 3 ảnh chụp UI hiện tại (03/11/2026): khám phá, lập kế hoạch, lịch trình/bản đồ tại docs/uxui_screenshots |
 
 Kiểm tra browser dùng Chromium có sẵn và server localhost. Snapshot/fixture check không phải solver benchmark. Reviewer đã rà và các lỗi quan trọng về khóa prefix, provenance từng dữ kiện và metadata result đã được sửa.
 
