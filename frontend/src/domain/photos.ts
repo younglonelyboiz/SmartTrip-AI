@@ -35,6 +35,13 @@ export const photos = {
     file: "Huyen_Khong_Cave_1.jpg",
     position: "center 60%",
   },
+  haGiang: {
+    src: "/images/ha-giang-ma-pi-leng.png",
+    alt: "Đèo Mã Pí Lèng và dòng sông Nho Quế giữa núi đá Hà Giang",
+    title: "Đèo Mã Pí Lèng, Hà Giang",
+    file: "Ảnh minh họa được tạo bằng AI",
+    position: "center 54%",
+  },
 } as const;
 export type PhotoKey = keyof typeof photos;
 export const placePhotos: Record<string, PhotoKey | undefined> = {
