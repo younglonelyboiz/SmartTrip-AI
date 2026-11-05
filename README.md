@@ -33,18 +33,33 @@ Chi tiết phạm vi, tính năng, nguồn dữ liệu dự kiến và phân k�
 ### 2.1 Sơ đồ Use Case Tổng thể (Use Case Diagram)
 
 ```mermaid
-flowchart LR
- G[Guest] --> U2[UC-02 Xem danh mục]
- T[Traveler] --> U1[UC-01 Hồ sơ]
- T --> U3[UC-03 Nhập yêu cầu]
- T --> U4[UC-04 Lập kế hoạch]
- T --> U5[UC-05 Xem và so sánh]
- T --> U6[UC-06 Điều chỉnh]
- T --> U7[UC-07 Lưu phiên bản]
- T --> U9[UC-09 Chia sẻ và phản hồi]
- A[Admin] --> U8[UC-08 Quản trị nguồn]
- U3 --> U4
- U4 --> O[Optimization Engine]
+flowchart TB
+    subgraph roles["Vai trò"]
+        direction LR
+        guest([Guest])
+        traveler([Traveler])
+        admin([Admin])
+    end
+
+    subgraph system["SmartTripAI — Ranh giới hệ thống"]
+        direction LR
+        guestCases["<b>Guest</b><br/><br/>UC02 Tra cứu địa điểm<br/>Xem lịch được chia sẻ bằng link hợp lệ"]
+        travelerCases["<b>Traveler</b><br/><br/>UC01 Hồ sơ và sở thích · UC02 Tra cứu địa điểm<br/>UC03 Nhập yêu cầu · UC04 Lập kế hoạch<br/>UC05 Xem và so sánh · UC06 Điều chỉnh<br/>UC07 Lưu phiên bản · UC09 Chia sẻ và phản hồi"]
+        adminCases["<b>Admin</b><br/><br/>UC02 Tra cứu địa điểm<br/>Quản lý chuyến đi của chính mình<br/>UC08 Quản trị dữ liệu và nguồn<br/>Xem vận hành đã khử dữ liệu nhạy cảm"]
+    end
+
+    guest --> guestCases
+    traveler --> travelerCases
+    admin --> adminCases
+
+    classDef actor fill:#666,color:#fff,stroke:#333
+    classDef primary fill:#1168bd,color:#fff,stroke:#0b4f9e
+    classDef standard fill:#3a7bd5,color:#fff,stroke:#245fa8
+    class guest,traveler,admin actor
+    class travelerCases primary
+    class guestCases,adminCases standard
+    style roles fill:#fff,stroke:#bbb,stroke-dasharray:5 5
+    style system fill:#f8fbff,stroke:#1168bd,stroke-dasharray:5 5
 ```
 
 Các use case bao gồm hồ sơ, danh mục, nhập yêu cầu, lập lịch, kiểm tra kết quả, điều chỉnh, lưu phiên bản và quản trị nguồn. Mỗi use case có tiền/hậu điều kiện, luồng chính và luồng ngoại lệ.
@@ -97,36 +112,53 @@ Backend target phải thực thi ownership và quyền ở API/DB. Admin không 
 ### 3.1 Sơ đồ Phân quyền Vai trò tới Màn hình (Role-to-Screen Mapping)
 
 ```mermaid
-flowchart LR
-    T[Traveler demo] --> E["/ — Khám phá"]
-    T --> D["/diem-den/:destinationId"]
-    T --> L["/demo-login"]
-    T --> TR["/trips"]
-    T --> P["/planner"]
-    T --> I["/trips/:tripId/versions/:versionId"]
-    T --> C["/compare/:scenarioId"]
-    A[Admin demo] --> E
-    A --> D
-    A --> L
-    A --> TR
-    A --> P
-    A --> I
-    A --> C
-    A --> AD["/admin"]
+flowchart TB
+    subgraph roles["Vai trò"]
+        direction LR
+        guest([Guest])
+        traveler([Traveler])
+        admin([Admin])
+    end
+
+    subgraph system["SmartTripAI — Màn hình và quyền truy cập"]
+        direction LR
+        guestScreens["<b>Guest</b><br/><br/>1. Khám phá: /<br/>2. Điểm đến: /diem-den/:destinationId<br/>3. Lịch trình chia sẻ: link hợp lệ, chỉ xem"]
+        travelerScreens["<b>Traveler</b><br/><br/>1. Khám phá: / và /diem-den/:destinationId<br/>2. Hồ sơ demo: /demo-login<br/>3. Chuyến đi: /trips<br/>4. Lập kế hoạch: /planner<br/>5. Lịch trình: /trips/:tripId/versions/:versionId<br/>6. So sánh: /compare/:scenarioId<br/>7. Lịch trình chia sẻ: link hợp lệ, chỉ xem<br/><br/>Chỉ quản lý chuyến của mình; chuyến người khác chỉ xem qua link hợp lệ"]
+        adminScreens["<b>Admin</b><br/><br/>1. Khám phá: / và /diem-den/:destinationId<br/>2. Hồ sơ demo: /demo-login<br/>3. Chuyến đi: /trips và /planner<br/>4. Lịch trình: /trips/:tripId/versions/:versionId<br/>5. So sánh: /compare/:scenarioId<br/>6. Quản trị dữ liệu: /admin<br/>7. Vận hành đã khử dữ liệu: target, chưa triển khai<br/><br/>Chỉ xem chuyến có quyền sở hữu hoặc link chia sẻ hợp lệ"]
+    end
+
+    guest --> guestScreens
+    traveler --> travelerScreens
+    admin --> adminScreens
+
+    classDef actor fill:#666,color:#fff,stroke:#333
+    classDef guestStyle fill:#3a7bd5,color:#fff,stroke:#245fa8
+    classDef travelerStyle fill:#1168bd,color:#fff,stroke:#0b4f9e
+    classDef adminStyle fill:#8a5a13,color:#fff,stroke:#68420d
+    class guest,traveler,admin actor
+    class guestScreens guestStyle
+    class travelerScreens travelerStyle
+    class adminScreens adminStyle
+    style roles fill:#fff,stroke:#bbb,stroke-dasharray:5 5
+    style system fill:#f8fbff,stroke:#1168bd,stroke-dasharray:5 5
 ```
+
+Guest chỉ xem nội dung công khai hoặc lịch được chia sẻ; Traveler và Admin dùng màn hình chuyến đi theo quyền sở hữu/chia sẻ. Màn hình vận hành Admin và link chia sẻ là phạm vi target, chưa có route riêng trong prototype.
 
 ### 3.2 Bảng Ma trận Màn hình theo Vai trò
 
-| Tuyến đường | Màn hình | Chức năng chính | Traveler demo | Admin demo |
+| Tuyến đường | Màn hình | Guest | Traveler demo | Admin demo |
 |---|---|---|---|---|
-| `/` | Khám phá | Thẻ tỉnh/thành, lịch mẫu và cẩm nang | Có | Có |
-| `/diem-den/:destinationId` | Lộ trình tham khảo | Hà Nội và Huế; nội dung minh họa theo ngày | Có | Có |
-| `/demo-login` | Chọn hồ sơ | Chuyển vai trò mô phỏng | Có | Có |
-| `/trips` | Chuyến đi của bạn | Chuyến mẫu, phiên bản lưu trên thiết bị | Có | Có |
-| `/planner` | Lập kế hoạch | Điểm đi, chặng đi–về, dự trù và ràng buộc tại điểm đến | Có | Có |
-| `/trips/:tripId/versions/:versionId` | Chi tiết lịch trình | Toàn hành trình nếu có dữ liệu đi–về, timeline, dự toán và kiểm tra | Có | Có |
-| `/compare/:scenarioId` | So sánh lịch mẫu | Baseline/proposed cùng request và snapshot | Có | Có |
-| `/admin` | Quản trị dữ liệu | Xem danh mục và nguồn mock | Không | Có |
+| `/` | Khám phá | Điểm đến, lịch mẫu và cẩm nang | Có | Có | Có |
+| `/diem-den/:destinationId` | Lộ trình tham khảo | Lộ trình minh họa theo ngày | Có | Có | Có |
+| `/demo-login` | Chọn hồ sơ demo | Chuyển vai trò mô phỏng | Không | Có | Có |
+| `/trips` | Chuyến đi | Chuyến mẫu và phiên bản lưu trên thiết bị | Không | Có | Có |
+| `/planner` | Lập kế hoạch | Nhập hành trình, ngân sách và ràng buộc | Không | Có | Có |
+| `/trips/:tripId/versions/:versionId` | Chi tiết lịch trình | Timeline, dự toán và kiểm tra; cần quyền sở hữu hoặc link | Link hợp lệ | Có quyền | Có quyền |
+| `/compare/:scenarioId` | So sánh lịch mẫu | Baseline/proposed cùng request và snapshot | Không | Có | Có |
+| `/admin` | Quản trị dữ liệu | Xem danh mục và nguồn mock | Không | Không | Có |
+| Màn hình vận hành đã khử dữ liệu | Vận hành | Chỉ target, chưa triển khai | Không | Không | Target |
+| Link chia sẻ lịch trình | Xem lịch chỉ đọc | Chỉ target, chưa có route prototype riêng | Link hợp lệ | Link hợp lệ | Link hợp lệ |
 
 Chi tiết sitemap, vòng đời run và phiên bản: [04-INFORMATION_ARCHITECTURE.md](docs/04-INFORMATION_ARCHITECTURE.md).
 
@@ -327,6 +359,111 @@ erDiagram
 Các bảng chính: users, preferences, trips, trip_versions, optimization_runs, itinerary_items, places, opening_windows, price_records, data_sources, dataset_snapshots, feedback và share_links. Quan hệ parent version/run/snapshot phải cùng chuyến đi; không lưu plan vi phạm ràng buộc thành version khả thi.
 
 Chi tiết khóa, trường dữ liệu, tính nhất quán, index và retention: [DATABASE_DESIGN.md](docs/architecture/DATABASE_DESIGN.md).
+
+### 6.2 Core Class Diagram
+
+Class diagram mô tả các lớp target cho lập kế hoạch. `PlanVersion` là bất biến; replan tạo phiên bản con và giữ nguyên phiên bản trước.
+
+```mermaid
+classDiagram
+    direction TB
+
+    class TripsController {
+        +CreatePlanAsync(tripId, request) Task
+        +ReplanAsync(tripId, versionId, changes) Task
+    }
+    class ITripService {
+        <<interface>>
+        +CreatePlanAsync(tripId, request, actor) Task
+        +ReplanAsync(tripId, versionId, changes, actor) Task
+    }
+    class TripService {
+        +CreatePlanAsync(tripId, request, actor) Task
+        +ReplanAsync(tripId, versionId, changes, actor) Task
+    }
+    class Trip {
+        +string Id
+        +string OwnerId
+        +string Title
+    }
+    class TravelRequest {
+        +string Destination
+        +DateOnly StartDate
+        +DateOnly EndDate
+        +int PartySize
+        +long BudgetVnd
+        +string[] MandatoryPlaceIds
+        +string[] ExcludedPlaceIds
+    }
+    class OptimizationRun {
+        +string Id
+        +string SnapshotId
+        +SolverStatus Status
+    }
+    class PlanVersion {
+        +string Id
+        +string? ParentVersionId
+        +string SnapshotId
+        +long TotalCostVnd
+        +SolverStatus Status
+    }
+    class DatasetSnapshot {
+        +string Id
+        +Place[] Places
+        +TravelEdge[] Edges
+    }
+    class IOptimizationEngine {
+        <<interface>>
+        +OptimizeAsync(request, snapshot) Task
+    }
+    class IPlanValidator {
+        <<interface>>
+        +Validate(request, snapshot, plan) ValidationResult
+    }
+
+    TripsController --> ITripService
+    TripService ..|> ITripService
+    TripService --> IOptimizationEngine
+    TripService --> IPlanValidator
+    TripService --> Trip
+    TripService --> OptimizationRun
+    TripService --> PlanVersion
+    Trip "1" o-- "*" OptimizationRun
+    Trip "1" o-- "*" PlanVersion
+    PlanVersion "0..1" --> "0..1" PlanVersion : parent
+    PlanVersion --> DatasetSnapshot
+    PlanVersion --> TravelRequest
+```
+
+### 6.3 Core Sequence Diagrams
+
+**Tạo kế hoạch:** chỉ lưu phiên bản sau khi validator xác nhận lịch hợp lệ.
+
+```mermaid
+sequenceDiagram
+    actor Traveler
+    participant API as TripsController
+    participant Service as TripService
+    participant Engine as OptimizationEngine
+    participant Validator as PlanValidator
+    participant Store as PlanVersionRepository
+
+    Traveler->>API: CreatePlan(tripId, request)
+    API->>Service: CreatePlanAsync(request, actor)
+    Service->>Service: Check ownership and validate request
+    Service->>Engine: Optimize(request, snapshot)
+    Engine-->>Service: Candidate plan and status
+    Service->>Validator: Validate(candidate)
+    alt Plan valid
+        Validator-->>Service: Valid
+        Service->>Store: Save PlanVersion
+        Store-->>Service: Saved version
+        Service-->>Traveler: Plan result
+    else Invalid or no solution
+        Validator-->>Service: Failure/status
+        Service-->>Traveler: Explanation
+    end
+```
 
 ---
 
