@@ -1,5 +1,7 @@
 # SmartTripAI — Nền tảng du lịch thông minh
 
+Đánh giá thuật toán lập lịch offline: [phương pháp và kết quả benchmark](docs/BENCHMARK.md).
+
 Nền tảng hỗ trợ người dùng lập kế hoạch du lịch tự túc tại Việt Nam, kết hợp **Recommendation System**, **Optimization Engine** và **AI Travel Agent**. Hệ thống hướng đến lịch trình cá nhân hóa có thể kiểm tra theo thời gian, tuyến đường và ngân sách; người dùng có thể lưu và điều chỉnh khi nhu cầu thay đổi.
 
 > Phạm vi hiện tại: **bộ tài liệu phân tích–thiết kế và FE prototype dùng dữ liệu mock**. Backend, hệ gợi ý, AI Agent và thuật toán tối ưu chưa được triển khai thực tế.
