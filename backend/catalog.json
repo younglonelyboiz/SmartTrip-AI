@@ -1,0 +1,41 @@
+{
+  "source": {"name": "OpenStreetMap", "license": "ODbL-1.0", "attribution": "© OpenStreetMap contributors", "licenseUrl": "https://www.openstreetmap.org/copyright", "snapshotTimestamp": "2026-11-04T21:21:03Z"},
+  "destinations": {
+    "Hà Nội": [
+      {"osmId":"node/443033827","name":"Tượng đài Lý Thái Tổ","lat":21.0274885,"lon":105.854501,"tags":["lịch sử","văn hóa"]},
+      {"osmId":"node/445345255","name":"Nhà 48 phố Hàng Ngang","lat":21.0343278,"lon":105.8504388,"tags":["lịch sử","bảo tàng"]},
+      {"osmId":"node/1498111667","name":"Di Tích Lịch Sử Chùa Láng","lat":21.0234337,"lon":105.802772,"tags":["lịch sử","văn hóa"]},
+      {"osmId":"node/1716371376","name":"Ô Thuỵ Chương","lat":21.0395242,"lon":105.8284048,"tags":["lịch sử"]},
+      {"osmId":"node/2810302635","name":"Bảo tàng Binh chủng Thông tin liên lạc","lat":21.0303429,"lon":105.8266305,"tags":["lịch sử","bảo tàng"]},
+      {"osmId":"node/4489385889","name":"Chợ Đêm Hàng Đào – Đồng Xuân","lat":21.0335078,"lon":105.8509571,"tags":["văn hóa","ẩm thực"]},
+      {"osmId":"node/4499978190","name":"Bảo tàng Địa chất Việt Nam","lat":21.0235524,"lon":105.8587723,"tags":["bảo tàng"]},
+      {"osmId":"node/4742507123","name":"Đài Tưởng Niệm Vua Lê Thái Tổ","lat":21.0290553,"lon":105.8509582,"tags":["lịch sử","văn hóa"]},
+      {"osmId":"node/4927916321","name":"Tượng kỷ niệm chiến thắng B52","lat":21.0468303,"lon":105.8368305,"tags":["lịch sử"]},
+      {"osmId":"node/5406262022","name":"Đài quan sát Lotte Skywalk","lat":21.0322019,"lon":105.8123288,"tags":["ngắm cảnh"]}
+    ],
+    "Huế": [
+      {"osmId":"node/669249193","name":"Lăng Tự Đức","lat":16.4331813,"lon":107.5645857,"tags":["lịch sử","văn hóa"]},
+      {"osmId":"node/12411957519","name":"Lăng Dục Đức","lat":16.4510937,"lon":107.5931525,"tags":["lịch sử","văn hóa"]},
+      {"osmId":"node/2899189013","name":"Tử Cấm Thành","lat":16.4694914,"lon":107.577755,"tags":["lịch sử","văn hóa"]},
+      {"osmId":"node/5182931945","name":"Hoàng Thành Huế","lat":16.4689726,"lon":107.5781266,"tags":["lịch sử","văn hóa"]},
+      {"osmId":"node/4555464591","name":"Điềm Phùng Thį","lat":16.4578346,"lon":107.5842155,"tags":["bảo tàng","văn hóa"]},
+      {"osmId":"node/4555491489","name":"Tượng đài Phan Bội Châu","lat":16.46715,"lon":107.5898061,"tags":["lịch sử"]},
+      {"osmId":"node/6099306388","name":"Tượng đài vua Quang Trung","lat":16.4420037,"lon":107.5914458,"tags":["lịch sử"]},
+      {"osmId":"node/6533792207","name":"Đàn Xã Tắc","lat":16.4650415,"lon":107.5712089,"tags":["lịch sử","văn hóa"]},
+      {"osmId":"node/9960090217","name":"Đúc đồng Dương Xuân","lat":16.4532498,"lon":107.5632941,"tags":["văn hóa","làng nghề"]},
+      {"osmId":"node/13503143701","name":"Thanh Toan Bridge","lat":16.4667729,"lon":107.6427024,"tags":["lịch sử","văn hóa"]}
+    ],
+    "Đà Nẵng": [
+      {"osmId":"node/1036552571","name":"Đèo Hải Vân","lat":16.1874495,"lon":108.1307217,"tags":["thiên nhiên","ngắm cảnh"]},
+      {"osmId":"node/1758586662","name":"Thuỷ Sơn","lat":16.0043044,"lon":108.263527,"tags":["thiên nhiên","văn hóa"]},
+      {"osmId":"node/4172034499","name":"Non Nuoc Beach","lat":16.0205336,"lon":108.261744,"tags":["biển","thiên nhiên"]},
+      {"osmId":"node/4347089780","name":"My An Beach","lat":16.025095,"lon":108.2595335,"tags":["biển","thiên nhiên"]},
+      {"osmId":"node/5273998823","name":"Cầu Trần Thị Lý","lat":16.050179,"lon":108.2293814,"tags":["ngắm cảnh"]},
+      {"osmId":"node/5273999121","name":"Cầu Thuận Phước","lat":16.0948084,"lon":108.2200134,"tags":["ngắm cảnh"]},
+      {"osmId":"node/5383428522","name":"Khu Du Lịch Sinh Thái Suối Lương","lat":16.1559167,"lon":108.1098007,"tags":["thiên nhiên"]},
+      {"osmId":"node/7276380289","name":"Cầu Sông Hàn","lat":16.0721398,"lon":108.2268106,"tags":["ngắm cảnh"]},
+      {"osmId":"node/7301996085","name":"Chợ đêm Helio","lat":16.0370944,"lon":108.2248186,"tags":["ẩm thực","văn hóa"]},
+      {"osmId":"node/10709724107","name":"Làng đá mỹ nghệ Non Nước","lat":16.0009523,"lon":108.2666434,"tags":["văn hóa","làng nghề"]}
+    ]
+  }
+}

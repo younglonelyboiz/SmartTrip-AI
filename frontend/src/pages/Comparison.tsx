@@ -15,7 +15,7 @@ export function Comparison() {
     return (
       <>
         <h1>Không có cặp lịch mẫu để so sánh</h1>
-        <Link to="/planner">Chọn kịch bản</Link>
+        <Link to="/planner?scenario=standard">Chọn kịch bản</Link>
       </>
     );
   return (

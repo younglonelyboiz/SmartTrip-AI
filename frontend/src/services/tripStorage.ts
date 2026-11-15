@@ -1,5 +1,6 @@
 import type { PlanVersion } from "../domain/types";
 import { scenarios } from "./mockTravelService";
+import { cityHappyCases } from "../mocks/cityHappyCases";
 export const STORAGE_KEY = "smarttrip.demo.v1";
 export interface StorageResult {
   ok: boolean;
@@ -7,7 +8,7 @@ export interface StorageResult {
   message?: string;
 }
 // Only known, immutable demo plans may enter storage. Never trust localStorage as API data.
-const allowed = scenarios.flatMap((s) =>
+const allowed = [...scenarios, ...cityHappyCases.map((city) => city.scenario)].flatMap((s) =>
   s.result.plan ? [s.result.plan] : [],
 );
 function validVersion(value: unknown): value is PlanVersion {

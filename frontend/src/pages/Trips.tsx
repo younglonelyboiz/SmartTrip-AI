@@ -88,9 +88,9 @@ export function Trips() {
         {stored.versions.length ? (
           <ul className="saved-list">
             {stored.versions.map((p) => (
-              <li key={p.versionId}>
+              <li key={`${p.tripId}-${p.versionId}`}>
                 <Link to={`/trips/${p.tripId}/versions/${p.versionId}`}>
-                  <strong>Đà Nẵng · {p.versionId}</strong>
+                  <strong>{p.request.destination} · {p.versionId}</strong>
                   <span>
                     {dateLabel(p.request.startDate)} ·{" "}
                     {currency(p.totalCostVnd)}

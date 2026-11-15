@@ -12,7 +12,7 @@ export function AppLayout({ role }: { role: string }) {
       <a className="skip" href="#main">
         Đến nội dung chính
       </a>
-      <header>
+      <header className="site-header">
         <Link className="brand" to="/">
           <img className="brand-mark" src="/logo.svg" alt="" width="42" height="48" />
           <span className="brand-wordmark">SmartTrip<span className="brand-ai">AI</span></span>
@@ -27,9 +27,6 @@ export function AppLayout({ role }: { role: string }) {
           {role === "admin" ? "Quản trị viên" : "Khách du lịch"} · Demo
         </Link>
       </header>
-      <div className="mock-banner">
-        Dữ liệu mô phỏng · Không phải giá thực tế hoặc kết quả chạy thuật toán
-      </div>
       <main id="main" ref={main} tabIndex={-1}>
         <Outlet />
       </main>

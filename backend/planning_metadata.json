@@ -1,0 +1,340 @@
+{
+  "version": "planning-assumptions-v1",
+  "dataKind": "editorial_estimates",
+  "transportVndPerKm": 12000,
+  "notice": "Giá vé, khung tham quan, thời lượng ghé và mức ưu tiên là giả định biên tập để thử lập lịch; chưa được xác minh. Không phải giờ mở cửa hoặc báo giá thực tế. Không xét thứ trong tuần hay ngày lễ.",
+  "budgetScope": "Một người: vé tham quan và di chuyển giữa các điểm trong ngày. Không gồm ăn uống, lưu trú, chặng đến/rời thành phố, từ/về khách sạn hoặc nối giữa hai ngày.",
+  "routingNotice": "Profile ô tô GraphHopper/OSM; chưa có giao thông trực tiếp hoặc xử lý hạn chế rẽ. Tọa độ là tham khảo, không phải cổng vào đã xác minh.",
+  "places": {
+    "node/443033827": {
+      "durationMinutes": 60,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "20:00"
+      },
+      "admissionVnd": 0,
+      "priority": 9,
+      "activityGroup": "văn hóa",
+      "exclusionGroup": null
+    },
+    "node/445345255": {
+      "durationMinutes": 60,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "17:00"
+      },
+      "admissionVnd": 30000,
+      "priority": 8,
+      "activityGroup": "lịch sử",
+      "exclusionGroup": null
+    },
+    "node/1498111667": {
+      "durationMinutes": 60,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "17:00"
+      },
+      "admissionVnd": 0,
+      "priority": 6,
+      "activityGroup": "văn hóa",
+      "exclusionGroup": null
+    },
+    "node/1716371376": {
+      "durationMinutes": 30,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "18:00"
+      },
+      "admissionVnd": 0,
+      "priority": 3,
+      "activityGroup": "lịch sử",
+      "exclusionGroup": null
+    },
+    "node/2810302635": {
+      "durationMinutes": 60,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "17:00"
+      },
+      "admissionVnd": 30000,
+      "priority": 5,
+      "activityGroup": "bảo tàng",
+      "exclusionGroup": null
+    },
+    "node/4489385889": {
+      "durationMinutes": 90,
+      "visitWindow": {
+        "start": "18:00",
+        "end": "22:00"
+      },
+      "admissionVnd": 0,
+      "priority": 8,
+      "activityGroup": "chợ đêm",
+      "exclusionGroup": null
+    },
+    "node/4499978190": {
+      "durationMinutes": 60,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "17:00"
+      },
+      "admissionVnd": 30000,
+      "priority": 7,
+      "activityGroup": "bảo tàng",
+      "exclusionGroup": null
+    },
+    "node/4742507123": {
+      "durationMinutes": 30,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "20:00"
+      },
+      "admissionVnd": 0,
+      "priority": 5,
+      "activityGroup": "lịch sử",
+      "exclusionGroup": null
+    },
+    "node/4927916321": {
+      "durationMinutes": 30,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "18:00"
+      },
+      "admissionVnd": 0,
+      "priority": 4,
+      "activityGroup": "lịch sử",
+      "exclusionGroup": null
+    },
+    "node/5406262022": {
+      "durationMinutes": 90,
+      "visitWindow": {
+        "start": "09:00",
+        "end": "22:00"
+      },
+      "admissionVnd": 250000,
+      "priority": 7,
+      "activityGroup": "ngắm cảnh",
+      "exclusionGroup": null
+    },
+    "node/669249193": {
+      "durationMinutes": 120,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "17:00"
+      },
+      "admissionVnd": 150000,
+      "priority": 9,
+      "activityGroup": "lăng tẩm",
+      "exclusionGroup": null
+    },
+    "node/12411957519": {
+      "durationMinutes": 60,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "17:00"
+      },
+      "admissionVnd": 100000,
+      "priority": 6,
+      "activityGroup": "lăng tẩm",
+      "exclusionGroup": null
+    },
+    "node/2899189013": {
+      "durationMinutes": 150,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "17:00"
+      },
+      "admissionVnd": 200000,
+      "priority": 7,
+      "activityGroup": "di sản",
+      "exclusionGroup": "hue-imperial"
+    },
+    "node/5182931945": {
+      "durationMinutes": 180,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "17:00"
+      },
+      "admissionVnd": 200000,
+      "priority": 10,
+      "activityGroup": "di sản",
+      "exclusionGroup": "hue-imperial"
+    },
+    "node/4555464591": {
+      "durationMinutes": 60,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "17:00"
+      },
+      "admissionVnd": 30000,
+      "priority": 7,
+      "activityGroup": "bảo tàng",
+      "exclusionGroup": null
+    },
+    "node/4555491489": {
+      "durationMinutes": 30,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "20:00"
+      },
+      "admissionVnd": 0,
+      "priority": 5,
+      "activityGroup": "lịch sử",
+      "exclusionGroup": null
+    },
+    "node/6099306388": {
+      "durationMinutes": 30,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "18:00"
+      },
+      "admissionVnd": 0,
+      "priority": 4,
+      "activityGroup": "lịch sử",
+      "exclusionGroup": null
+    },
+    "node/6533792207": {
+      "durationMinutes": 45,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "17:00"
+      },
+      "admissionVnd": 0,
+      "priority": 5,
+      "activityGroup": "di sản",
+      "exclusionGroup": null
+    },
+    "node/9960090217": {
+      "durationMinutes": 90,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "17:00"
+      },
+      "admissionVnd": 0,
+      "priority": 6,
+      "activityGroup": "làng nghề",
+      "exclusionGroup": null
+    },
+    "node/13503143701": {
+      "durationMinutes": 60,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "18:00"
+      },
+      "admissionVnd": 0,
+      "priority": 8,
+      "activityGroup": "văn hóa",
+      "exclusionGroup": null
+    },
+    "node/1036552571": {
+      "durationMinutes": 90,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "17:00"
+      },
+      "admissionVnd": 0,
+      "priority": 8,
+      "activityGroup": "thiên nhiên",
+      "exclusionGroup": null
+    },
+    "node/1758586662": {
+      "durationMinutes": 120,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "17:00"
+      },
+      "admissionVnd": 40000,
+      "priority": 10,
+      "activityGroup": "di sản",
+      "exclusionGroup": null
+    },
+    "node/4172034499": {
+      "durationMinutes": 90,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "18:00"
+      },
+      "admissionVnd": 0,
+      "priority": 8,
+      "activityGroup": "biển",
+      "exclusionGroup": null
+    },
+    "node/4347089780": {
+      "durationMinutes": 90,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "18:00"
+      },
+      "admissionVnd": 0,
+      "priority": 7,
+      "activityGroup": "biển",
+      "exclusionGroup": null
+    },
+    "node/5273998823": {
+      "durationMinutes": 30,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "22:00"
+      },
+      "admissionVnd": 0,
+      "priority": 6,
+      "activityGroup": "ngắm cảnh",
+      "exclusionGroup": null
+    },
+    "node/5273999121": {
+      "durationMinutes": 30,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "22:00"
+      },
+      "admissionVnd": 0,
+      "priority": 5,
+      "activityGroup": "ngắm cảnh",
+      "exclusionGroup": null
+    },
+    "node/5383428522": {
+      "durationMinutes": 120,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "17:00"
+      },
+      "admissionVnd": 100000,
+      "priority": 7,
+      "activityGroup": "thiên nhiên",
+      "exclusionGroup": null
+    },
+    "node/7276380289": {
+      "durationMinutes": 45,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "22:00"
+      },
+      "admissionVnd": 0,
+      "priority": 8,
+      "activityGroup": "ngắm cảnh",
+      "exclusionGroup": null
+    },
+    "node/7301996085": {
+      "durationMinutes": 90,
+      "visitWindow": {
+        "start": "17:00",
+        "end": "22:00"
+      },
+      "admissionVnd": 0,
+      "priority": 9,
+      "activityGroup": "chợ đêm",
+      "exclusionGroup": null
+    },
+    "node/10709724107": {
+      "durationMinutes": 90,
+      "visitWindow": {
+        "start": "08:00",
+        "end": "17:00"
+      },
+      "admissionVnd": 0,
+      "priority": 7,
+      "activityGroup": "làng nghề",
+      "exclusionGroup": null
+    }
+  }
+}

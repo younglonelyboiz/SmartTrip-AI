@@ -7,3 +7,8 @@ frontend/test-results/
 
 # Local presentation files and slide assets
 /docs/presentation/
+
+# Local OSM data, downloaded tools and generated routing graphs
+/data/raw/
+/data/tools/
+/data/processed/

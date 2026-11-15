@@ -1,9 +1,8 @@
-import { useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import {
   scenarios,
   snapshot,
-  getScenario,
 } from "../services/mockTravelService";
 import { defaultJourney, journeyFromSearch, journeySearch, journeyConflict } from "../domain/journey";
 import type { TravelRequest } from "../domain/types";
@@ -11,7 +10,19 @@ import { DestinationPhoto } from "../components/DestinationPhoto";
 import { placePhotos } from "../domain/photos";
 import { Icon } from "../components/Icon";
 import { PlannerMap } from "../components/PlannerMap";
+import { CatalogPlanner } from "../components/CatalogPlanner";
+import { fetchRecommendations, fetchScenario, type BackendRecommendation } from "../services/prototypeApi";
 export function Planner() {
+  const [params] = useSearchParams();
+  if (params.has("scenario") || params.has("place") || params.has("origin")) return <FixturePlanner />;
+  return <UnifiedPlanner />;
+}
+
+function UnifiedPlanner() {
+  return <CatalogPlanner />;
+}
+
+function FixturePlanner() {
   const [params] = useSearchParams();
   const initialScenario = scenarios.find(s => s.id === params.get("scenario")) ?? scenarios[0];
   const [id, setId] = useState(initialScenario.id);
@@ -27,12 +38,31 @@ export function Planner() {
     })(),
   );
   const [journey, setJourney] = useState(() => journeyFromSearch("?" + params.toString()) ?? defaultJourney());
+  const [interestText, setInterestText] = useState(() => initialScenario.request.interests.join(", "));
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [recommendations, setRecommendations] = useState<BackendRecommendation[]>([]);
+  const [recommendationStatus, setRecommendationStatus] = useState("Đang tải gợi ý từ backend…");
   const navigate = useNavigate();
+  const interestKey = JSON.stringify(req.interests);
+  useEffect(() => {
+    const controller = new AbortController();
+    setRecommendations([]);
+    setRecommendationStatus("Đang tải gợi ý từ backend…");
+    fetchRecommendations(JSON.parse(interestKey) as string[], controller.signal)
+      .then((response) => {
+        setRecommendations(response.recommendations);
+        setRecommendationStatus(response.recommendations.length ? "" : "Chưa có điểm gợi ý.");
+      })
+      .catch(() => {
+        if (!controller.signal.aborted) setRecommendationStatus("Không kết nối được backend. Hãy khởi động backend rồi tải lại trang.");
+      });
+    return () => controller.abort();
+  }, [interestKey]);
   function select(id: string) {
     setId(id);
     setReq(structuredClone(scenarios.find((s) => s.id === id)!.request));
+    setInterestText(scenarios.find((s) => s.id === id)!.request.interests.join(", "));
     setMessage("");
   }
   async function submit(e: React.FormEvent) {
@@ -56,7 +86,7 @@ export function Planner() {
     setLoading(true);
     setMessage("");
     try {
-      const response = await getScenario(req, id);
+      const response = await fetchScenario(req, id);
       if (response.kind === "unsupported") setMessage(response.message);
       else if (response.scenario.result.plan) {
         const p = response.scenario.result.plan;
@@ -65,7 +95,7 @@ export function Planner() {
         navigate(`/trips/${p.tripId}/versions/${p.versionId}${journeySearch(journey)}`);
       } else setMessage(response.scenario.result.reason);
     } catch {
-      setMessage("Không tải được dữ liệu demo. Hãy thử chọn lại kịch bản.");
+      setMessage("Không kết nối được backend. Hãy khởi động backend rồi thử lại.");
     } finally {
       setLoading(false);
     }
@@ -75,8 +105,9 @@ export function Planner() {
       <div className="page-heading">
         <div>
           <p className="muted">Bắt đầu từ điều bạn muốn</p>
-          <h1>Thiết kế chuyến đi</h1>
-          <p>Chọn mẫu để khám phá lịch trình và các tình huống ràng buộc.</p>
+          <h1>Kịch bản demo Đà Nẵng</h1>
+          <p>Chọn kịch bản dựng sẵn để xem các tình huống ràng buộc.</p>
+          <Link to="/planner">Tạo lịch nháp từ danh mục địa điểm</Link>
         </div>
       </div>
       <div className="two-columns planner-layout">
@@ -171,13 +202,11 @@ export function Planner() {
             <label>
               Sở thích (phân cách bằng dấu phẩy)
               <input
-                value={req.interests.join(", ")}
-                onChange={(e) =>
-                  setReq({
-                    ...req,
-                    interests: e.target.value.split(",").map((x) => x.trim()),
-                  })
-                }
+                value={interestText}
+                onChange={(e) => {
+                  setInterestText(e.target.value);
+                  setReq({ ...req, interests: e.target.value.split(",").map((x) => x.trim()).filter(Boolean) });
+                }}
               />
             </label>
             <p className="fine">
@@ -201,10 +230,14 @@ export function Planner() {
         <div className="panel candidates-panel">
           <h2>Điểm dừng ứng viên</h2>
           <p className="muted">
-            Điểm phù hợp và thông số giả lập, chưa chạy hệ gợi ý.
+            Gợi ý từ backend theo loại địa điểm khớp sở thích, dùng danh mục Đà Nẵng giả lập. Không tính ngân sách hay khoảng cách; lịch trình vẫn là mẫu.
           </p>
+          <p className="fine" role="status">{recommendationStatus}</p>
           <div className="candidate-list">
-            {snapshot.places.map((p) => (
+            {recommendations.map(({ placeId, matchedInterests }) => {
+              const p = snapshot.places.find((place) => place.id === placeId);
+              if (!p) return null;
+              return (
               <div key={p.id} className="candidate-row">
                 {placePhotos[p.id] ? (
                   <DestinationPhoto
@@ -221,6 +254,7 @@ export function Planner() {
                   <p>
                     {p.category} · {p.durationMinutes} phút
                   </p>
+                  <p className="fine">{matchedInterests.length ? `Khớp sở thích: ${matchedInterests.join(", ")}` : "Chưa khớp sở thích đã nhập"}{req.excludedPlaceIds.includes(p.id) ? " · Đã loại trừ" : ""}</p>
                   <div className="checks-inline">
                     <label>
                       <input
@@ -261,7 +295,7 @@ export function Planner() {
                   </div>
                 </div>
               </div>
-            ))}
+            ); })}
           </div>
           {req.lockedVisits.length ? (
             <p className="notice">

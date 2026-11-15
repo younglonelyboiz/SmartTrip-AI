@@ -3,7 +3,7 @@ import { journeyFromSearch, journeyConflict, minuteOfDay } from '../domain/journ
 import { clock, currency, dateLabel, type PlanVersion } from '../domain/types';
 export function JourneySummary({plan,search}:{plan:PlanVersion;search:string}) {
   const j=journeyFromSearch(search);
-  if (!j) return <section className="panel journey-summary"><h2>Toàn hành trình của bạn</h2><p>Lịch tham quan bắt đầu và kết thúc tại nơi lưu trú ở {plan.request.destination}. Chưa có thông tin đi–về từ tỉnh/thành xuất phát.</p><Link to="/planner">Bổ sung điểm đi và chặng đi–về</Link></section>;
+  if (!j) return <section className="panel journey-summary"><h2>Toàn hành trình của bạn</h2><p>Lịch tham quan bắt đầu và kết thúc tại nơi lưu trú ở {plan.request.destination}. Chưa có thông tin đi–về từ tỉnh/thành xuất phát.</p>{plan.request.destination === "Đà Nẵng" && <Link to="/planner?scenario=standard">Bổ sung điểm đi và chặng đi–về cho mẫu Đà Nẵng</Link>}</section>;
   const conflict=journeyConflict(j,plan);
   const subtotal=plan.totalCostVnd+(j.travelCost===''?0:Number(j.travelCost));
   return <section className="panel journey-summary"><h2>{j.origin} → {plan.request.destination} → {j.origin}</h2><p>{j.mode} · Thời gian do bạn nhập, chưa đối chiếu lịch vận hành thực tế.</p>

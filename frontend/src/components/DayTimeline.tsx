@@ -1,8 +1,8 @@
 import { snapshot } from "../services/mockTravelService";
-import { clock, type DayPlan } from "../domain/types";
+import { clock, type DatasetSnapshot, type DayPlan } from "../domain/types";
 import { DestinationPhoto } from "./DestinationPhoto";
 import { placePhotos } from "../domain/photos";
-export function DayTimeline({ day }: { day: DayPlan }) {
+export function DayTimeline({ day, data = snapshot }: { day: DayPlan; data?: DatasetSnapshot }) {
   let previous = "hotel";
   return (
     <section className="panel">
@@ -15,8 +15,8 @@ export function DayTimeline({ day }: { day: DayPlan }) {
       </p>
       <ol className="timeline">
         {day.visits.map((v, i) => {
-          const place = snapshot.places.find((p) => p.id === v.placeId)!;
-          const edge = snapshot.edges.find(
+          const place = data.places.find((p) => p.id === v.placeId)!;
+          const edge = data.edges.find(
             (e) => e.fromId === previous && e.toId === place.id,
           );
           previous = place.id;

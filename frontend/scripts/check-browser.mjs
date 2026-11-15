@@ -10,12 +10,16 @@ const browser = await chromium.launch({
 });
 const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } }),
   errors = [];
-page.on("pageerror", (e) => errors.push(e.message));
+page.on("pageerror", (e) => {
+  errors.push(e.message);
+  console.error(`Browser error at ${page.url()}: ${e.stack}`);
+});
 await mkdir("test-results", { recursive: true });
 try {
   await page.goto(base + "/demo-login");
   await page.getByRole("button", { name: "Khám phá bản demo" }).click();
   await page.getByRole("link", { name: "Lập kế hoạch mới" }).click();
+  await page.getByRole("link", { name: "Xem kịch bản demo Đà Nẵng" }).click();
   await page.getByRole("button", { name: "Xem kết quả mock" }).click();
   await page
     .getByRole("heading", { name: "Đà Nẵng, một hành trình vừa đủ." })
@@ -49,6 +53,7 @@ try {
   await page.getByRole("link", { name: "Đà Nẵng · v1" }).waitFor();
   await page.getByRole("link", { name: "Đà Nẵng · v2" }).waitFor();
   await page.getByRole("link", { name: "Lập kế hoạch", exact: true }).click();
+  await page.getByRole("link", { name: "Xem kịch bản demo Đà Nẵng" }).click();
   for (const [id, text] of [
     ["budget-conflict", "Chi phí cố định 1.600.000"],
     ["timeout", "Chưa có chứng cứ vô nghiệm"],
@@ -117,7 +122,7 @@ try {
     );
   }
   await page.emulateMedia({ reducedMotion: "reduce" });
-  await page.goto(base + "/planner");
+  await page.goto(base + "/planner?scenario=standard");
   await page.getByLabel("Kịch bản minh họa").waitFor();
   await page.locator(".skip").focus();
   assert.equal(
@@ -133,12 +138,12 @@ try {
   for (const path of [
     "/demo-login",
     "/trips",
-    "/planner",
+    "/planner?scenario=standard",
     "/trips/danang-demo/versions/v1",
   ]) {
     await page.goto(base + path);
     await page.locator("h1").waitFor();
-    const images = await page.locator("img:not(.brand-mark)").evaluateAll(async (images) => {
+    const images = await page.locator("img:not(.brand-mark):not(.leaflet-tile)").evaluateAll(async (images) => {
       return Promise.all(
         images.map(async (image) => {
           image.loading = "eager";

@@ -57,7 +57,7 @@ try {
     clip: { x: 76, y: hero.y - 16, width: 1288, height: Math.ceil(destinations.y + destinations.height - hero.y + 32) },
   });
 
-  await prepare("/planner", true);
+  await prepare("/planner?scenario=standard", true);
   await page.locator("main").screenshot({ path: `${dir}/happy_02_planner.png`, animations: "disabled" });
 
   await prepare("/trips/danang-demo/versions/v1?origin=H%C3%A0+N%E1%BB%99i&mode=M%C3%A1y+bay&arrival=07%3A00&departure=19%3A00&transfer=60&travelCost=", true);

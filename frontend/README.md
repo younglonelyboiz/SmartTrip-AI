@@ -1,18 +1,53 @@
 # SmartTripAI — Frontend prototype
 
-React + TypeScript + Vite; chưa có backend, solver, LLM hoặc API dữ liệu thật. Mọi giá, giờ và tuyến đều giả lập.
+React + TypeScript + Vite, FastAPI và GraphHopper cục bộ; có bộ lập lịch heuristic từ yêu cầu, chưa có solver chứng minh tối ưu hay LLM. Giá/giờ tham quan là giả định; planner mới tính lịch từ input, còn ba happy case giữ lịch mẫu. Tuyến ô tô dự kiến tính từ dữ liệu OSM.
+
+Kịch bản mẫu tại `/planner?scenario=standard` gọi backend để xếp hạng gợi ý đơn giản: ưu tiên category khớp chính xác sở thích trong danh mục Đà Nẵng giả lập. Đây không phải mô hình học máy và không tính ngân sách/khoảng cách. Lịch trình được backend trả từ fixture khi request khớp, không tự tối ưu theo gợi ý.
+
+Trang `/planner` nhận **thành phố (Hà Nội, Huế, Đà Nẵng), số ngày 1–14**, ngân sách cho một người và điểm bắt buộc tùy chọn. Không chọn điểm vẫn tạo được gợi ý. Hệ thống đề xuất thêm điểm, tìm thứ tự và chia ngày dựa trên giờ tham quan/chi phí giả định cùng thời gian và khoảng cách GraphHopper thực. Lịch mới không lấy từ fixture.
+
+Mặc định 08:00–22:00, nghỉ 12:00–13:00; phần chỉnh giờ là tùy chọn dùng chung cho toàn chuyến, có thể tắt nghỉ. Ngân sách trống không giới hạn, 0 giới hạn đúng bằng 0; chỉ gồm vé và di chuyển giữa điểm trong ngày, không gồm ăn uống/khách sạn/chặng đến-rời thành phố/từ-về nơi ở. Giá và giờ là **ước tính biên tập chưa xác minh** trong `backend/planning_metadata.json`; di chuyển minh họa 12.000 VND/km, không phải báo giá taxi.
+
+Kết quả có timeline, điểm bắt buộc/được gợi ý, lý do, thời gian chặng, phí và tổng; bản đồ dùng geometry từ cùng kết quả đã kiểm tra. Khi không đủ điều kiện/dữ liệu để phủ số ngày yêu cầu, hiển thị rõ ngày trống. Tìm kiếm heuristic hữu hạn không cam kết tối ưu toàn cục; chưa tìm thấy lịch khác với chứng minh vô nghiệm. Lịch mới chưa có lưu/chia sẻ. Đổi đầu vào sẽ bỏ kết quả cũ.
 
 ## Chạy ứng dụng
 
-Cần Node 22.12+ hoặc phiên bản đáp ứng Vite trong lockfile (môi trường kiểm tra Node 26.8.1).
+Cần Python 3.10+ với FastAPI/Uvicorn/httpx theo `backend/requirements.txt`, Java 17 và Node 22.12+ hoặc phiên bản đáp ứng Vite trong lockfile. Không cần Docker. Trên máy hiện tại các phụ thuộc đã có; nếu máy khác thiếu, kiểm tra dung lượng trước khi tải hoặc cài.
+
+Terminal 1, từ thư mục gốc dự án, khởi động GraphHopper với Java cục bộ đã chuẩn bị:
+
+```bash
+data/tools/java/usr/lib/jvm/java-17-openjdk-amd64/bin/java -Xmx3g -jar data/tools/downloads/graphhopper-web-10.2.jar server backend/graphhopper-danang.yml
+```
+
+Để có tuyến cho Hà Nội và Huế, chạy thêm hai terminal từ thư mục gốc:
+
+```bash
+data/tools/java/usr/lib/jvm/java-17-openjdk-amd64/bin/java -Xmx2g -jar data/tools/downloads/graphhopper-web-10.2.jar server backend/graphhopper-hanoi.yml
+```
+
+```bash
+data/tools/java/usr/lib/jvm/java-17-openjdk-amd64/bin/java -Xmx2g -jar data/tools/downloads/graphhopper-web-10.2.jar server backend/graphhopper-hue.yml
+```
+
+Chờ log `Started Server` của từng tiến trình. Máy khác có Java 17 có thể thay đường dẫn Java bằng `java`; các file trong `data/` phải được chuẩn bị riêng, không tự động đi kèm source. Các cấu hình dùng bản trích vùng và chỉ profile `car`. Bản đồ nền vẫn cần mạng.
+
+Terminal 2, từ thư mục gốc dự án:
+
+```bash
+python3 -m uvicorn backend.main:app --host 127.0.0.1 --port 8000
+```
+
+Terminal 3:
 
 ```bash
 cd frontend
-npm ci
 npm run dev
 ```
 
-Mở URL Vite in ra (mặc định http://127.0.0.1:5173). Trang đầu là Khám phá (`/`). Mở `/demo-login` nếu muốn đổi hồ sơ demo; không nhập tài khoản thật. Admin chỉ là chế độ UI. Hosting static cần SPA fallback cho deep link, chưa publish trong đợt này.
+Mở URL Vite in ra (mặc định http://127.0.0.1:5173). Vite chuyển `/api/prototype` tới backend cục bộ; nếu backend tắt, planner báo lỗi thay vì âm thầm dùng gợi ý cũ. Nếu `node_modules` chưa có, cần cài theo lockfile sau khi kiểm tra dung lượng. Trang đầu là Khám phá (`/`). Mở `/demo-login` nếu muốn đổi hồ sơ demo; không nhập tài khoản thật. Admin chỉ là chế độ UI. Hosting static cần SPA fallback và proxy API, chưa publish trong đợt này.
+
+Trên trang lịch trình ba thành phố, GraphHopper vẽ tuyến giữa các điểm ghé của ngày và trả quãng đường/thời gian ước tính riêng cho từng chặng khi dịch vụ thành phố tương ứng chạy. Vị trí là tọa độ tham khảo, không bao gồm chặng nơi lưu trú; đồ thị cắt theo vùng có thể không tìm thấy tuyến hoặc bỏ sót đường ngoài vùng. Cấu hình ô tô thử nghiệm chưa bật xử lý hạn chế rẽ (`turn_costs`), không có giao thông trực tiếp; không dùng làm chỉ dẫn lái xe. Thời gian/giá trong timeline và ngân sách vẫn lấy từ fixture, không phải kết quả GraphHopper. Nếu routing lỗi thì bản đồ báo lỗi, không giả đường thẳng thành tuyến thật. Planner mới vẽ các chặng GraphHopper đã dùng để tính timeline và dự toán; geometry không được tính lại ở frontend.
 
 ## Build và kiểm tra
 
@@ -20,8 +55,14 @@ Mở URL Vite in ra (mặc định http://127.0.0.1:5173). Trang đầu là Khá
 npm run build
 npm run check:fixtures
 npm run check:services
+node --import tsx scripts/check-recommendation.ts
+node --import tsx scripts/check-city-happy-cases.ts
+node scripts/check-city-happy-cases.mjs
+node scripts/check-backend-e2e.mjs
 node scripts/check-browser.mjs
 ```
+
+Từ thư mục gốc, kiểm tra API bằng `python3 -m unittest backend.test_api -v` (cần `httpx` cho kiểm thử). Backend dùng fixture của frontend và không ghi dữ liệu; `/docs` của FastAPI mô tả API prototype. Không phơi backend này ra Internet: chưa có xác thực, database hoặc bảo mật production.
 
 Browser check cần Chromium tương thích Playwright; cài bằng `npx playwright install chromium` hoặc đặt biến `SMARTTRIP_CHROME` tới executable đã có. Ảnh kiểm tra nằm trong test-results (không track); ảnh minh họa README được chụp riêng trong docs/uxui_screenshots.
 
@@ -29,7 +70,7 @@ Từ gốc repo: tạo venv rồi cài `scripts/requirements-checks.txt`, chạy
 
 ## Kịch bản demo và dữ liệu mẫu
 
-Nguồn duy nhất: `src/mocks/scenarios.json`. Thời điểm ghi dữ liệu mock 02/11/2026; ngày đi 10–12/12/2026. Các giờ/giá không phải thông tin du lịch thực tế.
+Đà Nẵng dùng `src/mocks/scenarios.json`; Hà Nội và Huế dùng `src/mocks/cityHappyCases.ts`. Chọn thành phố từ trang chủ để mở trực tiếp happy case, xem từng ngày và lưu phiên bản. Dữ liệu giả lập 02/11/2026; ngày đi 10–12/12/2026. Giờ, giá và thời gian di chuyển trong các lịch không phải thông tin thực tế. Luồng demo nhận request fixture Đà Nẵng; planner chính lập lịch mới từ catalog cho cả ba thành phố.
 
 ## Request chuẩn
 Đà Nẵng, 2 người, tổng ngân sách 6.000.000 VND, 08:00–18:00 mỗi ngày, depot `hotel`, thích biển/ẩm thực, bắt buộc `my-khe`, không loại trừ, không lockedVisits. Fixed cost: lưu trú 2 đêm tổng 1.000.000 theo nhóm và ăn uống 3 ngày tổng 300.000 mỗi người. Snapshot `danang-demo-v1`.
@@ -90,8 +131,17 @@ Theo yêu cầu người dùng: tông xanh dương nhẹ + trắng, ảnh địa
 
 ### Điểm đi và chặng đi–về
 
-Planner cho nhập điểm xuất phát, phương tiện, giờ đến điểm đến ngày đầu, giờ rời điểm đến ngày cuối, thời gian mỗi chặng nối và dự trù đi–về/chặng nối cả nhóm. Giờ đến cộng thời gian nối phải kịp lịch ngày đầu; giờ kết thúc lịch ngày cuối phải kịp chặng về. Prototype kiểm tra fixture, chưa tự xếp lại lịch khi xung đột và chưa tra cứu vận tải/giá thực tế.
+Kịch bản mẫu Đà Nẵng cho nhập điểm xuất phát, phương tiện, giờ đến điểm đến ngày đầu, giờ rời điểm đến ngày cuối, thời gian mỗi chặng nối và dự trù đi–về/chặng nối cả nhóm. Giờ đến cộng thời gian nối phải kịp lịch ngày đầu; giờ kết thúc lịch ngày cuối phải kịp chặng về. Prototype kiểm tra fixture, chưa tự xếp lại lịch khi xung đột và chưa tra cứu vận tải/giá thực tế.
 
 Thông tin đi–về được truyền trong URL và lưu riêng theo chuyến/phiên bản khi bấm lưu. Dự toán tại điểm đến đã gồm lưu trú, ăn uống, tham quan và di chuyển giả lập. Chi phí đi–về do người dùng nhập được cộng riêng; để trống nghĩa là chưa biết, không phải miễn phí. Xóa dữ liệu demo cũng xóa thông tin đi–về đã lưu.
 
 Kiểm tra logic hành trình: `node --import tsx scripts/check-journey.ts`.
+
+## Kiểm chứng luồng lập lịch mới — 06/11/2026
+
+- Backend: 31 test đạt (API cũ/mới, ngân sách 0/trống, điểm bắt buộc, giờ/nghỉ, lỗi dữ liệu/tuyến, giới hạn đồng thời và hủy tác vụ khi hết thời gian).
+- Browser end-to-end đã chạy qua Vite → FastAPI → GraphHopper thực cho cả Hà Nội, Huế và Đà Nẵng, gồm tự chọn điểm và điểm bắt buộc; đối chiếu timeline, geometry và tổng tiền.
+- Kiểm tra UI: giờ tùy chọn, budget 0, xung đột, retry, bỏ response cũ, ngày một điểm/ngày trống, lỗi nền bản đồ và không tràn ngang ở 375/390/1440px.
+- Hồi quy demo: standard/comparison/conflict/timeout/unsupported, lưu/reload v1-v2, storage hỏng/reset, admin, keyboard/reduced motion đạt; không có page error. Đã sửa timer zoom Leaflet chạy sau khi gỡ bản đồ lúc chuyển trang.
+
+Build TypeScript/Vite đạt; còn cảnh báo sẵn từ React Router (`use client`) và bundle trên 500 kB. Đây là kiểm chứng chạy phần mềm theo giả định, không xác minh giá/giờ thực tế hoặc chứng minh lịch tối ưu.

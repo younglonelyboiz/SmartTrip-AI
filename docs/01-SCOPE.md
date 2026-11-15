@@ -67,4 +67,4 @@ Khảo sát quyền truy cập → ingest dữ liệu được phép → normali
 - Lịch sử mô phỏng chỉ dùng dữ liệu có recordedAt <= asOf, snapshot không chứa bản ghi đến sau; chưa triển khai vì chưa có nguồn lịch sử đầy đủ.
 
 ## Fixture hiện tại
-`frontend/src/mocks/scenarios.json` là nguồn duy nhất của dữ liệu FE. Cả giá, thời gian đi và giờ hoạt động đều simulated, không tải nguồn ngoài. Tên địa danh có mục đích minh họa; thông số không được dùng như thông tin dịch vụ thực tế. So sánh baseline/proposed dùng cùng request/snapshot; fixture replan tạo request/version con riêng.
+`frontend/src/mocks/scenarios.json` chứa các fixture Đà Nẵng; `frontend/src/mocks/cityHappyCases.ts` chứa happy case Hà Nội và Huế. Giá, thời gian đi và giờ hoạt động trong timeline đều simulated. Bản đồ ba thành phố có thể gọi GraphHopper cục bộ với đồ thị vùng tương ứng; tuyến chỉ là ước tính, không thay thế thông số timeline. Tên địa danh có mục đích minh họa; thông số không được dùng như thông tin dịch vụ thực tế. So sánh baseline/proposed dùng cùng request/snapshot; fixture replan tạo request/version con riêng.

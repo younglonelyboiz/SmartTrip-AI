@@ -10,13 +10,15 @@ import { ConstraintReport } from "../components/ConstraintReport";
 import { DestinationPhoto } from "../components/DestinationPhoto";
 import { loadJourneySearch, saveJourneySearch } from "../domain/journey";
 import { JourneySummary } from "../components/JourneySummary";
+import { cityHappyCases } from "../mocks/cityHappyCases";
 export function Itinerary() {
   const { search: urlSearch } = useLocation();
   const { tripId = "", versionId = "" } = useParams();
+  const city = cityHappyCases.find((item) => item.scenario.result.plan?.tripId === tripId && item.scenario.result.plan.versionId === versionId);
   const plan =
     loadVersions().versions.find(
       (p) => p.tripId === tripId && p.versionId === versionId,
-    ) ?? getFixturePlan(tripId, versionId);
+    ) ?? getFixturePlan(tripId, versionId) ?? city?.scenario.result.plan;
   const [index, setIndex] = useState(0);
   const [message, setMessage] = useState("");
   if (!plan)
@@ -28,8 +30,8 @@ export function Itinerary() {
     );
   const search = urlSearch || loadJourneySearch(plan);
   const day = plan.days[Math.min(index, plan.days.length - 1)];
-  const scenario = scenarios.find(
-    (s) => s.result.plan?.versionId === plan.versionId,
+  const scenario = city?.scenario ?? scenarios.find(
+    (s) => s.result.plan?.tripId === plan.tripId && s.result.plan.versionId === plan.versionId,
   )!;
   return (
     <>
@@ -37,8 +39,8 @@ export function Itinerary() {
         Về chuyến đi
       </Link>
       <div className="itinerary-cover">
-        <DestinationPhoto photo="city" eager />
-        <span className="photo-label">Đà Nẵng bên sông Hàn</span>
+        <DestinationPhoto photo={city?.photo ?? "city"} eager />
+        <span className="photo-label">{city ? city.scenario.request.destination : "Đà Nẵng bên sông Hàn"}</span>
       </div>
       <div className="page-heading itinerary-heading">
         <div>
@@ -46,7 +48,7 @@ export function Itinerary() {
             3 ngày 2 đêm · {plan.request.partySize} người · Phiên bản{" "}
             {plan.versionId}
           </p>
-          <h1>Đà Nẵng, một hành trình vừa đủ.</h1>
+          <h1>{city?.headline ?? "Đà Nẵng, một hành trình vừa đủ."}</h1>
           <p>
             {dateLabel(plan.request.startDate)} –{" "}
             {dateLabel(plan.request.endDate)} · {plan.travelMinutes} phút di
@@ -64,6 +66,7 @@ export function Itinerary() {
       <p role="status" className={message ? "notice" : ""}>
         {message}
       </p>
+      <p className="notice">Happy case minh họa: giờ, giá và thời gian di chuyển là giả lập; không phải thông tin dịch vụ thực tế.</p>
       <div className="day-buttons" aria-label="Chọn ngày">
         {plan.days.map((d, i) => (
           <button
@@ -77,13 +80,13 @@ export function Itinerary() {
         ))}
       </div>
       <div className="itinerary-destination-layout">
-        <DayTimeline day={day} />
+        <DayTimeline day={day} data={city?.snapshot} />
         <aside className="itinerary-map-column">
-          <PlannerMap placeIds={day.visits.map((visit) => visit.placeId)} destination={`${plan.request.destination} · Ngày ${index + 1}`} />
+          <PlannerMap placeIds={day.visits.map((visit) => visit.placeId)} destination={`${plan.request.destination} · Ngày ${index + 1}`} data={city?.snapshot} positions={city?.coordinates} showRoadRoute />
         </aside>
       </div>
       <div className="actions">
-        {plan.versionId === "v1" ? (
+        {!city && (plan.versionId === "v1" ? (
           <Link className="button secondary" to={"/trips/danang-demo/versions/v2" + search}>
             Xem mẫu điều chỉnh: bỏ Sơn Trà
           </Link>
@@ -91,7 +94,7 @@ export function Itinerary() {
           <Link className="button secondary" to={"/trips/danang-demo/versions/v1" + search}>
             Xem phiên bản trước
           </Link>
-        )}
+        ))}
         {scenario.baseline ? <Link className="button secondary" to="/compare/standard">So sánh hai lịch mẫu</Link> : null}
       </div>
       <p className="fine">{scenario.result.reason}</p>

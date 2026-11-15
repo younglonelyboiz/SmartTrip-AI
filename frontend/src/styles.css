@@ -91,6 +91,9 @@ summary:focus-visible {
   outline-offset: 4px;
 }
 header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
   display: flex;
   align-items: center;
   gap: 40px;
@@ -133,13 +136,6 @@ nav a.active {
 .profile {
   font-size: 14px;
   white-space: nowrap;
-}
-.mock-banner {
-  text-align: center;
-  font-size: 13px;
-  padding: 9px 20px;
-  background: var(--color-soft);
-  color: var(--color-primary-hover);
 }
 main {
   max-width: 1288px;
@@ -639,11 +635,6 @@ nav a.active {
   border-radius: 24px;
   text-decoration: none;
   color: var(--ink);
-}
-.mock-banner {
-  background: var(--color-soft);
-  color: var(--color-muted);
-  font-size: 12px;
 }
 .page-heading h1 {
   font-size: clamp(28px, 3.4vw, 40px);
@@ -1196,6 +1187,11 @@ h1,h2,h3 { letter-spacing: -.035em; line-height: 1.3; }
 .province-heading h1 { font-size: clamp(2rem,4vw,3.4rem); }
 .province-days { display: grid; gap: 24px; margin: 28px 0; }
 .province-days li { padding: 12px 0; }
+.sample-itinerary summary { cursor: pointer; }
+.sample-itinerary summary strong { font-size: 1.15rem; }
+.sample-itinerary summary small { display: block; margin-top: 6px; color: #53697d; line-height: 1.5; }
+.sample-itinerary-day { padding-top: 20px; }
+.sample-itinerary-day + .sample-itinerary-day { border-top: 1px solid #dce7ef; }
 
 .brand { gap: 10px; letter-spacing: -.05em; }
 .brand-mark { display: block; flex: 0 0 auto; width: 44px; height: 44px; }
@@ -1221,3 +1217,30 @@ h1,h2,h3 { letter-spacing: -.035em; line-height: 1.3; }
 .journey-stages p { margin: 10px 0; }
 .journey-stages small { color: var(--muted); }
 @media(max-width:760px) { .journey-stages { grid-template-columns: 1fr; } }
+
+/* Request-driven city planner, using the existing surface and color tokens. */
+.catalog-planner .two-columns > *, .catalog-day-layout > * { min-width: 0; }
+.catalog-time-settings { margin: 24px 0; padding: 16px 0; border-block: 1px solid var(--line); }
+.catalog-time-settings summary, .catalog-assumptions summary { min-height: 44px; padding-block: 10px; font-weight: 600; }
+.catalog-check { display: flex; flex-direction: row; align-items: center; gap: 12px; min-height: 44px; margin: 0; cursor: pointer; }
+.catalog-check input { width: 20px; min-height: 20px; height: 20px; flex: 0 0 20px; padding: 0; }
+.catalog-check small { display: block; font-weight: 400; color: var(--muted); margin-top: 4px; }
+.catalog-place { display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--line); padding: 10px 0; }
+.catalog-place > a { padding-block: 12px; flex-shrink: 0; }
+.catalog-place-list { max-height: 550px; overflow-y: auto; padding-right: 8px; }
+.catalog-result { margin-top: 24px; }
+.catalog-totals { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 24px 0; }
+.catalog-totals > div { background: var(--color-surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+.catalog-totals dt { color: var(--muted); font-size: 14px; }
+.catalog-totals dd { margin: 8px 0 0; font-size: 20px; font-weight: 700; overflow-wrap: anywhere; }
+.catalog-day-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0; }
+.catalog-timeline { list-style: none; margin: 24px 0; padding: 0 0 0 16px; border-left: 2px solid var(--line); }
+.catalog-event { position: relative; padding: 0 0 20px 12px; }
+.catalog-event::before { content: ""; position: absolute; width: 10px; height: 10px; border-radius: 50%; background: var(--color-primary); left: -22px; top: 6px; }
+.catalog-event h4 { font-size: 18px; margin: 6px 0 10px; }
+.catalog-event p { margin: 8px 0; }
+.catalog-event-time { font-size: 14px; font-weight: 600; }
+.catalog-event-leg, .catalog-event-break { color: var(--muted); }
+.catalog-assumptions { overflow-wrap: anywhere; }
+@media (max-width: 900px) { .catalog-totals { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 540px) { .catalog-totals { grid-template-columns: 1fr; } .catalog-day-buttons button { flex: 1 0 auto; } }
