@@ -1,0 +1,723 @@
+{
+  "surveyDate": "2026-11-06",
+  "purpose": "Research-only Wikipedia coverage survey; not imported into product ranking.",
+  "catalogSha256": "4cdae14d8fb44efa8d88d59dc46707fb508ac9d6e3a8081130eac17d7714e3c6",
+  "catalogSource": {
+    "name": "OpenStreetMap",
+    "license": "ODbL-1.0",
+    "attribution": "© OpenStreetMap contributors",
+    "licenseUrl": "https://www.openstreetmap.org/copyright",
+    "snapshotTimestamp": "2026-11-04T21:21:03Z"
+  },
+  "summary": {
+    "Hà Nội": {
+      "unconfirmed": 6,
+      "matched_scope": 2,
+      "identity_conflict": 1,
+      "broader_entity_only": 1
+    },
+    "Huế": {
+      "matched_scope": 6,
+      "unconfirmed": 4
+    },
+    "Đà Nẵng": {
+      "matched_scope": 6,
+      "broader_entity_only": 1,
+      "unconfirmed": 3
+    }
+  },
+  "totals": {
+    "unconfirmed": 13,
+    "matched_scope": 14,
+    "identity_conflict": 1,
+    "broader_entity_only": 2
+  },
+  "osmTaggedCount": 3,
+  "matchingMethod": "Exact OSM ID tags, then manual article-scope and city review via web search/open. Article existence and entity match do not verify attraction entrance, prices or hours. Unconfirmed is not proof of absence.",
+  "pageviewsProbe": {
+    "project": "vi.wikipedia.org",
+    "article": "Chùa Láng",
+    "start": "2026-10-01",
+    "end": "2026-10-31",
+    "access": "all-access",
+    "agent": "user",
+    "granularity": "daily",
+    "httpStatus": 403,
+    "status": "blocked_robot_policy",
+    "responseSummary": "Please respect our robot policy; contact bot-traffic@wikimedia.org if higher volumes needed.",
+    "url": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/vi.wikipedia.org/all-access/user/Ch%C3%B9a_L%C3%A1ng/daily/2026100100/2026103100"
+  },
+  "limitations": [
+    "No successful pageview response; no popularity ranking derived.",
+    "13 matched Vietnamese articles and one matched English article: do not directly compare raw counts across languages.",
+    "Article title/redirect/page ID and time-window completeness must be resolved by the official APIs before production import.",
+    "Web open cache misses are not evidence of non-existence.",
+    "Current OSM tags were queried separately from the local catalog snapshot."
+  ],
+  "places": [
+    {
+      "osmId": "node/443033827",
+      "destination": "Hà Nội",
+      "catalogName": "Tượng đài Lý Thái Tổ",
+      "catalogCoordinates": {
+        "lat": 21.0274885,
+        "lon": 105.854501
+      },
+      "status": "unconfirmed",
+      "article": null,
+      "broaderArticle": null,
+      "note": "Chưa xác nhận bài riêng về tượng đài tại Hà Nội. Loại bài tiểu sử Lý Thái Tổ và công viên cùng tên ở TP.HCM.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": "Statue of King Ly Thai To",
+      "osmSourceUrl": "https://www.openstreetmap.org/node/443033827",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "mapping_not_eligible"
+    },
+    {
+      "osmId": "node/445345255",
+      "destination": "Hà Nội",
+      "catalogName": "Nhà 48 phố Hàng Ngang",
+      "catalogCoordinates": {
+        "lat": 21.0343278,
+        "lon": 105.8504388
+      },
+      "status": "matched_scope",
+      "article": {
+        "project": "vi.wikipedia.org",
+        "title": "Nhà 48 Hàng Ngang",
+        "url": "https://vi.wikipedia.org/wiki/Nh%C3%A0_48_H%C3%A0ng_Ngang"
+      },
+      "broaderArticle": null,
+      "note": "OSM có wikipedia và wikidata; bài mô tả chính ngôi nhà tại Hà Nội.",
+      "osmWikipediaTag": "vi:Nhà 48 Hàng Ngang",
+      "osmWikidataTag": "Q10800786",
+      "osmEnglishName": "House number 48 Hang Ngang Street",
+      "osmSourceUrl": "https://www.openstreetmap.org/node/445345255",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "not_fetched_http_403"
+    },
+    {
+      "osmId": "node/1498111667",
+      "destination": "Hà Nội",
+      "catalogName": "Di Tích Lịch Sử Chùa Láng",
+      "catalogCoordinates": {
+        "lat": 21.0234337,
+        "lon": 105.802772
+      },
+      "status": "matched_scope",
+      "article": {
+        "project": "vi.wikipedia.org",
+        "title": "Chùa Láng",
+        "url": "https://vi.wikipedia.org/wiki/Ch%C3%B9a_L%C3%A1ng"
+      },
+      "broaderArticle": null,
+      "note": "Tên khác Chiêu Thiền tự; nội dung xác định ngôi chùa ở Hà Nội.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": null,
+      "osmSourceUrl": "https://www.openstreetmap.org/node/1498111667",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "not_fetched_http_403"
+    },
+    {
+      "osmId": "node/1716371376",
+      "destination": "Hà Nội",
+      "catalogName": "Ô Thuỵ Chương",
+      "catalogCoordinates": {
+        "lat": 21.0395242,
+        "lon": 105.8284048
+      },
+      "status": "unconfirmed",
+      "article": null,
+      "broaderArticle": null,
+      "note": "Chưa xác nhận được bài đúng Ô Thụy Chương; không tự đổi sang Ô Thụy Khuê.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": null,
+      "osmSourceUrl": "https://www.openstreetmap.org/node/1716371376",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "mapping_not_eligible"
+    },
+    {
+      "osmId": "node/2810302635",
+      "destination": "Hà Nội",
+      "catalogName": "Bảo tàng Binh chủng Thông tin liên lạc",
+      "catalogCoordinates": {
+        "lat": 21.0303429,
+        "lon": 105.8266305
+      },
+      "status": "unconfirmed",
+      "article": null,
+      "broaderArticle": null,
+      "note": "Chưa tìm được bài riêng đủ chắc cho đúng bảo tàng thông tin liên lạc này.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": null,
+      "osmSourceUrl": "https://www.openstreetmap.org/node/2810302635",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "mapping_not_eligible"
+    },
+    {
+      "osmId": "node/4489385889",
+      "destination": "Hà Nội",
+      "catalogName": "Chợ Đêm Hàng Đào – Đồng Xuân",
+      "catalogCoordinates": {
+        "lat": 21.0335078,
+        "lon": 105.8509571
+      },
+      "status": "unconfirmed",
+      "article": null,
+      "broaderArticle": null,
+      "note": "Chưa xác nhận bài riêng chợ đêm Hàng Đào–Đồng Xuân. Không dùng lượt xem bài chợ Đồng Xuân hoặc phố cổ thay thế.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": "Hanoi Weekend Night Market",
+      "osmSourceUrl": "https://www.openstreetmap.org/node/4489385889",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "mapping_not_eligible"
+    },
+    {
+      "osmId": "node/4499978190",
+      "destination": "Hà Nội",
+      "catalogName": "Bảo tàng Địa chất Việt Nam",
+      "catalogCoordinates": {
+        "lat": 21.0235524,
+        "lon": 105.8587723
+      },
+      "status": "unconfirmed",
+      "article": null,
+      "broaderArticle": null,
+      "note": "Tên bài thử mở bị cache miss; chưa xác nhận bài tồn tại hoặc ghép đúng, không kết luận không có bài.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": "Geological Museum",
+      "osmSourceUrl": "https://www.openstreetmap.org/node/4499978190",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "mapping_not_eligible"
+    },
+    {
+      "osmId": "node/4742507123",
+      "destination": "Hà Nội",
+      "catalogName": "Đài Tưởng Niệm Vua Lê Thái Tổ",
+      "catalogCoordinates": {
+        "lat": 21.0290553,
+        "lon": 105.8509582
+      },
+      "status": "unconfirmed",
+      "article": null,
+      "broaderArticle": null,
+      "note": "Chưa xác nhận bài riêng cho đài tưởng niệm; loại tiểu sử Lê Lợi/Lê Thái Tổ.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": "Monument of King Le Thai To",
+      "osmSourceUrl": "https://www.openstreetmap.org/node/4742507123",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "mapping_not_eligible"
+    },
+    {
+      "osmId": "node/4927916321",
+      "destination": "Hà Nội",
+      "catalogName": "Tượng kỷ niệm chiến thắng B52",
+      "catalogCoordinates": {
+        "lat": 21.0468303,
+        "lon": 105.8368305
+      },
+      "status": "identity_conflict",
+      "article": null,
+      "broaderArticle": null,
+      "note": "OSM name nói chiến thắng B52 nhưng name:en nói John McCain capture memorial. Cần xác minh danh tính trước khi ghép Wikipedia; không lấy lượt xem John McCain.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": "John McCain capture memoral (in Vietnamese only)",
+      "osmSourceUrl": "https://www.openstreetmap.org/node/4927916321",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "mapping_not_eligible"
+    },
+    {
+      "osmId": "node/5406262022",
+      "destination": "Hà Nội",
+      "catalogName": "Đài quan sát Lotte Skywalk",
+      "catalogCoordinates": {
+        "lat": 21.0322019,
+        "lon": 105.8123288
+      },
+      "status": "broader_entity_only",
+      "article": null,
+      "broaderArticle": {
+        "project": "vi.wikipedia.org",
+        "title": "Lotte Center Hà Nội",
+        "url": "https://vi.wikipedia.org/wiki/Lotte_Center_H%C3%A0_N%E1%BB%99i"
+      },
+      "note": "Bài về toàn tòa nhà, không riêng đài quan sát. Chưa dùng làm điểm nổi tiếng cho Skywalk.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": "Lotte Observation Deck",
+      "osmSourceUrl": "https://www.openstreetmap.org/node/5406262022",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "mapping_not_eligible"
+    },
+    {
+      "osmId": "node/669249193",
+      "destination": "Huế",
+      "catalogName": "Lăng Tự Đức",
+      "catalogCoordinates": {
+        "lat": 16.4331813,
+        "lon": 107.5645857
+      },
+      "status": "matched_scope",
+      "article": {
+        "project": "vi.wikipedia.org",
+        "title": "Lăng Tự Đức",
+        "url": "https://vi.wikipedia.org/wiki/L%C4%83ng_T%E1%BB%B1_%C4%90%E1%BB%A9c"
+      },
+      "broaderArticle": null,
+      "note": "Bài về khu lăng tại Huế, không phải tiểu sử vua Tự Đức.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": null,
+      "osmSourceUrl": "https://www.openstreetmap.org/node/669249193",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "not_fetched_http_403"
+    },
+    {
+      "osmId": "node/12411957519",
+      "destination": "Huế",
+      "catalogName": "Lăng Dục Đức",
+      "catalogCoordinates": {
+        "lat": 16.4510937,
+        "lon": 107.5931525
+      },
+      "status": "matched_scope",
+      "article": {
+        "project": "vi.wikipedia.org",
+        "title": "Lăng Dục Đức",
+        "url": "https://vi.wikipedia.org/wiki/L%C4%83ng_D%E1%BB%A5c_%C4%90%E1%BB%A9c"
+      },
+      "broaderArticle": null,
+      "note": "Bài về khu lăng tại Huế, không phải tiểu sử vua Dục Đức.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": "Tomb of Duc Duc",
+      "osmSourceUrl": "https://www.openstreetmap.org/node/12411957519",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "not_fetched_http_403"
+    },
+    {
+      "osmId": "node/2899189013",
+      "destination": "Huế",
+      "catalogName": "Tử Cấm Thành",
+      "catalogCoordinates": {
+        "lat": 16.4694914,
+        "lon": 107.577755
+      },
+      "status": "matched_scope",
+      "article": {
+        "project": "vi.wikipedia.org",
+        "title": "Tử Cấm thành (Huế)",
+        "url": "https://vi.wikipedia.org/wiki/T%E1%BB%AD_C%E1%BA%A5m_th%C3%A0nh_(Hu%E1%BA%BF)"
+      },
+      "broaderArticle": null,
+      "note": "Bài riêng cho khu bên trong Hoàng thành Huế; giữ nhóm loại trừ trải nghiệm hiện có.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": "Purple Forbidden City",
+      "osmSourceUrl": "https://www.openstreetmap.org/node/2899189013",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "not_fetched_http_403"
+    },
+    {
+      "osmId": "node/5182931945",
+      "destination": "Huế",
+      "catalogName": "Hoàng Thành Huế",
+      "catalogCoordinates": {
+        "lat": 16.4689726,
+        "lon": 107.5781266
+      },
+      "status": "matched_scope",
+      "article": {
+        "project": "vi.wikipedia.org",
+        "title": "Hoàng thành Huế",
+        "url": "https://vi.wikipedia.org/wiki/Ho%C3%A0ng_th%C3%A0nh_Hu%E1%BA%BF"
+      },
+      "broaderArticle": null,
+      "note": "OSM có wikipedia và wikidata; không dùng bài về cả thành phố Huế.",
+      "osmWikipediaTag": "vi:Hoàng thành Huế",
+      "osmWikidataTag": "Q10769129",
+      "osmEnglishName": "Imperial Citadel",
+      "osmSourceUrl": "https://www.openstreetmap.org/node/5182931945",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "not_fetched_http_403"
+    },
+    {
+      "osmId": "node/4555464591",
+      "destination": "Huế",
+      "catalogName": "Điềm Phùng Thį",
+      "catalogCoordinates": {
+        "lat": 16.4578346,
+        "lon": 107.5842155
+      },
+      "status": "unconfirmed",
+      "article": null,
+      "broaderArticle": null,
+      "note": "OSM name:en xác định nhà trưng bày nghệ thuật. Không dùng bài tiểu sử nghệ sĩ Điềm Phùng Thị làm độ nổi tiếng của nhà trưng bày.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": "Diem Phung Thi Art Exhibition House",
+      "osmSourceUrl": "https://www.openstreetmap.org/node/4555464591",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "mapping_not_eligible"
+    },
+    {
+      "osmId": "node/4555491489",
+      "destination": "Huế",
+      "catalogName": "Tượng đài Phan Bội Châu",
+      "catalogCoordinates": {
+        "lat": 16.46715,
+        "lon": 107.5898061
+      },
+      "status": "unconfirmed",
+      "article": null,
+      "broaderArticle": null,
+      "note": "Chưa xác nhận bài riêng tượng đài tại Huế. Không dùng tiểu sử Phan Bội Châu.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": "Phan Boi Chau Street Monument",
+      "osmSourceUrl": "https://www.openstreetmap.org/node/4555491489",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "mapping_not_eligible"
+    },
+    {
+      "osmId": "node/6099306388",
+      "destination": "Huế",
+      "catalogName": "Tượng đài vua Quang Trung",
+      "catalogCoordinates": {
+        "lat": 16.4420037,
+        "lon": 107.5914458
+      },
+      "status": "unconfirmed",
+      "article": null,
+      "broaderArticle": null,
+      "note": "Chưa xác nhận bài riêng tượng đài tại Huế. Không dùng tiểu sử Quang Trung hoặc bảo tàng Quang Trung ở địa phương khác.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": "Statue of Emperor Quang Trung",
+      "osmSourceUrl": "https://www.openstreetmap.org/node/6099306388",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "mapping_not_eligible"
+    },
+    {
+      "osmId": "node/6533792207",
+      "destination": "Huế",
+      "catalogName": "Đàn Xã Tắc",
+      "catalogCoordinates": {
+        "lat": 16.4650415,
+        "lon": 107.5712089
+      },
+      "status": "matched_scope",
+      "article": {
+        "project": "vi.wikipedia.org",
+        "title": "Đàn Xã Tắc (Huế)",
+        "url": "https://vi.wikipedia.org/wiki/%C4%90%C3%A0n_X%C3%A3_T%E1%BA%AFc_(Hu%E1%BA%BF)"
+      },
+      "broaderArticle": null,
+      "note": "Bài riêng có tọa độ gần trùng node; không dùng bài chung Đàn Xã Tắc.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": null,
+      "osmSourceUrl": "https://www.openstreetmap.org/node/6533792207",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "not_fetched_http_403"
+    },
+    {
+      "osmId": "node/9960090217",
+      "destination": "Huế",
+      "catalogName": "Đúc đồng Dương Xuân",
+      "catalogCoordinates": {
+        "lat": 16.4532498,
+        "lon": 107.5632941
+      },
+      "status": "unconfirmed",
+      "article": null,
+      "broaderArticle": null,
+      "note": "Chưa xác nhận bài đúng điểm đúc đồng Dương Xuân; bài về phường hoặc nghề chung chưa đủ.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": null,
+      "osmSourceUrl": "https://www.openstreetmap.org/node/9960090217",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "mapping_not_eligible"
+    },
+    {
+      "osmId": "node/13503143701",
+      "destination": "Huế",
+      "catalogName": "Thanh Toan Bridge",
+      "catalogCoordinates": {
+        "lat": 16.4667729,
+        "lon": 107.6427024
+      },
+      "status": "matched_scope",
+      "article": {
+        "project": "vi.wikipedia.org",
+        "title": "Cầu ngói Thanh Toàn",
+        "url": "https://vi.wikipedia.org/wiki/C%E1%BA%A7u_ng%C3%B3i_Thanh_To%C3%A0n"
+      },
+      "broaderArticle": null,
+      "note": "Nội dung xác định cầu tại Thủy Thanh, Huế; tên catalog hiện ở tiếng Anh.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": null,
+      "osmSourceUrl": "https://www.openstreetmap.org/node/13503143701",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "not_fetched_http_403"
+    },
+    {
+      "osmId": "node/1036552571",
+      "destination": "Đà Nẵng",
+      "catalogName": "Đèo Hải Vân",
+      "catalogCoordinates": {
+        "lat": 16.1874495,
+        "lon": 108.1307217
+      },
+      "status": "matched_scope",
+      "article": {
+        "project": "vi.wikipedia.org",
+        "title": "Đèo Hải Vân",
+        "url": "https://vi.wikipedia.org/wiki/%C4%90%C3%A8o_H%E1%BA%A3i_V%C3%A2n"
+      },
+      "broaderArticle": null,
+      "note": "OSM có wikipedia và wikidata; điểm OSM đại diện cho địa danh đèo, chưa xác minh điểm dừng/cổng vào.",
+      "osmWikipediaTag": "vi:Đèo Hải Vân",
+      "osmWikidataTag": "Q1477078",
+      "osmEnglishName": "Hai Van Pass",
+      "osmSourceUrl": "https://www.openstreetmap.org/node/1036552571",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "not_fetched_http_403"
+    },
+    {
+      "osmId": "node/1758586662",
+      "destination": "Đà Nẵng",
+      "catalogName": "Thuỷ Sơn",
+      "catalogCoordinates": {
+        "lat": 16.0043044,
+        "lon": 108.263527
+      },
+      "status": "broader_entity_only",
+      "article": null,
+      "broaderArticle": {
+        "project": "en.wikipedia.org",
+        "title": "Ngũ Hành Sơn",
+        "url": "https://en.wikipedia.org/wiki/Ng%C5%A9_H%C3%A0nh_S%C6%A1n"
+      },
+      "note": "Bài về cả cụm núi, không riêng Thủy Sơn. Trang vi:Thủy Sơn là định hướng, không dùng lượt xem.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": "Mountain of Water",
+      "osmSourceUrl": "https://www.openstreetmap.org/node/1758586662",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "mapping_not_eligible"
+    },
+    {
+      "osmId": "node/4172034499",
+      "destination": "Đà Nẵng",
+      "catalogName": "Non Nuoc Beach",
+      "catalogCoordinates": {
+        "lat": 16.0205336,
+        "lon": 108.261744
+      },
+      "status": "matched_scope",
+      "article": {
+        "project": "vi.wikipedia.org",
+        "title": "Bãi biển Non Nước",
+        "url": "https://vi.wikipedia.org/wiki/B%C3%A3i_bi%E1%BB%83n_Non_N%C6%B0%E1%BB%9Bc"
+      },
+      "broaderArticle": null,
+      "note": "Bài về bãi biển ở Đà Nẵng; không dùng trang định hướng Non Nước hoặc phim China Beach.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": "Non Nuoc Beach",
+      "osmSourceUrl": "https://www.openstreetmap.org/node/4172034499",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "not_fetched_http_403"
+    },
+    {
+      "osmId": "node/4347089780",
+      "destination": "Đà Nẵng",
+      "catalogName": "My An Beach",
+      "catalogCoordinates": {
+        "lat": 16.025095,
+        "lon": 108.2595335
+      },
+      "status": "unconfirmed",
+      "article": null,
+      "broaderArticle": null,
+      "note": "Chưa xác nhận bài riêng bãi Mỹ An; không tự đồng nhất với bãi Mỹ Khê.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": "My An Beach",
+      "osmSourceUrl": "https://www.openstreetmap.org/node/4347089780",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "mapping_not_eligible"
+    },
+    {
+      "osmId": "node/5273998823",
+      "destination": "Đà Nẵng",
+      "catalogName": "Cầu Trần Thị Lý",
+      "catalogCoordinates": {
+        "lat": 16.050179,
+        "lon": 108.2293814
+      },
+      "status": "matched_scope",
+      "article": {
+        "project": "vi.wikipedia.org",
+        "title": "Cầu Trần Thị Lý",
+        "url": "https://vi.wikipedia.org/wiki/C%E1%BA%A7u_Tr%E1%BA%A7n_Th%E1%BB%8B_L%C3%BD"
+      },
+      "broaderArticle": null,
+      "note": "Bài về cầu bắc qua sông Hàn tại Đà Nẵng; tên và vị trí phù hợp.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": "Tran Thi Ly Bridge",
+      "osmSourceUrl": "https://www.openstreetmap.org/node/5273998823",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "not_fetched_http_403"
+    },
+    {
+      "osmId": "node/5273999121",
+      "destination": "Đà Nẵng",
+      "catalogName": "Cầu Thuận Phước",
+      "catalogCoordinates": {
+        "lat": 16.0948084,
+        "lon": 108.2200134
+      },
+      "status": "matched_scope",
+      "article": {
+        "project": "vi.wikipedia.org",
+        "title": "Cầu Thuận Phước",
+        "url": "https://vi.wikipedia.org/wiki/C%E1%BA%A7u_Thu%E1%BA%ADn_Ph%C6%B0%E1%BB%9Bc"
+      },
+      "broaderArticle": null,
+      "note": "Bài về cầu ở Đà Nẵng; tọa độ trong các bản ngôn ngữ có độ chính xác khác nhau.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": "Thuan Phuoc Bridge",
+      "osmSourceUrl": "https://www.openstreetmap.org/node/5273999121",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "not_fetched_http_403"
+    },
+    {
+      "osmId": "node/5383428522",
+      "destination": "Đà Nẵng",
+      "catalogName": "Khu Du Lịch Sinh Thái Suối Lương",
+      "catalogCoordinates": {
+        "lat": 16.1559167,
+        "lon": 108.1098007
+      },
+      "status": "unconfirmed",
+      "article": null,
+      "broaderArticle": null,
+      "note": "Chưa xác nhận bài riêng đúng khu du lịch Suối Lương.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": null,
+      "osmSourceUrl": "https://www.openstreetmap.org/node/5383428522",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "mapping_not_eligible"
+    },
+    {
+      "osmId": "node/7276380289",
+      "destination": "Đà Nẵng",
+      "catalogName": "Cầu Sông Hàn",
+      "catalogCoordinates": {
+        "lat": 16.0721398,
+        "lon": 108.2268106
+      },
+      "status": "matched_scope",
+      "article": {
+        "project": "vi.wikipedia.org",
+        "title": "Cầu Sông Hàn",
+        "url": "https://vi.wikipedia.org/wiki/C%E1%BA%A7u_S%C3%B4ng_H%C3%A0n"
+      },
+      "broaderArticle": null,
+      "note": "Đúng cầu tại Đà Nẵng; không ghép với cầu qua sông Hàn ở Hàn Quốc.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": "Han River Bridge",
+      "osmSourceUrl": "https://www.openstreetmap.org/node/7276380289",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "not_fetched_http_403"
+    },
+    {
+      "osmId": "node/7301996085",
+      "destination": "Đà Nẵng",
+      "catalogName": "Chợ đêm Helio",
+      "catalogCoordinates": {
+        "lat": 16.0370944,
+        "lon": 108.2248186
+      },
+      "status": "unconfirmed",
+      "article": null,
+      "broaderArticle": null,
+      "note": "Chưa xác nhận bài riêng đúng chợ đêm Helio; kết quả cầu thủ Helio là sai đối tượng.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": "Helio Night Market",
+      "osmSourceUrl": "https://www.openstreetmap.org/node/7301996085",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "mapping_not_eligible"
+    },
+    {
+      "osmId": "node/10709724107",
+      "destination": "Đà Nẵng",
+      "catalogName": "Làng đá mỹ nghệ Non Nước",
+      "catalogCoordinates": {
+        "lat": 16.0009523,
+        "lon": 108.2666434
+      },
+      "status": "matched_scope",
+      "article": {
+        "project": "en.wikipedia.org",
+        "title": "Non Nước Village",
+        "url": "https://en.wikipedia.org/wiki/Non_N%C6%B0%E1%BB%9Bc_Village"
+      },
+      "broaderArticle": null,
+      "note": "Tìm thấy bài tiếng Anh đúng làng đá. Chưa xác nhận bài tiếng Việt; không so lượt xem thô en với vi.",
+      "osmWikipediaTag": null,
+      "osmWikidataTag": null,
+      "osmEnglishName": null,
+      "osmSourceUrl": "https://www.openstreetmap.org/node/10709724107",
+      "pageviews": null,
+      "popularityScore": null,
+      "pageviewsStatus": "not_fetched_http_403"
+    }
+  ]
+}
